@@ -1,13 +1,18 @@
 ![PKHUD - Swift and easy.](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
-
-A Swift based reimplementation of the Apple HUD View (Volume, Ringer, Rotation,…) for iOS 8.
+<br />
+<br />
+<br />
+<center>A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8**.</center>
+<br />
+<br />
 
 ## Features
-- Official iOS 8 Blur via *UIVisualEffectsView*
-- Proper rotation support
+- Official iOS 8 blur effect via **UIVisualEffectsView**.
+- Proper **rotation support**.
+- Size / **Device agnostic**.
 - Works on top of presented view controllers, alerts,...
-- Comes with several *free* resources (Checkmark, Cross, Progress Indicator,...)
-- Builds as an iOS 8 framework
+- Comes with several *free* resources - Checkmark, Cross, Progress Indicator,...
+- Builds as an **iOS 8 framework**.
 
 ## How To
 After adding the framework to your project, you need to import the module
@@ -17,7 +22,8 @@ import PKHUD
 
 As of the initial release, there is six out-of-the-box types of content views you can present. 
 
-- `PKHUD.ContentView.TextView(...)` - provides a wide, three line text view, which you can use to display information.
+- `PKHUD.ContentView.TextView(...)`
+provides a wide, three line text view, which you can use to display information.
 
 - `PKHUD.ContentView.ImageView(...)` - provides a square view, which you can use to display a single image within.
 
@@ -56,6 +62,10 @@ There are two properties at your disposal to customize general behavior.
 Additionally you are free to create you own custom content views. They can either descend from `PKHUD.ContentView.SquareBaseView`, `PKHUD.ContentView.WideBaseView` or simply UIView.
 
 **Note**: It's neither possible to customize the general look and feel, nor do I plan to add that feature. You are free to provide any content views you wish but the blurring, corner radius and shading will remain the same.
+
+## Disclaimer
+
+While basically feature complete and stable, make sure you understand that the API **will change as Swift matures** and some of the annoying compiler quirks are resolved. If you stick to using the `Controller` and `ContentView` classes you will be fine - consider the other classes private.
 
 ## Additional Notes
 
