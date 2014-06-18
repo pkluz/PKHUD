@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fUS-nh-a92">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+    </dependencies>
+    <scenes>
+        <!--Demo View Controller-->
+        <scene sceneID="i1R-Qy-z0z">
+            <objects>
+                <viewController id="fUS-nh-a92" customClass="DemoViewController" customModule="PKHUD_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xe5-Sk-LrC"/>
+                        <viewControllerLayoutGuide type="bottom" id="fsH-l9-1Kh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZJE-RV-lYd">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="QUK-0M-drm">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-2A-3TB">
+                                <rect key="frame" x="20" y="229" width="440" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gEw-kF-GfB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Progress HUD">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showProgressHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="SeT-vx-KUc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOA-ax-T4A">
+                                <rect key="frame" x="20" y="277" width="440" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GOm-l1-Phg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Title HUD">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTitleHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="cix-lk-cqi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-90-mst">
+                                <rect key="frame" x="20" y="325" width="440" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sop-Hv-1gM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Subtitle HUD">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSubtitleHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="7dl-JX-wNJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anS-2E-3FN">
+                                <rect key="frame" x="20" y="373" width="440" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="64I-iI-84b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Text HUD">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTextHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="Udb-7A-cra"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-k6-s89">
+                                <rect key="frame" x="20" y="421" width="440" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EBB-wr-KRW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Alert + HUD">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlertWithHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="Z3k-oz-l2L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nOA-ax-T4A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="4e7-kJ-bME"/>
+                            <constraint firstAttribute="trailing" secondItem="9dj-k6-s89" secondAttribute="trailing" constant="20" id="4jU-K5-Yrt"/>
+                            <constraint firstItem="9dj-k6-s89" firstAttribute="top" secondItem="anS-2E-3FN" secondAttribute="bottom" constant="8" id="79S-pj-shS"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nOA-ax-T4A" secondAttribute="trailing" constant="20" id="J0o-a0-s8W"/>
+                            <constraint firstItem="9dj-k6-s89" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="Miw-ga-2Vf"/>
+                            <constraint firstItem="1Gc-2A-3TB" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="S3v-U1-laR"/>
+                            <constraint firstItem="QUK-0M-drm" firstAttribute="top" secondItem="Xe5-Sk-LrC" secondAttribute="bottom" constant="-20" id="Vjc-At-Htt"/>
+                            <constraint firstItem="nOA-ax-T4A" firstAttribute="top" secondItem="1Gc-2A-3TB" secondAttribute="bottom" constant="8" id="WCa-Bm-bnp"/>
+                            <constraint firstItem="fsH-l9-1Kh" firstAttribute="top" secondItem="9dj-k6-s89" secondAttribute="bottom" constant="19" id="b8a-y3-Vud"/>
+                            <constraint firstItem="Wkr-90-mst" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="ecu-Hg-6He"/>
+                            <constraint firstItem="QUK-0M-drm" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" id="gdT-GE-icr"/>
+                            <constraint firstAttribute="trailing" secondItem="Wkr-90-mst" secondAttribute="trailing" constant="20" id="kDv-0Q-bhZ"/>
+                            <constraint firstAttribute="trailing" secondItem="anS-2E-3FN" secondAttribute="trailing" constant="20" id="lC2-dW-MNm"/>
+                            <constraint firstAttribute="trailing" secondItem="nOA-ax-T4A" secondAttribute="trailing" constant="20" id="mye-OP-nXH"/>
+                            <constraint firstItem="anS-2E-3FN" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="ndA-Hx-29v"/>
+                            <constraint firstItem="anS-2E-3FN" firstAttribute="top" secondItem="Wkr-90-mst" secondAttribute="bottom" constant="8" id="p1i-qr-xAZ"/>
+                            <constraint firstAttribute="trailing" secondItem="QUK-0M-drm" secondAttribute="trailing" id="qVV-DU-WuV"/>
+                            <constraint firstItem="Wkr-90-mst" firstAttribute="top" secondItem="nOA-ax-T4A" secondAttribute="bottom" constant="8" id="rxN-Is-6vw"/>
+                            <constraint firstAttribute="trailing" secondItem="1Gc-2A-3TB" secondAttribute="trailing" constant="20" id="v4K-tj-MtK"/>
+                            <constraint firstItem="nOA-ax-T4A" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="wRE-Nn-B6a"/>
+                            <constraint firstItem="fsH-l9-1Kh" firstAttribute="top" secondItem="QUK-0M-drm" secondAttribute="bottom" id="y9C-FG-OcL"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zil-YM-aIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="535" y="420"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1434" height="1100"/>
+    </resources>
+</document>
