@@ -26,28 +26,28 @@ extension PKHUD {
         init(frameView: PKHUD.FrameView = PKHUD.FrameView()) {
             self.frameView = frameView
             super.init(frame: UIApplication.sharedApplication().delegate.window!.bounds)
-            self.rootViewController = PKHUD.WindowRootViewController()
-            self.windowLevel = UIWindowLevelNormal + 1.0
             
-            self.addSubview(self.backgroundView)
-            self.addSubview(self.frameView)
+            rootViewController = PKHUD.WindowRootViewController()
+            windowLevel = UIWindowLevelNormal + 1.0
+            backgroundColor = UIColor.clearColor()
             
-            self.backgroundColor = UIColor.clearColor()
+            addSubview(backgroundView)
+            addSubview(frameView)
         }
         
         override func layoutSubviews() {
             super.layoutSubviews()
             
-            self.frameView.center = self.center
-            self.backgroundView.frame = self.bounds
+            frameView.center = center
+            backgroundView.frame = bounds
         }
         
         func showFrameView() {
-            self.layer.removeAllAnimations()
-            self.makeKeyAndVisible()
-            self.frameView.center = self.center
-            self.frameView.alpha = 1.0
-            self.hidden = false
+            layer.removeAllAnimations()
+            makeKeyAndVisible()
+            frameView.center = center
+            frameView.alpha = 1.0
+            hidden = false
         }
         
         var willHide: Bool = false
@@ -61,11 +61,11 @@ extension PKHUD {
                 self.willHide = false
             }
             
-            if self.hidden {
+            if hidden {
                 return
             }
             
-            self.willHide = true
+            willHide = true
             
             if anim {
                 UIView.animateWithDuration(0.8, animations: { self.frameView.alpha = 0.0 }, completion)
@@ -80,7 +80,7 @@ extension PKHUD {
                     self.backgroundView.alpha = 1.0
                 }
             } else {
-                self.backgroundView.alpha = 1.0;
+                backgroundView.alpha = 1.0;
             }
         }
         
@@ -90,7 +90,7 @@ extension PKHUD {
                     self.backgroundView.alpha = 0.0
                 }
             } else {
-                self.backgroundView.alpha = 0.0;
+                backgroundView.alpha = 0.0;
             }
         }
     }
