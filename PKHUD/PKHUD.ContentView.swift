@@ -29,6 +29,7 @@ extension PKHUD {
             }
         }
         
+        @final
         class TextView: WideBaseView {
             init(text: String?) {
                 super.init()
@@ -78,6 +79,7 @@ extension PKHUD {
             }()
         }
         
+        @final
         class ProgressView: ImageView {
             init() {
                 super.init(image: UIImage(named: "progress"))
@@ -97,6 +99,7 @@ extension PKHUD {
             }
         }
         
+        @final
         class TitleView: ImageView {
             init(title: String?, image: UIImage?) {
                 super.init(image: image)
@@ -130,6 +133,7 @@ extension PKHUD {
             }()
         }
         
+        @final
         class SubtitleView: ImageView {
             init(subtitle: String?, image: UIImage?) {
                 super.init(image: image)
@@ -166,6 +170,7 @@ extension PKHUD {
             }()
         }
         
+        @final
         class StatusView: ImageView {
             init(title: String?, subtitle: String?, image: UIImage?) {
                 super.init(image: image)
