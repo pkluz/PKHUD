@@ -2,10 +2,9 @@
 <br />
 <br />
 <br />
-<center>A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8**.</center>
+A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8**.
 <br />
 <br />
-
 ## Features
 - Official iOS 8 blur effect via **UIVisualEffectsView**.
 - Proper **rotation support**.
