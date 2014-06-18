@@ -53,9 +53,9 @@ There are two properties at your disposal to customize general behavior.
 
 - `PKHUD.Controller.sharedController.userInteractionOnUnderlyingViewsEnabled: Bool` defines whether the underlying views respond to touches while the HUD is shown.
 
-Additionally you're free to create you own custom content views. They can either descend from `PKHUD.ContentViews.SquareBaseView`, `PKHUD.ContentViews.WideBaseView` or simply UIView.
+Additionally you are free to create you own custom content views. They can either descend from `PKHUD.ContentViews.SquareBaseView`, `PKHUD.ContentViews.WideBaseView` or simply UIView.
 
-**Note**: Its neither possible to customize the general look and feel, nor do I plan to add that feature. You are free to provide any content views you wish but the blurring, corner radius and shading will remain the same.
+**Note**: It's neither possible to customize the general look and feel, nor do I plan to add that feature. You are free to provide any content views you wish but the blurring, corner radius and shading will remain the same.
 
 ## Additional Notes
 
