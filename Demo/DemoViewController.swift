@@ -18,6 +18,12 @@ class DemoViewController: UIViewController {
         PKHUD.Controller.sharedController.userInteractionOnUnderlyingViewsEnabled = false
     }
     
+    @IBAction func showStatusHUD(sender: AnyObject) {
+        PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.StatusView(title: "Ringer", subtitle: "Silent", image: PKHUD.Assets.ringerMutedImage)
+        PKHUD.Controller.sharedController.showHUD()
+        PKHUD.Controller.sharedController.hideHUD(afterDelay: 2.0)
+    }
+    
     @IBAction func showProgressHUD(sender: AnyObject) {
         PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.ProgressView()
         PKHUD.Controller.sharedController.showHUD()
