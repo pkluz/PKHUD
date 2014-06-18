@@ -1,8 +1,34 @@
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control?
-#
-# Pods/
+# Mac OS X Finder and whatnot
+.DS_Store
+*.swp
+*~.nib
 
+# XCode (and ancestors) per-user config (very noisy, and not relevant)
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xcworkspace
+*.xccheckout
+
+# XCode 4
+xcuserdata
+
+# build products
+build/
+
+# Other source repository archive directories (protects when importing)
+.hg
+.svn
+CVS
+
+# temporary script folders/files
+ThirdParty/boost/*
+
+# Eclipse Workspace
+.metadata
+
+# Maya temporary
+.mayaSwatches/
