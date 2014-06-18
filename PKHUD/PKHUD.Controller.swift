@@ -69,10 +69,7 @@ struct PKHUD {
         
         // MARK: Private
         
-        let window: PKHUD.Window = {
-            return PKHUD.Window(frameView: PKHUD.FrameView())
-        }()
-        
+        let window: PKHUD.Window = PKHUD.Window(frameView: PKHUD.FrameView())
         var hideTimer: NSTimer?
         
         struct Constants {
