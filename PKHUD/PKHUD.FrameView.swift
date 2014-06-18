@@ -24,7 +24,7 @@ extension PKHUD {
             contentView.addSubview(self.content)
         }
         
-        var _content: UIView = UIView()
+        var _content = UIView()
         var content: UIView {
             get {
                 return _content

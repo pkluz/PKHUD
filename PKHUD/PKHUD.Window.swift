@@ -50,7 +50,7 @@ extension PKHUD {
             hidden = false
         }
         
-        var willHide: Bool = false
+        var willHide = false
         func hideFrameView(animated anim: Bool) {
             let completion: (finished: Bool) -> (Void) = { finished in
                 if finished {

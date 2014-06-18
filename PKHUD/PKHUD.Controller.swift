@@ -28,7 +28,7 @@ struct PKHUD {
             window.frameView.autoresizingMask = .FlexibleLeftMargin | .FlexibleRightMargin | .FlexibleTopMargin | .FlexibleBottomMargin
         }
         
-        var dimsBackground: Bool = true
+        var dimsBackground = true
         
         var userInteractionOnUnderlyingViewsEnabled: Bool {
             get {
@@ -69,7 +69,7 @@ struct PKHUD {
         
         // MARK: Private
         
-        let window: PKHUD.Window = PKHUD.Window(frameView: PKHUD.FrameView())
+        let window = PKHUD.Window(frameView: PKHUD.FrameView())
         var hideTimer: NSTimer?
         
         struct Constants {
