@@ -1,4 +1,4 @@
-![PKHUD - Swift and easy.](https://raw.githubusercontent.com/pkluz/PKHUD/master/hero.png)
+![PKHUD - Swift and easy.](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
 
 A Swift based reimplementation of the Apple HUD View (Volume, Ringer, Rotation,…) for iOS 8.
 
