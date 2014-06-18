@@ -10,9 +10,7 @@ import UIKit
 
 extension PKHUD {
     
-    /**
-        Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
-    */
+    /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
     class FrameView: UIVisualEffectView {
         init() {
             super.init(effect: UIBlurEffect(style: .Light))

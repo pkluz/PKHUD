@@ -10,26 +10,29 @@ import UIKit
 
 extension PKHUD {
     
+    /// Serves as a configuration relay controller, tapping into the main window's rootViewController settings.
     class WindowRootViewController: UIViewController {
         
+        let rootViewController = UIApplication.sharedApplication().delegate.window!.rootViewController
+        
         override func supportedInterfaceOrientations() -> Int {
-            return UIApplication.sharedApplication().delegate.window!.rootViewController.supportedInterfaceOrientations()
+            return rootViewController.supportedInterfaceOrientations()
         }
         
         override func preferredStatusBarStyle() -> UIStatusBarStyle {
-            return UIApplication.sharedApplication().delegate.window!.rootViewController.preferredStatusBarStyle()
+            return rootViewController.preferredStatusBarStyle()
         }
         
         override func prefersStatusBarHidden() -> Bool {
-            return UIApplication.sharedApplication().delegate.window!.rootViewController.prefersStatusBarHidden()
+            return rootViewController.prefersStatusBarHidden()
         }
         
         override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-            return UIApplication.sharedApplication().delegate.window!.rootViewController.preferredStatusBarUpdateAnimation()
+            return rootViewController.preferredStatusBarUpdateAnimation()
         }
         
         override func shouldAutorotate() -> Bool {
-            return UIApplication.sharedApplication().delegate.window!.rootViewController.shouldAutorotate()
+            return rootViewController.shouldAutorotate()
         }
     }
 }

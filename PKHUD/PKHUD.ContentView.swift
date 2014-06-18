@@ -10,25 +10,25 @@ import UIKit
 import QuartzCore
 
 extension PKHUD {
-    /**
-        Provides a set of classes that can be customized and inserted as the PKHUD's contentView.
     
-        @example
-            PKHUD.Controller.sharedController.contentView = YOUR_CONTENT_VIEW
-    */
-    struct ContentViews {
+    /// Provides a set of base classes that can be customized and inserted as the PKHUD's contentView.
+    struct ContentView {
+        
+        /// Provides a square view, which you can subclass and add additional views to.
         class SquareBaseView: UIView {
             init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
                 super.init(frame: frame)
             }
         }
         
+        /// Provides a wide base view, which you can subclass and add additional views to.
         class WideBaseView: UIView {
             init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
                 super.init(frame: frame)
             }
         }
         
+        /// Provides a wide, three line text view, which you can use to display information.
         class TextView: WideBaseView {
             init(text: String?) {
                 super.init()
@@ -55,6 +55,7 @@ extension PKHUD {
             }()
         }
         
+        /// Provides a square view, which you can use to display a single image.
         class ImageView: SquareBaseView {
             init(image: UIImage?) {
                 super.init()
@@ -78,6 +79,7 @@ extension PKHUD {
             }()
         }
         
+        /// Provides a square (indeterminate) progress view.
         @final class ProgressView: ImageView {
             init() {
                 super.init(image: UIImage(named: "progress"))
@@ -97,6 +99,7 @@ extension PKHUD {
             }
         }
         
+        /// Provides a square view, which you can use to display a picture and a title (above the image).
         @final class TitleView: ImageView {
             init(title: String?, image: UIImage?) {
                 super.init(image: image)
@@ -130,6 +133,7 @@ extension PKHUD {
             }()
         }
         
+        /// Provides a square view, which you can use to display a picture and a subtitle (beneath the image).
         @final class SubtitleView: ImageView {
             init(subtitle: String?, image: UIImage?) {
                 super.init(image: image)
@@ -166,6 +170,7 @@ extension PKHUD {
             }()
         }
         
+        /// Provides a square view, which you can use to display a picture, a title and a subtitle. This type of view replicates the Apple HUD one to one.
         @final class StatusView: ImageView {
             init(title: String?, subtitle: String?, image: UIImage?) {
                 super.init(image: image)

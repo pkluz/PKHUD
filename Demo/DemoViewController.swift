@@ -19,31 +19,31 @@ class DemoViewController: UIViewController {
     }
     
     @IBAction func showStatusHUD(sender: AnyObject) {
-        PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.StatusView(title: "Ringer", subtitle: "Silent", image: PKHUD.Assets.ringerMutedImage)
+        PKHUD.Controller.sharedController.contentView = PKHUD.ContentView.StatusView(title: "Ringer", subtitle: "Silent", image: PKHUD.Assets.ringerMutedImage)
         PKHUD.Controller.sharedController.showHUD()
         PKHUD.Controller.sharedController.hideHUD(afterDelay: 2.0)
     }
     
     @IBAction func showProgressHUD(sender: AnyObject) {
-        PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.ProgressView()
+        PKHUD.Controller.sharedController.contentView = PKHUD.ContentView.ProgressView()
         PKHUD.Controller.sharedController.showHUD()
         PKHUD.Controller.sharedController.hideHUD(afterDelay: 2.0)
     }
     
     @IBAction func showTitleHUD(sender: AnyObject) {
-        PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.TitleView(title: "Success", image: PKHUD.Assets.checkmarkImage)
+        PKHUD.Controller.sharedController.contentView = PKHUD.ContentView.TitleView(title: "Success", image: PKHUD.Assets.checkmarkImage)
         PKHUD.Controller.sharedController.showHUD()
         PKHUD.Controller.sharedController.hideHUD(afterDelay: 2.0)
     }
     
     @IBAction func showSubtitleHUD(sender: AnyObject) {
-        PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.SubtitleView(subtitle: "Error", image: PKHUD.Assets.crossImage)
+        PKHUD.Controller.sharedController.contentView = PKHUD.ContentView.SubtitleView(subtitle: "Error", image: PKHUD.Assets.crossImage)
         PKHUD.Controller.sharedController.showHUD()
         PKHUD.Controller.sharedController.hideHUD(afterDelay: 2.0)
     }
     
     @IBAction func showTextHUD(sender: AnyObject) {
-        PKHUD.Controller.sharedController.contentView = PKHUD.ContentViews.TextView(text: "Requesting Licence…")
+        PKHUD.Controller.sharedController.contentView = PKHUD.ContentView.TextView(text: "Requesting Licence…")
         PKHUD.Controller.sharedController.showHUD()
         PKHUD.Controller.sharedController.hideHUD(afterDelay: 2.0)
     }

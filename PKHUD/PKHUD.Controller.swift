@@ -17,8 +17,15 @@ struct PKHUD {
       PKHUD.Controller controls showing and hiding of the HUD, as well as its contents and touch response behavior.
       It is recommended to use the PKHUD.Controller.sharedController instance, nevertheless you are free to instantiate your own.
     */
-    @objc
-    class Controller {
+    @objc class Controller {
+        
+        struct Constants {
+            static let sharedWindow: PKHUD.Window?
+            static let sharedController = Controller.init()
+        }
+        
+        let window = PKHUD.Window()
+        
         class var sharedController: Controller {
             return Constants.sharedController
         }
@@ -62,20 +69,13 @@ struct PKHUD {
             }
         }
         
+        var hideTimer: NSTimer?
         func hideHUD(afterDelay delay: NSTimeInterval) {
             hideTimer?.invalidate()
             hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay, target: self, selector: Selector("hideHUDAnimated"), userInfo: nil, repeats: false)
         }
         
-        // MARK: Private
-        
-        let window = PKHUD.Window()
-        var hideTimer: NSTimer?
-        
-        struct Constants {
-            static let sharedWindow: PKHUD.Window?
-            static let sharedController = Controller.init()
-        }
+        // MARK: Helper
         
         func hideHUDAnimated() -> Void {
             hideHUD(animated: true)

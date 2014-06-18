@@ -10,12 +10,7 @@ import UIKit
 
 extension PKHUD {
     
-    /**
-        Provides a set of default assets, like images, that can be supplied to the PKHUD's contentViews.
-        
-        @example
-            var rotationLockImage = PKHUD.Assets.rotationLockImage
-    */
+    /// Provides a set of default assets, like images, that can be supplied to the PKHUD's contentViews.
     struct Assets {
         static let rotationLockImage = Assets.bundledImage(named: "rotation_lock")
         static let rotationUnlockedImage = Assets.bundledImage(named: "rotation_unlocked")

@@ -17,21 +17,21 @@ import PKHUD
 
 As of the initial release, there is six out-of-the-box types of content views you can present. 
 
-- `PKHUD.ContentViews.TextView(...)` - provides a wide, three line text view, which you can use to display information.
+- `PKHUD.ContentView.TextView(...)` - provides a wide, three line text view, which you can use to display information.
 
-- `PKHUD.ContentViews.ImageView(...)` - provides a square view, which you can use to display a single image within.
+- `PKHUD.ContentView.ImageView(...)` - provides a square view, which you can use to display a single image within.
 
-- `PKHUD.ContentViews.ProgressView(...)` - provides a square (indeterminate) progress view.
+- `PKHUD.ContentView.ProgressView(...)` - provides a square (indeterminate) progress view.
 
-- `PKHUD.ContentViews.TitleView(...)` - provides a square view, which you can use to display a picture and a title (above the image).
+- `PKHUD.ContentView.TitleView(...)` - provides a square view, which you can use to display a picture and a title (above the image).
 
-- `PKHUD.ContentViews.SubtitleView(...)` - provides a square view, which you can use to display a picture and a subtitle (beneath the image).
+- `PKHUD.ContentView.SubtitleView(...)` - provides a square view, which you can use to display a picture and a subtitle (beneath the image).
 
-- `PKHUD.ContentViews.StatusView(...)` - provides a square view, which you can use to display a picture, a title and a subtitle. This type of view replicates the Apple HUD one to one.
+- `PKHUD.ContentView.StatusView(...)` - provides a square view, which you can use to display a picture, a title and a subtitle. This type of view replicates the Apple HUD one to one.
 
 You can present the HUD with a content view by using the controller.
 ```
-var contentView = PKHUD.ContentViews.ProgressView()
+var contentView = PKHUD.ContentView.ProgressView()
 PKHUD.Controller.sharedController.contentView = contentView
 PKHUD.Controller.sharedController.showHUD()
 ```
@@ -53,7 +53,7 @@ There are two properties at your disposal to customize general behavior.
 
 - `PKHUD.Controller.sharedController.userInteractionOnUnderlyingViewsEnabled: Bool` defines whether the underlying views respond to touches while the HUD is shown.
 
-Additionally you are free to create you own custom content views. They can either descend from `PKHUD.ContentViews.SquareBaseView`, `PKHUD.ContentViews.WideBaseView` or simply UIView.
+Additionally you are free to create you own custom content views. They can either descend from `PKHUD.ContentView.SquareBaseView`, `PKHUD.ContentView.WideBaseView` or simply UIView.
 
 **Note**: It's neither possible to customize the general look and feel, nor do I plan to add that feature. You are free to provide any content views you wish but the blurring, corner radius and shading will remain the same.
 

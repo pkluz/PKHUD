@@ -136,11 +136,11 @@
 			children = (
 				F996322219514FD8001F73CA /* PKHUD.h */,
 				F996324819514FEF001F73CA /* PKHUD.Controller.swift */,
-				F996324719514FEF001F73CA /* PKHUD.ContentView.swift */,
 				F996324919514FEF001F73CA /* PKHUD.FrameView.swift */,
 				F996324B19514FEF001F73CA /* PKHUD.Window.swift */,
 				F996324C19514FEF001F73CA /* PKHUD.WindowRootViewController.swift */,
 				F996324619514FEF001F73CA /* PKHUD.Assets.swift */,
+				F996324719514FEF001F73CA /* PKHUD.ContentView.swift */,
 				F996325419514FF3001F73CA /* Images.xcassets */,
 				F996322019514FD8001F73CA /* Supporting Files */,
 			);
@@ -385,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = "Demo/Info.plist";
+				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -396,7 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = "Demo/Info.plist";
+				INFOPLIST_FILE = Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

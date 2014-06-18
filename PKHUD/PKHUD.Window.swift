@@ -10,19 +10,10 @@ import UIKit
 
 extension PKHUD {
     
-    /**
-        The window used to display the PKHUD within. Placed atop the applications main window.
-    */
+    /// The window used to display the PKHUD within. Placed atop the applications main window.
     class Window: UIWindow {
         
         let frameView: PKHUD.FrameView
-        @lazy var backgroundView: UIView = {
-            let view = UIView()
-            view.backgroundColor = UIColor(white:0.0, alpha:0.25)
-            view.alpha = 0.0;
-            return view;
-        }()
-        
         init(frameView: PKHUD.FrameView = PKHUD.FrameView()) {
             self.frameView = frameView
             super.init(frame: UIApplication.sharedApplication().delegate.window!.bounds)
@@ -51,6 +42,7 @@ extension PKHUD {
         }
         
         var willHide = false
+        
         func hideFrameView(animated anim: Bool) {
             let completion: (finished: Bool) -> (Void) = { finished in
                 if finished {
@@ -73,6 +65,14 @@ extension PKHUD {
                 completion(finished: true)
             }
         }
+        
+        
+        @lazy var backgroundView: UIView = {
+            let view = UIView()
+            view.backgroundColor = UIColor(white:0.0, alpha:0.25)
+            view.alpha = 0.0;
+            return view;
+        }()
         
         func showBackground(animated anim: Bool) {
             if anim {
