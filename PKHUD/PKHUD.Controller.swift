@@ -20,7 +20,6 @@ struct PKHUD {
     @objc class Controller {
         
         struct Constants {
-            static let sharedWindow: PKHUD.Window?
             static let sharedController = Controller.init()
         }
         

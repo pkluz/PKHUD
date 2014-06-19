@@ -66,7 +66,6 @@ extension PKHUD {
             }
         }
         
-        
         @lazy var backgroundView: UIView = {
             let view = UIView()
             view.backgroundColor = UIColor(white:0.0, alpha:0.25)
