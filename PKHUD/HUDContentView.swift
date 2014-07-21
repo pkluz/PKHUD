@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-public struct ContentView {
+public struct HUDContentView {
     /// Provides a square view, which you can subclass and add additional views to.
     public class SquareBaseView: UIView {
         public init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
@@ -79,7 +79,7 @@ public struct ContentView {
         public init() {
             super.init(image: UIImage(named: "progress"))
             
-            let progressImage = PKHUD.Assets.progressImage
+            let progressImage = HUDAssets.progressImage
             
             imageView.image = progressImage
             imageView.layer.addAnimation({
