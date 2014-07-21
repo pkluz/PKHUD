@@ -138,7 +138,6 @@
                             <constraint firstItem="nOA-ax-T4A" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="wRE-Nn-B6a"/>
                             <constraint firstItem="fsH-l9-1Kh" firstAttribute="top" secondItem="QUK-0M-drm" secondAttribute="bottom" id="y9C-FG-OcL"/>
                         </constraints>
-                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zil-YM-aIl" userLabel="First Responder" sceneMemberID="firstResponder"/>

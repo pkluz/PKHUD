@@ -14,6 +14,7 @@ class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         PKHUD.Controller.sharedController.dimsBackground = false
         PKHUD.Controller.sharedController.userInteractionOnUnderlyingViewsEnabled = false
     }
