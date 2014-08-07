@@ -11,25 +11,25 @@ import UIKit
 /// Serves as a configuration relay controller, tapping into the main window's rootViewController settings.
 internal class WindowRootViewController: UIViewController {
     
-    private let rootViewController = UIApplication.sharedApplication().delegate.window!.rootViewController
+    private let rootViewController = UIApplication.sharedApplication().delegate.window!?.rootViewController
     
     internal override func supportedInterfaceOrientations() -> Int {
-        return rootViewController.supportedInterfaceOrientations()
+        return rootViewController!.supportedInterfaceOrientations()
     }
     
     internal override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return rootViewController.preferredStatusBarStyle()
+        return rootViewController!.preferredStatusBarStyle()
     }
     
     internal override func prefersStatusBarHidden() -> Bool {
-        return rootViewController.prefersStatusBarHidden()
+        return rootViewController!.prefersStatusBarHidden()
     }
     
     internal override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-        return rootViewController.preferredStatusBarUpdateAnimation()
+        return rootViewController!.preferredStatusBarUpdateAnimation()
     }
     
     internal override func shouldAutorotate() -> Bool {
-        return rootViewController.shouldAutorotate()
+        return rootViewController!.shouldAutorotate()
     }
 }

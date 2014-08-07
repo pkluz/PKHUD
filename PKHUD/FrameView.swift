@@ -10,7 +10,11 @@ import UIKit
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
 internal class FrameView: UIVisualEffectView {
-    public init() {
+    required internal init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
+    internal init() {
         super.init(effect: UIBlurEffect(style: .Light))
         
         backgroundColor = UIColor(white: 0.8, alpha: 0.36)

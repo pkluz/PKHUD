@@ -12,20 +12,32 @@ import QuartzCore
 public struct HUDContentView {
     /// Provides a square view, which you can subclass and add additional views to.
     public class SquareBaseView: UIView {
-        public init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
+        public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
             super.init(frame: frame)
         }
     }
     
     /// Provides a wide base view, which you can subclass and add additional views to.
     public class WideBaseView: UIView {
-        public init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
+        public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
             super.init(frame: frame)
         }
     }
     
     /// Provides a wide, three line text view, which you can use to display information.
     public class TextView: WideBaseView {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
         public init(text: String?) {
             super.init()
             
@@ -53,6 +65,10 @@ public struct HUDContentView {
     
     /// Provides a square view, which you can use to display a single image.
     public class ImageView: SquareBaseView {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
         public init(image: UIImage?) {
             super.init()
             
@@ -76,6 +92,10 @@ public struct HUDContentView {
     
     /// Provides a square (indeterminate) progress view.
     public final class ProgressView: ImageView {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
         public init() {
             super.init(image: UIImage(named: "progress"))
             
@@ -96,6 +116,10 @@ public struct HUDContentView {
     
     /// Provides a square view, which you can use to display a picture and a title (above the image).
     public final class TitleView: ImageView {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
         public init(title: String?, image: UIImage?) {
             super.init(image: image)
             
@@ -130,6 +154,10 @@ public struct HUDContentView {
     
     /// Provides a square view, which you can use to display a picture and a subtitle (beneath the image).
     public final class SubtitleView: ImageView {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
         public init(subtitle: String?, image: UIImage?) {
             super.init(image: image)
             
@@ -166,6 +194,10 @@ public struct HUDContentView {
     
     /// Provides a square view, which you can use to display a picture, a title and a subtitle. This type of view replicates the Apple HUD one to one.
     public final class StatusView: ImageView {
+        required public init(coder aDecoder: NSCoder!) {
+            super.init(coder: aDecoder)
+        }
+
         public init(title: String?, subtitle: String?, image: UIImage?) {
             super.init(image: image)
             
