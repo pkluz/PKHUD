@@ -10,7 +10,7 @@ import UIKit
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
 internal class FrameView: UIVisualEffectView {
-    required internal init(coder aDecoder: NSCoder!) {
+    required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
