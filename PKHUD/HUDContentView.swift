@@ -104,7 +104,7 @@ public struct HUDContentView {
             imageView.image = progressImage
             imageView.layer.addAnimation({
                 let animation = CABasicAnimation(keyPath: "transform.rotation.z")
-                animation.toValue = NSNumber.numberWithFloat(2.0 * Float(M_PI))
+                animation.toValue = NSNumber(float: 2.0 * Float(M_PI))
                 animation.duration = 0.65
                 animation.cumulative = true
                 animation.repeatCount = Float(INT_MAX)
