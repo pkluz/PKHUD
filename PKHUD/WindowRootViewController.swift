@@ -11,7 +11,7 @@ import UIKit
 /// Serves as a configuration relay controller, tapping into the main window's rootViewController settings.
 internal class WindowRootViewController: UIViewController {
     
-    private let rootViewController = UIApplication.sharedApplication().delegate.window!?.rootViewController
+    private let rootViewController = UIApplication.sharedApplication().delegate!.window!?.rootViewController
     
     internal override func supportedInterfaceOrientations() -> Int {
         return rootViewController!.supportedInterfaceOrientations()
