@@ -20,7 +20,7 @@ public struct HUDAssets {
     public static let checkmarkImage = HUDAssets.bundledImage(named: "checkmark")
     public static let progressImage = HUDAssets.bundledImage(named: "progress")
     
-    internal static func bundledImage(named name: String) -> UIImage? {
+    internal static func bundledImage(named name: String) -> UIImage {
         let bundleIdentifier = "com.NSExceptional.PKHUD"
         return UIImage(named: name, inBundle: NSBundle(identifier: bundleIdentifier), compatibleWithTraitCollection: nil)
     }

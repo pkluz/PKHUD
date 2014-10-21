@@ -12,15 +12,23 @@ import QuartzCore
 public struct HUDContentView {
     /// Provides a square view, which you can subclass and add additional views to.
     public class SquareBaseView: UIView {
-        public init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
+        public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
             super.init(frame: frame)
+        }
+
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
         }
     }
     
     /// Provides a wide base view, which you can subclass and add additional views to.
     public class WideBaseView: UIView {
-        public init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
+        public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
             super.init(frame: frame)
+        }
+
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
         }
     }
     
@@ -28,7 +36,15 @@ public struct HUDContentView {
     public class TextView: WideBaseView {
         public init(text: String?) {
             super.init()
-            
+            commonInit(text)
+        }
+
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            commonInit("")
+        }
+        
+        private func commonInit(text: String?) {
             titleLabel.text = text
             addSubview(titleLabel)
         }
@@ -40,7 +56,7 @@ public struct HUDContentView {
             titleLabel.frame = CGRectInset(bounds, padding, padding)
         }
         
-        internal let titleLabel: UILabel = {
+        public let titleLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .Center
             label.font = UIFont.boldSystemFontOfSize(17.0)
@@ -55,7 +71,15 @@ public struct HUDContentView {
     public class ImageView: SquareBaseView {
         public init(image: UIImage?) {
             super.init()
-            
+            commonInit(image)
+        }
+        
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            commonInit(nil)
+        }
+        
+        private func commonInit(image: UIImage?) {
             imageView.image = image
             addSubview(imageView)
         }
@@ -65,7 +89,7 @@ public struct HUDContentView {
             imageView.frame = bounds
         }
         
-        internal let imageView: UIImageView = {
+        public let imageView: UIImageView = {
             let imageView = UIImageView()
             imageView.alpha = 0.85
             imageView.clipsToBounds = true
@@ -78,13 +102,21 @@ public struct HUDContentView {
     public final class ProgressView: ImageView {
         public init() {
             super.init(image: UIImage(named: "progress"))
+        }
+        
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
+        
+        private override func commonInit(image: UIImage?) {
+            super.commonInit(image)
             
             let progressImage = HUDAssets.progressImage
             
             imageView.image = progressImage
             imageView.layer.addAnimation({
                 let animation = CABasicAnimation(keyPath: "transform.rotation.z")
-                animation.toValue = NSNumber.numberWithFloat(2.0 * Float(M_PI))
+                animation.toValue = NSNumber(float: 2.0 * Float(M_PI))
                 animation.duration = 0.65
                 animation.cumulative = true
                 animation.repeatCount = Float(INT_MAX)
@@ -98,7 +130,15 @@ public struct HUDContentView {
     public final class TitleView: ImageView {
         public init(title: String?, image: UIImage?) {
             super.init(image: image)
-            
+            commonInit(title)
+        }
+        
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            commonInit("");
+        }
+        
+        private func commonInit(title: String?) {
             titleLabel.text = title
             addSubview(titleLabel)
         }
@@ -119,7 +159,7 @@ public struct HUDContentView {
             imageView.frame = CGRect(origin: CGPoint(x:0.0, y:quarterHeight - opticalOffset), size: CGSize(width: viewWidth, height: threeQuarterHeight))
         }
         
-        internal let titleLabel: UILabel = {
+        public let titleLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .Center
             label.font = UIFont.boldSystemFontOfSize(17.0)
@@ -132,7 +172,15 @@ public struct HUDContentView {
     public final class SubtitleView: ImageView {
         public init(subtitle: String?, image: UIImage?) {
             super.init(image: image)
-            
+            commonInit(subtitle)
+        }
+
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            commonInit("");
+        }
+        
+        private func commonInit(subtitle: String?) {
             subtitleLabel.text = subtitle
             addSubview(subtitleLabel)
         }
@@ -153,7 +201,7 @@ public struct HUDContentView {
             subtitleLabel.frame = CGRect(origin: CGPoint(x:0.0, y:threeQuarterHeight - opticalOffset), size: CGSize(width: viewWidth, height: quarterHeight))
         }
         
-        internal let subtitleLabel: UILabel = {
+        public let subtitleLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .Center
             label.font = UIFont.boldSystemFontOfSize(17.0)
@@ -168,7 +216,15 @@ public struct HUDContentView {
     public final class StatusView: ImageView {
         public init(title: String?, subtitle: String?, image: UIImage?) {
             super.init(image: image)
-            
+            commonInit(title, subtitle: subtitle)
+        }
+        
+        public required init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+            commonInit("", subtitle: "")
+        }
+        
+        private func commonInit(title: String?, subtitle: String?) {
             titleLabel.text = title
             subtitleLabel.text = subtitle
             
@@ -191,7 +247,7 @@ public struct HUDContentView {
             subtitleLabel.frame = CGRect(origin: CGPoint(x:0.0, y:threeQuarterHeight), size: CGSize(width: viewWidth, height: quarterHeight))
         }
         
-        internal let titleLabel: UILabel = {
+        public let titleLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .Center
             label.font = UIFont.boldSystemFontOfSize(17.0)
@@ -199,7 +255,7 @@ public struct HUDContentView {
             return label
         }()
         
-        internal let subtitleLabel: UILabel = {
+        public let subtitleLabel: UILabel = {
             let label = UILabel()
             label.textAlignment = .Center
             label.font = UIFont.systemFontOfSize(14.0)

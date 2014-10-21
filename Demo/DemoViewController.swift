@@ -11,10 +11,8 @@ import PKHUD
 
 @objc
 class DemoViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         HUDController.sharedController.dimsBackground = false
         HUDController.sharedController.userInteractionOnUnderlyingViewsEnabled = false
     }
@@ -59,8 +57,7 @@ class DemoViewController: UIViewController {
         }
     }
     
-    override func supportedInterfaceOrientations() -> Int
-    {
+    override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.AllButUpsideDown.toRaw())
     }
     
