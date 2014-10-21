@@ -12,6 +12,7 @@ import QuartzCore
 public struct HUDContentView {
     /// Provides a square view, which you can subclass and add additional views to.
     public class SquareBaseView: UIView {
+
         public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
             super.init(frame: frame)
         }
