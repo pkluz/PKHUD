@@ -70,7 +70,7 @@ While basically feature complete and stable, make sure you understand that the A
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Philip Kluz (Philip.Kluz@zuui.org)
+Copyright (c) 2014 Philip Kluz (Philip.Kluz@gmail.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
