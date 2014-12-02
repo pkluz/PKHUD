@@ -22,6 +22,6 @@ public struct HUDAssets {
     
     internal static func bundledImage(named name: String) -> UIImage {
         let bundleIdentifier = "com.NSExceptional.PKHUD"
-        return UIImage(named: name, inBundle: NSBundle(identifier: bundleIdentifier), compatibleWithTraitCollection: nil)
+        return UIImage(named: name, inBundle: NSBundle(identifier: bundleIdentifier), compatibleWithTraitCollection: nil)!
     }
 }
