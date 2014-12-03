@@ -10,25 +10,44 @@ import UIKit
 
 /// Serves as a configuration relay controller, tapping into the main window's rootViewController settings.
 internal class WindowRootViewController: UIViewController {
-    private let rootViewController = UIApplication.sharedApplication().delegate!.window!!.rootViewController
     
     internal override func supportedInterfaceOrientations() -> Int {
-        return rootViewController!.supportedInterfaceOrientations()
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            return rootViewController.supportedInterfaceOrientations()
+        } else {
+            return 0
+        }
     }
     
     internal override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return rootViewController!.preferredStatusBarStyle()
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            return rootViewController.preferredStatusBarStyle()
+        } else {
+            return .Default
+        }
     }
     
     internal override func prefersStatusBarHidden() -> Bool {
-        return rootViewController!.prefersStatusBarHidden()
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            return rootViewController.prefersStatusBarHidden()
+        } else {
+            return false
+        }
     }
     
     internal override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
-        return rootViewController!.preferredStatusBarUpdateAnimation()
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            return rootViewController.preferredStatusBarUpdateAnimation()
+        } else {
+            return .None
+        }
     }
     
     internal override func shouldAutorotate() -> Bool {
-        return rootViewController!.shouldAutorotate()
+        if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
+            return rootViewController.shouldAutorotate()
+        } else {
+            return false
+        }
     }
 }
