@@ -29,6 +29,12 @@ class DemoViewController: UIViewController {
         HUDController.sharedController.hide(afterDelay: 2.0)
     }
     
+    @IBAction func showAppleProgressHUD(sender: AnyObject) {
+        HUDController.sharedController.contentView = HUDContentView.SystemActivityIndicatorView()
+        HUDController.sharedController.show()
+        HUDController.sharedController.hide(afterDelay: 2.0)
+    }
+    
     @IBAction func showTitleHUD(sender: AnyObject) {
         HUDController.sharedController.contentView = HUDContentView.TitleView(title: "Success", image: HUDAssets.checkmarkImage)
         HUDController.sharedController.show()
