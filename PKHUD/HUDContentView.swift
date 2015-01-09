@@ -127,6 +127,37 @@ public struct HUDContentView {
         }
     }
     
+    // Provides the system UIActivityIndicatorView as an alternative
+    public final class SystemActivityIndicatorView: UIView {
+        
+        required public override init() {
+            super.init(frame: CGRectMake(0, 0, 120, 120))
+            self.commonInit()
+        }
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            self.commonInit()
+        }
+        
+        required public init(coder aDecoder: NSCoder) {
+            super.init(coder: aDecoder)
+        }
+        
+        func commonInit () {
+            self.backgroundColor = UIColor.clearColor()
+            self.alpha = 0.8
+            
+            let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+            activity.color = UIColor.blackColor()
+            activity.startAnimating()
+            
+            self.addSubview(activity)
+            
+            activity.center = self.center
+        }
+    }
+    
     /// Provides a square view, which you can use to display a picture and a title (above the image).
     public final class TitleView: ImageView {
         public init(title: String?, image: UIImage?) {
