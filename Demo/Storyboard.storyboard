@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fUS-nh-a92">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fUS-nh-a92">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Demo View Controller-->
@@ -13,20 +14,17 @@
                         <viewControllerLayoutGuide type="bottom" id="fsH-l9-1Kh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZJE-RV-lYd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="QUK-0M-drm">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gc-2A-3TB">
-                                <rect key="frame" x="20" y="229" width="440" height="40"/>
+                                <rect key="frame" x="20" y="301" width="560" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gEw-kF-GfB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Progress HUD">
+                                <state key="normal" title="Show Custom Progress HUD">
                                     <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -35,13 +33,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOA-ax-T4A">
-                                <rect key="frame" x="20" y="277" width="440" height="40"/>
+                                <rect key="frame" x="20" y="397" width="560" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GOm-l1-Phg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Title HUD">
+                                <state key="normal" title="Show Titled HUD">
                                     <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -50,13 +48,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkr-90-mst">
-                                <rect key="frame" x="20" y="325" width="440" height="40"/>
+                                <rect key="frame" x="20" y="445" width="560" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sop-Hv-1gM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Subtitle HUD">
+                                <state key="normal" title="Show Subtitled HUD">
                                     <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -65,7 +63,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anS-2E-3FN">
-                                <rect key="frame" x="20" y="373" width="440" height="40"/>
+                                <rect key="frame" x="20" y="493" width="560" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="64I-iI-84b"/>
@@ -80,13 +78,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dj-k6-s89">
-                                <rect key="frame" x="20" y="421" width="440" height="40"/>
+                                <rect key="frame" x="20" y="541" width="560" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EBB-wr-KRW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Alert + HUD">
+                                <state key="normal" title="Show Alert + HUD Stack">
                                     <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -95,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-ZH-rl7">
-                                <rect key="frame" x="20" y="181" width="440" height="40"/>
+                                <rect key="frame" x="20" y="253" width="560" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7p3-fo-h1r"/>
@@ -110,20 +108,41 @@
                                     <action selector="showStatusHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="r0A-Sy-xST"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCJ-X8-NXp">
+                                <rect key="frame" x="20" y="349" width="560" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="o8K-Ph-smh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Show Apple Activity HUD">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAppleProgressHUD:" destination="fUS-nh-a92" eventType="touchUpInside" id="nNy-vm-DmZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="QUK-0M-drm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nOA-ax-T4A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="4e7-kJ-bME"/>
                             <constraint firstAttribute="trailing" secondItem="9dj-k6-s89" secondAttribute="trailing" constant="20" id="4jU-K5-Yrt"/>
                             <constraint firstItem="9dj-k6-s89" firstAttribute="top" secondItem="anS-2E-3FN" secondAttribute="bottom" constant="8" id="79S-pj-shS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LCJ-X8-NXp" secondAttribute="trailing" constant="4" id="CMp-5B-UWx"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nOA-ax-T4A" secondAttribute="trailing" constant="20" id="J0o-a0-s8W"/>
                             <constraint firstItem="9dj-k6-s89" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="Miw-ga-2Vf"/>
+                            <constraint firstItem="LCJ-X8-NXp" firstAttribute="top" secondItem="1Gc-2A-3TB" secondAttribute="bottom" constant="8" id="Myw-hJ-oLN"/>
                             <constraint firstItem="aeK-ZH-rl7" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="P3A-LV-cFf"/>
+                            <constraint firstItem="1Gc-2A-3TB" firstAttribute="top" secondItem="aeK-ZH-rl7" secondAttribute="bottom" constant="8" id="QDg-8g-Ehj"/>
                             <constraint firstItem="1Gc-2A-3TB" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="S3v-U1-laR"/>
+                            <constraint firstItem="nOA-ax-T4A" firstAttribute="top" secondItem="LCJ-X8-NXp" secondAttribute="bottom" constant="8" id="SpX-U0-kjF"/>
+                            <constraint firstItem="LCJ-X8-NXp" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leadingMargin" constant="4" id="TU6-RA-Liq"/>
                             <constraint firstItem="QUK-0M-drm" firstAttribute="top" secondItem="Xe5-Sk-LrC" secondAttribute="bottom" constant="-20" id="Vjc-At-Htt"/>
-                            <constraint firstItem="nOA-ax-T4A" firstAttribute="top" secondItem="1Gc-2A-3TB" secondAttribute="bottom" constant="8" id="WCa-Bm-bnp"/>
                             <constraint firstItem="fsH-l9-1Kh" firstAttribute="top" secondItem="9dj-k6-s89" secondAttribute="bottom" constant="19" id="b8a-y3-Vud"/>
-                            <constraint firstItem="1Gc-2A-3TB" firstAttribute="top" secondItem="aeK-ZH-rl7" secondAttribute="bottom" constant="8" id="beE-fl-jCf"/>
                             <constraint firstAttribute="trailing" secondItem="aeK-ZH-rl7" secondAttribute="trailing" constant="20" id="cqw-fA-Z5o"/>
                             <constraint firstItem="Wkr-90-mst" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" constant="20" id="ecu-Hg-6He"/>
                             <constraint firstItem="QUK-0M-drm" firstAttribute="leading" secondItem="ZJE-RV-lYd" secondAttribute="leading" id="gdT-GE-icr"/>

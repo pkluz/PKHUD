@@ -127,11 +127,11 @@ public struct HUDContentView {
         }
     }
     
-    // Provides the system UIActivityIndicatorView as an alternative
+    //// Provides the system UIActivityIndicatorView as an alternative.
     public final class SystemActivityIndicatorView: UIView {
         
         required public override init() {
-            super.init(frame: CGRectMake(0, 0, 120, 120))
+            super.init(frame: CGRectMake(0.0, 0.0, 120.0, 120.0))
             self.commonInit()
         }
         
@@ -145,7 +145,7 @@ public struct HUDContentView {
         }
         
         func commonInit () {
-            self.backgroundColor = UIColor.clearColor()
+            self.backgroundColor = UIColor.redColor()
             self.alpha = 0.8
             
             let activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
