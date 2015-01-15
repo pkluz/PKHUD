@@ -15,7 +15,7 @@ public struct HUDContentView {
 
         public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
             super.init(frame: frame)
-        }r
+        }
 
         public required init(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)
