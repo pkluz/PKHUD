@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-public struct HUDContentView {
+@objc public struct HUDContentView {
     /// Provides a square view, which you can subclass and add additional views to.
     public class SquareBaseView: UIView {
 
