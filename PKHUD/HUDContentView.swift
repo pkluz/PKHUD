@@ -101,6 +101,9 @@ public struct HUDContentView {
     
     /// Provides a square (indeterminate) progress view.
     public final class ProgressView: ImageView {
+
+        public var animationDuration = 0.65
+
         public init() {
             super.init(image: UIImage(named: "progress"))
         }
@@ -118,7 +121,7 @@ public struct HUDContentView {
             imageView.layer.addAnimation({
                 let animation = CABasicAnimation(keyPath: "transform.rotation.z")
                 animation.toValue = NSNumber(float: 2.0 * Float(M_PI))
-                animation.duration = 0.65
+                animation.duration = self.animationDuration
                 animation.cumulative = true
                 animation.repeatCount = Float(INT_MAX)
                 return animation
