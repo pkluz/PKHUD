@@ -13,44 +13,44 @@ import PKHUD
 class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        HUDController.sharedController.dimsBackground = false
-        HUDController.sharedController.userInteractionOnUnderlyingViewsEnabled = false
+        PKHUD.sharedHUD.dimsBackground = false
+        PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
     }
     
     @IBAction func showStatusHUD(sender: AnyObject) {
-        HUDController.sharedController.contentView = HUDContentView.StatusView(title: "Ringer", subtitle: "Silent", image: HUDAssets.ringerMutedImage)
-        HUDController.sharedController.show()
-        HUDController.sharedController.hide(afterDelay: 2.0)
+        PKHUD.sharedHUD.contentView = PKHUDStatusView(title: "Success", subtitle: "Subtitle", image: PKHUDAssets.checkmarkImage)
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func showProgressHUD(sender: AnyObject) {
-        HUDController.sharedController.contentView = HUDContentView.ProgressView()
-        HUDController.sharedController.show()
-        HUDController.sharedController.hide(afterDelay: 2.0)
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func showAppleProgressHUD(sender: AnyObject) {
-        HUDController.sharedController.contentView = HUDContentView.SystemActivityIndicatorView()
-        HUDController.sharedController.show()
-        HUDController.sharedController.hide(afterDelay: 2.0)
+        PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func showTitleHUD(sender: AnyObject) {
-        HUDController.sharedController.contentView = HUDContentView.TitleView(title: "Success", image: HUDAssets.checkmarkImage)
-        HUDController.sharedController.show()
-        HUDController.sharedController.hide(afterDelay: 2.0)
+        PKHUD.sharedHUD.contentView = PKHUDTitleView(title: "Success", image: PKHUDAssets.checkmarkImage)
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func showSubtitleHUD(sender: AnyObject) {
-        HUDController.sharedController.contentView = HUDContentView.SubtitleView(subtitle: "Error", image: HUDAssets.crossImage)
-        HUDController.sharedController.show()
-        HUDController.sharedController.hide(afterDelay: 2.0)
+        PKHUD.sharedHUD.contentView = PKHUDSubtitleView(subtitle: "Error", image: PKHUDAssets.crossImage)
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func showTextHUD(sender: AnyObject) {
-        HUDController.sharedController.contentView = HUDContentView.TextView(text: "Requesting Licence…")
-        HUDController.sharedController.show()
-        HUDController.sharedController.hide(afterDelay: 2.0)
+        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Requesting Licence…")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func showAlertWithHUD(sender: AnyObject) {
