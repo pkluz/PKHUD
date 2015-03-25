@@ -9,11 +9,18 @@
 import UIKit
 import QuartzCore
 
+let defaultFrameWBV = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))
+let defaultFrameSBV = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))
+
 public struct HUDContentView {
     /// Provides a square view, which you can subclass and add additional views to.
     public class SquareBaseView: UIView {
 
-        public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
+        public init() {
+            super.init(frame: defaultFrameSBV)
+        }
+
+        public override init(frame: CGRect = defaultFrameSBV) {
             super.init(frame: frame)
         }
 
@@ -21,10 +28,15 @@ public struct HUDContentView {
             super.init(coder: aDecoder)
         }
     }
-    
+
     /// Provides a wide base view, which you can subclass and add additional views to.
     public class WideBaseView: UIView {
-        public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
+        
+        public init() {
+            super.init(frame: defaultFrameWBV)
+        }
+        
+        public override init(frame: CGRect = defaultFrameWBV) {
             super.init(frame: frame)
         }
 
@@ -36,7 +48,7 @@ public struct HUDContentView {
     /// Provides a wide, three line text view, which you can use to display information.
     public class TextView: WideBaseView {
         public init(text: String?) {
-            super.init()
+            super.init(frame : defaultFrameWBV)
             commonInit(text)
         }
 
@@ -71,7 +83,7 @@ public struct HUDContentView {
     /// Provides a square view, which you can use to display a single image.
     public class ImageView: SquareBaseView {
         public init(image: UIImage?) {
-            super.init()
+            super.init(frame : defaultFrameSBV)
             commonInit(image)
         }
         
@@ -101,9 +113,6 @@ public struct HUDContentView {
     
     /// Provides a square (indeterminate) progress view.
     public final class ProgressView: ImageView {
-
-        public var animationDuration = 0.65
-
         public init() {
             super.init(image: UIImage(named: "progress"))
         }
@@ -121,7 +130,7 @@ public struct HUDContentView {
             imageView.layer.addAnimation({
                 let animation = CABasicAnimation(keyPath: "transform.rotation.z")
                 animation.toValue = NSNumber(float: 2.0 * Float(M_PI))
-                animation.duration = self.animationDuration
+                animation.duration = 0.65
                 animation.cumulative = true
                 animation.repeatCount = Float(INT_MAX)
                 return animation
@@ -133,7 +142,7 @@ public struct HUDContentView {
     //// Provides the system UIActivityIndicatorView as an alternative.
     public final class SystemActivityIndicatorView: UIView {
         
-        required public override init() {
+        public init() {
             super.init(frame: CGRectMake(0.0, 0.0, 120.0, 120.0))
             self.commonInit()
         }
