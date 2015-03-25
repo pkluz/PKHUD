@@ -15,7 +15,7 @@ import UIKit
     public class var progressImage: UIImage { return PKHUDAssets.bundledImage(named: "progress") }
     
     internal class func bundledImage(named name: String) -> UIImage {
-        let bundleIdentifier = "com.NSExceptional.PKHUD"
-        return UIImage(named: name, inBundle: NSBundle(identifier: bundleIdentifier), compatibleWithTraitCollection: nil)!
+        let bundle = NSBundle(forClass: PKHUDAssets.self)
+        return UIImage(named: name, inBundle:bundle, compatibleWithTraitCollection:nil)!
     }
 }
