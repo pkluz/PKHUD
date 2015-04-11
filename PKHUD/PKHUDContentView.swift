@@ -9,10 +9,18 @@
 import UIKit
 import QuartzCore
 
+let defaultFrameWBV = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))
+private let defaultSquareFrame = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))
+
+
 /// Provides a square view, which you can subclass and add additional views to.
 @objc public class PKHUDSquareBaseView: UIView {
-    
-    public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0))) {
+
+    public init() {
+      super.init(frame: CGRect(origin: CGPointZero, size: CGSize(width: 156.0, height: 156.0)))
+    }
+
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -23,7 +31,12 @@ import QuartzCore
 
 /// Provides a wide base view, which you can subclass and add additional views to.
 @objc public class PKHUDWideBaseView: UIView {
-    public override init(frame: CGRect = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))) {
+
+    public init() {
+      super.init(frame: CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0)))
+    }
+
+    public override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
@@ -129,7 +142,7 @@ import QuartzCore
 //// Provides the system UIActivityIndicatorView as an alternative.
 @objc public final class PKHUDSystemActivityIndicatorView: UIView {
     
-    required public override init() {
+    required public init() {
         super.init(frame: CGRectMake(0.0, 0.0, 120.0, 120.0))
         self.commonInit()
     }
