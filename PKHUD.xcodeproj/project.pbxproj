@@ -12,9 +12,9 @@
 		F996322319514FD8001F73CA /* PKHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = F996322219514FD8001F73CA /* PKHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F996323319514FD8001F73CA /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		F996323419514FD8001F73CA /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		F996324D19514FEF001F73CA /* HUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* HUDAssets.swift */; };
-		F996324E19514FEF001F73CA /* HUDContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324719514FEF001F73CA /* HUDContentView.swift */; };
-		F996324F19514FEF001F73CA /* HUDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* HUDController.swift */; };
+		F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* PKHUDAssets.swift */; };
+		F996324E19514FEF001F73CA /* PKHUDContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324719514FEF001F73CA /* PKHUDContentView.swift */; };
+		F996324F19514FEF001F73CA /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* PKHUD.swift */; };
 		F996325019514FEF001F73CA /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; };
 		F996325219514FEF001F73CA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324B19514FEF001F73CA /* Window.swift */; };
 		F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324C19514FEF001F73CA /* WindowRootViewController.swift */; };
@@ -62,9 +62,9 @@
 		F996321E19514FD8001F73CA /* PKHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PKHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F996322119514FD8001F73CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F996322219514FD8001F73CA /* PKHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKHUD.h; sourceTree = "<group>"; };
-		F996324619514FEF001F73CA /* HUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDAssets.swift; sourceTree = "<group>"; };
-		F996324719514FEF001F73CA /* HUDContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDContentView.swift; sourceTree = "<group>"; };
-		F996324819514FEF001F73CA /* HUDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDController.swift; sourceTree = "<group>"; };
+		F996324619514FEF001F73CA /* PKHUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAssets.swift; sourceTree = "<group>"; };
+		F996324719514FEF001F73CA /* PKHUDContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDContentView.swift; sourceTree = "<group>"; };
+		F996324819514FEF001F73CA /* PKHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
 		F996324919514FEF001F73CA /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		F996324B19514FEF001F73CA /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		F996324C19514FEF001F73CA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
@@ -135,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				F996322219514FD8001F73CA /* PKHUD.h */,
-				F996324819514FEF001F73CA /* HUDController.swift */,
-				F996324619514FEF001F73CA /* HUDAssets.swift */,
-				F996324719514FEF001F73CA /* HUDContentView.swift */,
+				F996324819514FEF001F73CA /* PKHUD.swift */,
+				F996324619514FEF001F73CA /* PKHUDAssets.swift */,
+				F996324719514FEF001F73CA /* PKHUDContentView.swift */,
 				F9DB0B91197DB78B00385ACE /* Internal */,
 				F996325419514FF3001F73CA /* Images.xcassets */,
 				F996322019514FD8001F73CA /* Supporting Files */,
@@ -285,11 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F996325019514FEF001F73CA /* FrameView.swift in Sources */,
-				F996324E19514FEF001F73CA /* HUDContentView.swift in Sources */,
+				F996324E19514FEF001F73CA /* PKHUDContentView.swift in Sources */,
 				F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */,
 				F996325219514FEF001F73CA /* Window.swift in Sources */,
-				F996324D19514FEF001F73CA /* HUDAssets.swift in Sources */,
-				F996324F19514FEF001F73CA /* HUDController.swift in Sources */,
+				F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */,
+				F996324F19514FEF001F73CA /* PKHUD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
