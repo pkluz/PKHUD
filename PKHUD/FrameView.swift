@@ -37,7 +37,7 @@ internal class FrameView: UIVisualEffectView {
         motionEffectsY.maximumRelativeValue = offset
         motionEffectsY.minimumRelativeValue = -offset
         
-        var group = UIMotionEffectGroup()
+        let group = UIMotionEffectGroup()
         group.motionEffects = [motionEffectsX, motionEffectsY]
         
         addMotionEffect(group)

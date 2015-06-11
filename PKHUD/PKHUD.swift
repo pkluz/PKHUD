@@ -24,7 +24,7 @@ import UIKit
     
     public init () {
         userInteractionOnUnderlyingViewsEnabled = false
-        window.frameView.autoresizingMask = .FlexibleLeftMargin | .FlexibleRightMargin | .FlexibleTopMargin | .FlexibleBottomMargin
+        window.frameView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin]
     }
     
     public var dimsBackground = true
