@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Provides a set of default assets, like images, that can be supplied to the PKHUD's contentViews.
+/// PKHUDAssets provides a set of default images, that can be supplied to the PKHUD's content views.
 @objc public class PKHUDAssets {
     public class var crossImage: UIImage { return PKHUDAssets.bundledImage(named: "cross") }
     public class var checkmarkImage: UIImage { return PKHUDAssets.bundledImage(named: "checkmark") }
