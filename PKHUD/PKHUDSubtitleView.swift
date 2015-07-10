@@ -16,7 +16,7 @@ public final class PKHUDSubtitleView: PKHUDImageView {
         commonInit(subtitle: subtitle)
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit(subtitle: "");
     }
