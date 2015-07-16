@@ -15,7 +15,7 @@ public final class PKHUDProgressView: PKHUDImageView {
         super.init(image: PKHUDAssets.progressImage)
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
