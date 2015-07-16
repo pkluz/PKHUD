@@ -9,8 +9,8 @@
 import UIKit
 import PKHUD
 
-@objc
 class DemoViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         PKHUD.sharedHUD.dimsBackground = false
@@ -63,8 +63,8 @@ class DemoViewController: UIViewController {
         }
     }
     
-    override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.AllButUpsideDown;
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
