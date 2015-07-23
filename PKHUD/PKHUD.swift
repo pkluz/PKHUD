@@ -9,7 +9,7 @@
 import UIKit
 
 /// The PKHUD object controls showing and hiding of the HUD, as well as its contents and touch response behavior.
-@objc public class PKHUD {
+@objc public class PKHUD: NSObject {
     private struct Constants {
         static let sharedHUD = PKHUD()
     }
@@ -20,7 +20,8 @@ import UIKit
         return Constants.sharedHUD
     }
     
-    public init () {
+    override public init () {
+        super.init()
         userInteractionOnUnderlyingViewsEnabled = false
         window.frameView.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin, .FlexibleBottomMargin]
     }
