@@ -16,7 +16,7 @@ public final class PKHUDStatusView: PKHUDImageView {
         commonInit(title: title, subtitle: subtitle)
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit(title: "", subtitle: "")
     }

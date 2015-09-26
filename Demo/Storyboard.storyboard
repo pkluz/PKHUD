@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZJp-P0-C2o" userLabel="Background">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ZJp-P0-C2o" userLabel="Background">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
@@ -123,7 +123,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="e1q-cj-4qk" secondAttribute="leading" id="8oN-jM-0Jj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZJp-P0-C2o" secondAttribute="trailing" constant="-20" id="HIr-Pm-uyv"/>
                             <constraint firstItem="sKS-gL-TO9" firstAttribute="top" secondItem="e1q-cj-4qk" secondAttribute="bottom" constant="20" id="Pbn-1X-R19"/>
+                            <constraint firstItem="ZJp-P0-C2o" firstAttribute="leading" secondItem="w4E-8X-Jzi" secondAttribute="leadingMargin" constant="-20" id="dLA-ao-gv8"/>
+                            <constraint firstItem="sKS-gL-TO9" firstAttribute="top" secondItem="ZJp-P0-C2o" secondAttribute="bottom" id="exR-Hm-7bW"/>
+                            <constraint firstItem="ZJp-P0-C2o" firstAttribute="top" secondItem="nJl-Qv-Vrd" secondAttribute="bottom" constant="-20" id="pv1-nX-vSn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e1q-cj-4qk" secondAttribute="trailing" id="rca-dh-wks"/>
                         </constraints>
                     </view>

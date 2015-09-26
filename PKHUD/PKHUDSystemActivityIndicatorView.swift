@@ -21,7 +21,7 @@ public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView {
         self.commonInit()
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
