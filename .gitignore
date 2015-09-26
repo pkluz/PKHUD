@@ -12,6 +12,7 @@
 *.pbxuser
 *.xcworkspace
 *.xccheckout
+*.xcuserstate
 
 # XCode 4
 xcuserdata
@@ -32,3 +33,4 @@ ThirdParty/boost/*
 
 # Maya temporary
 .mayaSwatches/
+UserInterfaceState.xcuserstate
