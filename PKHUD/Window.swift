@@ -10,6 +10,7 @@ import UIKit
 
 /// The window used to display the PKHUD within. Placed atop the applications main window.
 internal class Window: UIWindow {
+    
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView

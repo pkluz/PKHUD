@@ -3,7 +3,7 @@
 //  PKHUD
 //
 //  Created by Philip Kluz on 6/12/15.
-//  Copyright © 2015 NSExceptional. All rights reserved.
+//  Copyright (c) 2015 NSExceptional. All rights reserved.
 //
 
 import UIKit
@@ -11,6 +11,7 @@ import QuartzCore
 
 /// PKHUDProgressView provides a square (indeterminate) progress view.
 public final class PKHUDProgressView: PKHUDImageView {
+    
     public init() {
         super.init(image: PKHUDAssets.progressImage)
     }
