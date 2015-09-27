@@ -9,33 +9,42 @@
 import UIKit
 
 /// PKHUDSystemActivityIndicatorView provides the system UIActivityIndicatorView as an alternative.
-public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView {
+public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDAnimating {
     
     public override init() {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
-        self.commonInit()
+        commonInit()
     }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.commonInit()
+        commonInit()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.commonInit()
+        commonInit()
     }
     
     func commonInit () {
-        self.backgroundColor = UIColor.clearColor()
-        self.alpha = 0.8
+        backgroundColor = UIColor.clearColor()
+        alpha = 0.8
         
+        self.addSubview(activityIndicatorView)
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        activityIndicatorView.center = self.center
+    }
+    
+    let activityIndicatorView: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
         activity.color = UIColor.blackColor()
-        activity.startAnimating()
-        
-        self.addSubview(activity)
-        
-        activity.center = self.center
+        return activity
+    }()
+    
+    func startAnimation() {
+        activityIndicatorView.startAnimating()
     }
 }
