@@ -43,6 +43,10 @@ public class PKHUD: NSObject {
         }
         set {
             window.frameView.content = newValue
+            if !window.hidden && contentView.conformsToProtocol(PKHUDAnimating) {
+                let animatingContentView = contentView as! PKHUDAnimating
+                animatingContentView.startAnimation()
+            }
         }
     }
     
