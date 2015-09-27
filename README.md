@@ -29,9 +29,19 @@ import PKHUD
 
 Now, you can proceed to show an arbitrary HUD (and hide it soon after) like this:
 ```
-PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+PKHUD.sharedHUD.contentView = PKHUDProgressView()
 PKHUD.sharedHUD.show()
-PKHUD.sharedHUD.hide(afterDelay: 2.0);
+        
+let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
+dispatch_after(delayTime, dispatch_get_main_queue()) {
+    PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+    PKHUD.sharedHUD.hide(afterDelay: 2.0)
+}
+```
+
+You can also hot-swap content views - this can prove useful if you want to display a progress HUD first and transform it into a success or error HUD after an asynchronous operation has finished.
+
+```
 ```
 
 Please note that there are _multiple_ types of content views that ship with PKHUD. You can find them as separate files in the project folder as well as in the `ContentViews` group in Xcode.
