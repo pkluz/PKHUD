@@ -18,17 +18,24 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 
 ## How To
 First you need to add the framework to your project. The recommended way is to use CocoaPods.
-```
+```ruby
 pod "PKHUD"
 ```
 
 After adding the framework to your project, you need to import the module
-```
+```swift
 import PKHUD
 ```
 
 Now, you can proceed to show an arbitrary HUD (and hide it soon after) like this:
+```swift
+PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+PKHUD.sharedHUD.show()
+PKHUD.sharedHUD.hide(afterDelay: 2.0);
 ```
+
+You can also hot-swap content views - this can prove useful if you want to display a progress HUD first and transform it into a success or error HUD after an asynchronous operation has finished.
+```swift
 PKHUD.sharedHUD.contentView = PKHUDProgressView()
 PKHUD.sharedHUD.show()
         
@@ -37,11 +44,6 @@ dispatch_after(delayTime, dispatch_get_main_queue()) {
     PKHUD.sharedHUD.contentView = PKHUDSuccessView()
     PKHUD.sharedHUD.hide(afterDelay: 2.0)
 }
-```
-
-You can also hot-swap content views - this can prove useful if you want to display a progress HUD first and transform it into a success or error HUD after an asynchronous operation has finished.
-
-```
 ```
 
 Please note that there are _multiple_ types of content views that ship with PKHUD. You can find them as separate files in the project folder as well as in the `ContentViews` group in Xcode.
