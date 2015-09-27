@@ -51,12 +51,22 @@ public class PKHUD: NSObject {
         if dimsBackground {
             window.showBackground(animated: true)
         }
+        
+        if contentView.conformsToProtocol(PKHUDAnimating) {
+            let animatingContentView = contentView as! PKHUDAnimating
+            animatingContentView.startAnimation()
+        }
     }
     
     public func hide(animated anim: Bool = true) {
         window.hideFrameView(animated: anim)
         if dimsBackground {
             window.hideBackground(animated: true)
+        }
+        
+        if contentView.conformsToProtocol(PKHUDAnimating) {
+            let animatingContentView = contentView as! PKHUDAnimating
+            animatingContentView.stopAnimation?()
         }
     }
     

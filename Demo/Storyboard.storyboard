@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D2U-NN-2aL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D2U-NN-2aL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,98 +21,59 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e1q-cj-4qk">
-                                <rect key="frame" x="20" y="322" width="560" height="258"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rqP-5y-Qfl">
+                                <rect key="frame" x="40" y="436" width="520" height="144"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIn-yK-5iR">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-Lx-cqz">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Status HUD">
+                                        <state key="normal" title="Animated Success HUD">
                                             <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showStatusHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="8kd-Hw-XBX"/>
+                                            <action selector="showAnimatedSuccessHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="k9E-hd-08Z"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-Eh-KX3">
-                                        <rect key="frame" x="0.0" y="38" width="560" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5z-e1-I63">
+                                        <rect key="frame" x="0.0" y="38" width="520" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Custom Progress HUD">
+                                        <state key="normal" title="Animated Error HUD">
                                             <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showProgressHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="eDC-qi-yLY"/>
+                                            <action selector="showAnimatedErrorHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="Cyd-W9-1e2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNa-9R-82y">
-                                        <rect key="frame" x="0.0" y="76" width="560" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-Eh-KX3">
+                                        <rect key="frame" x="0.0" y="76" width="520" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Apple Activity HUD">
+                                        <state key="normal" title="Animated Progress HUD">
                                             <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showAppleProgressHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="teS-oS-gYe"/>
+                                            <action selector="showAnimatedProgressHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="kzD-9I-CLW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-Lx-cqz">
-                                        <rect key="frame" x="0.0" y="114" width="560" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XL-mO-npD">
+                                        <rect key="frame" x="0.0" y="114" width="520" height="30"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Titled HUD">
+                                        <state key="normal" title="Text HUD">
                                             <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showTitleHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="Wok-Lz-Bzl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5a3-JE-Q3u">
-                                        <rect key="frame" x="0.0" y="152" width="560" height="30"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Subtitled HUD">
-                                            <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showSubtitleHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="ymZ-Uf-3US"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XL-mO-npD">
-                                        <rect key="frame" x="0.0" y="190" width="560" height="30"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Text HUD">
-                                            <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showTextHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="SeV-9U-4yM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-rb-oYj">
-                                        <rect key="frame" x="0.0" y="228" width="560" height="30"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="0.66000000000000003" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Show Alert + HUD Stack">
-                                            <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showAlertWithHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="tJE-Fr-6ha"/>
+                                            <action selector="showTextHUD:" destination="D2U-NN-2aL" eventType="touchUpInside" id="eJg-na-gUk"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -122,20 +83,20 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="e1q-cj-4qk" secondAttribute="leading" id="8oN-jM-0Jj"/>
+                            <constraint firstItem="sKS-gL-TO9" firstAttribute="top" secondItem="rqP-5y-Qfl" secondAttribute="bottom" constant="20" id="0Xk-Fo-1a2"/>
+                            <constraint firstItem="rqP-5y-Qfl" firstAttribute="leading" secondItem="w4E-8X-Jzi" secondAttribute="leadingMargin" constant="20" id="6dE-Gf-0ue"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rqP-5y-Qfl" secondAttribute="trailing" constant="20" id="CEv-Z8-TkK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZJp-P0-C2o" secondAttribute="trailing" constant="-20" id="HIr-Pm-uyv"/>
-                            <constraint firstItem="sKS-gL-TO9" firstAttribute="top" secondItem="e1q-cj-4qk" secondAttribute="bottom" constant="20" id="Pbn-1X-R19"/>
                             <constraint firstItem="ZJp-P0-C2o" firstAttribute="leading" secondItem="w4E-8X-Jzi" secondAttribute="leadingMargin" constant="-20" id="dLA-ao-gv8"/>
                             <constraint firstItem="sKS-gL-TO9" firstAttribute="top" secondItem="ZJp-P0-C2o" secondAttribute="bottom" id="exR-Hm-7bW"/>
                             <constraint firstItem="ZJp-P0-C2o" firstAttribute="top" secondItem="nJl-Qv-Vrd" secondAttribute="bottom" constant="-20" id="pv1-nX-vSn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="e1q-cj-4qk" secondAttribute="trailing" id="rca-dh-wks"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TMt-nL-bhl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5D-FH-e5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="388"/>
+            <point key="canvasLocation" x="-60" y="339"/>
         </scene>
     </scenes>
     <resources>
