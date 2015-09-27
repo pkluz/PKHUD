@@ -23,7 +23,7 @@ public class PKHUDErrorAnimation: PKHUDSquareBaseView, PKHUDAnimating {
         dash.lineCap     = kCALineCapRound
         dash.lineJoin    = kCALineJoinRound
         dash.fillColor   = nil
-        dash.strokeColor = UIColor.blackColor().CGColor
+        dash.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).CGColor
         dash.lineWidth   = 6
         dash.fillMode = kCAFillModeForwards;
         
@@ -42,7 +42,7 @@ public class PKHUDErrorAnimation: PKHUDSquareBaseView, PKHUDAnimating {
         dash.lineCap     = kCALineCapRound
         dash.lineJoin    = kCALineJoinRound
         dash.fillColor   = nil
-        dash.strokeColor = UIColor.blackColor().CGColor
+        dash.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).CGColor
         dash.lineWidth   = 6
         dash.fillMode = kCAFillModeForwards;
         
