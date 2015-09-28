@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; settings = {ASSET_TAGS = (); }; };
 		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; settings = {ASSET_TAGS = (); }; };
-		F908BEC51BB852C60015E5A8 /* PKHUDErrorAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorAnimation.swift */; settings = {ASSET_TAGS = (); }; };
+		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; settings = {ASSET_TAGS = (); }; };
 		F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */; settings = {ASSET_TAGS = (); }; };
 		F935B1581B2B8088003C3734 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F935B1571B2B8088003C3734 /* Storyboard.storyboard */; };
 		F935B15A1B2B865A003C3734 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F935B1591B2B865A003C3734 /* Launch Screen.storyboard */; };
@@ -69,7 +69,7 @@
 /* Begin PBXFileReference section */
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
-		F908BEC41BB852C60015E5A8 /* PKHUDErrorAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorAnimation.swift; sourceTree = "<group>"; };
+		F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
 		F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDProgressView.swift; sourceTree = "<group>"; };
 		F935B1571B2B8088003C3734 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F935B1591B2B865A003C3734 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				F935B16C1B2B8F8B003C3734 /* PKHUDStatusView.swift */,
 				F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */,
 				F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */,
-				F908BEC41BB852C60015E5A8 /* PKHUDErrorAnimation.swift */,
+				F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */,
 				F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */,
 			);
 			name = "Content Views";
@@ -346,7 +346,7 @@
 				F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */,
 				F935B16D1B2B8F8B003C3734 /* PKHUDStatusView.swift in Sources */,
 				F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */,
-				F908BEC51BB852C60015E5A8 /* PKHUDErrorAnimation.swift in Sources */,
+				F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */,
 				F935B16B1B2B8EA6003C3734 /* PKHUDSubtitleView.swift in Sources */,
 				F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */,
 				F996325219514FEF001F73CA /* Window.swift in Sources */,

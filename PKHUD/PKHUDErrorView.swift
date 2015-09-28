@@ -8,11 +8,11 @@
 
 import UIKit
 
-/// PKHUDErrorAnimation provides an animated error (cross) view.
-public class PKHUDErrorAnimation: PKHUDSquareBaseView, PKHUDAnimating {
+/// PKHUDErrorView provides an animated error (cross) view.
+public class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
     
-    var dashOneLayer = PKHUDErrorAnimation.generateDashLayer()
-    var dashTwoLayer = PKHUDErrorAnimation.generateDashLayer()
+    var dashOneLayer = PKHUDErrorView.generateDashLayer()
+    var dashTwoLayer = PKHUDErrorView.generateDashLayer()
     
     class func generateDashLayer() -> CAShapeLayer {
         let dash = CAShapeLayer()

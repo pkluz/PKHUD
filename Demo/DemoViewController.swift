@@ -24,7 +24,7 @@ class DemoViewController: UIViewController {
     }
     
     @IBAction func showAnimatedErrorHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDErrorAnimation()
+        PKHUD.sharedHUD.contentView = PKHUDErrorView()
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0);
     }
