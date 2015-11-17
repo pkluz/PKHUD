@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 NSExceptional. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// PKHUDStatusView provides a square view, which you can use to display a picture, a title and a subtitle. This type of view replicates the Apple HUD one to one.
 public final class PKHUDStatusView: PKHUDImageView {
