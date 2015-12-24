@@ -50,7 +50,7 @@ internal class Window: UIWindow {
     
     private var willHide = false
     
-    internal func hideFrameView(animated anim: Bool) {
+    internal func hideFrameView(animated anim: Bool, completionBlock: ((Bool) -> Void)? = nil) {
         let completion: (finished: Bool) -> (Void) = { finished in
             if finished {
                 self.hidden = true
@@ -58,6 +58,7 @@ internal class Window: UIWindow {
             }
             
             self.willHide = false
+            completionBlock?(finished)
         }
         
         if hidden {
@@ -67,8 +68,12 @@ internal class Window: UIWindow {
         willHide = true
         
         if anim {
-            UIView.animateWithDuration(0.8, animations: { self.frameView.alpha = 0.0 }, completion: completion)
+            UIView.animateWithDuration(0.8, animations: {
+                self.frameView.alpha = 0.0
+                self.hideBackground(animated: false);
+                }, completion: completion)
         } else {
+            self.frameView.alpha = 0.0
             completion(finished: true)
         }
     }
