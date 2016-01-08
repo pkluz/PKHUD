@@ -1,25 +1,16 @@
 //
-//  PKHUDStatusProgressView.swift
+//  PKHUDAnimation.swift
 //  PKHUD
 //
-//  Created by Piergiuseppe Longo on 05/01/16.
+//  Created by Piergiuseppe Longo on 06/01/16.
 //  Copyright © 2016 NSExceptional. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class PKHUDStatusProgressView: PKHUDStatusView, PKHUDAnimating   {
-
-    public init(title: String?, subtitle: String?) {
-        super.init(title: title, subtitle: subtitle, image: PKHUDAssets.progressImage)
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        super.commonInit(title: "", subtitle: "")
-    }
+public final class PKHUDAnimation {
     
-    let progressAnimation: CAKeyframeAnimation = {
+    static let rotation: CAKeyframeAnimation = {
         let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         animation.values = [
             NSNumber(float: 0.0),
@@ -56,12 +47,5 @@ public class PKHUDStatusProgressView: PKHUDStatusView, PKHUDAnimating   {
         animation.repeatCount = Float(INT_MAX)
         return animation
     }()
-    
-    func startAnimation() {
-        imageView.layer.addAnimation(progressAnimation, forKey: "progressAnimation")
-    }
-    
-    func stopAnimation() {
-    }
 
 }
