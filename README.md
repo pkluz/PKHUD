@@ -14,7 +14,7 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 - â€¦as well as animated ones.
 - Builds as an **iOS 8 framework**.
 
-![PKHUD.gif](https://cloud.githubusercontent.com/assets/1275218/10124182/09f4c406-654f-11e5-9cab-0f2e6f470887.gif)
+![demo.gif](https://raw.githubusercontent.com/nahitheper/PKHUD/master/demo.gif)
 
 ## How To
 First you need to add the framework to your project. The recommended way is to use CocoaPods.
