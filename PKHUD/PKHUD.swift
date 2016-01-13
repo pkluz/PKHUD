@@ -59,6 +59,15 @@ public class PKHUD: NSObject {
         }
     }
     
+    public var effect: UIVisualEffect? {
+        get {
+            return window.frameView.effect
+        }
+        set {
+            window.frameView.effect = effect
+        }
+    }
+    
     public func show() {
         window.showFrameView()
         if dimsBackground {

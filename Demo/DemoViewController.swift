@@ -40,6 +40,19 @@ class DemoViewController: UIViewController {
         }
     }
     
+    @IBAction func showAnimatedStatusProgressHUD(sender: AnyObject) {
+        PKHUD.sharedHUD.contentView = PKHUDStatusProgressView(title: "Title", subtitle: "Subtitle goes here")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 2.0);
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+            PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        }
+
+    }
+
+    
     @IBAction func showTextHUD(sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Requesting Licence…")
         PKHUD.sharedHUD.show()
