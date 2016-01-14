@@ -9,7 +9,8 @@
 import UIKit
 import QuartzCore
 
-/// PKHUDProgressView provides an indeterminate progress view.
+/// PKHUDCustomProgressView provides an class for using a cusom image
+/// for the spinner.
 public class PKHUDCustomProgressView: PKHUDImageView, PKHUDAnimating {
     
     public override init(image: UIImage?) {
@@ -22,7 +23,7 @@ public class PKHUDCustomProgressView: PKHUDImageView, PKHUDAnimating {
     
     override func commonInit(image image: UIImage?) {
         super.commonInit(image: image)
-        let progressImage = PKHUDAssets.progressImage
+        let progressImage = image
         imageView.image = progressImage
         imageView.alpha = 0.9
     }
