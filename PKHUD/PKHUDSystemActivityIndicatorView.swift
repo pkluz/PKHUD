@@ -11,7 +11,7 @@ import UIKit
 /// PKHUDSystemActivityIndicatorView provides the system UIActivityIndicatorView as an alternative.
 public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDAnimating {
     
-    public override init() {
+    public init() {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
         commonInit()
     }

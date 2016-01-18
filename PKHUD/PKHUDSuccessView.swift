@@ -30,11 +30,17 @@ public class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         return layer
     }()
     
-    public required override init() {
-        super.init()
+    public required init() {
+        super.init(image: nil, title: nil, subtitle: nil)
         layer.addSublayer(checkmarkShapeLayer)
         checkmarkShapeLayer.position = layer.position
+
     }
+    
+    public init(title: String?, subtitle: String?) {
+        super.init(title: title, subtitle: subtitle)
+    }
+    
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

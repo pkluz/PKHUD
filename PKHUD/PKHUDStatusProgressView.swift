@@ -16,7 +16,6 @@ public class PKHUDStatusProgressView: PKHUDStatusView, PKHUDAnimating   {
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        super.commonInit(title: "", subtitle: "")
     }
     
        
