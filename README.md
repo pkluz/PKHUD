@@ -31,7 +31,7 @@ Now, you can proceed to show an arbitrary HUD (and hide it soon after) like this
 ```swift
 PKHUD.sharedHUD.contentView = PKHUDSuccessView()
 PKHUD.sharedHUD.show()
-PKHUD.sharedHUD.hide(afterDelay: 2.0);
+PKHUD.sharedHUD.hide(afterDelay: 2.0)
 ```
 
 You can also hot-swap content views - this can prove useful if you want to display a progress HUD first and transform it into a success or error HUD after an asynchronous operation has finished.
