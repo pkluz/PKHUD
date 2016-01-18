@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 public final class PKHUDAnimation {
     
