@@ -42,7 +42,7 @@ class DemoViewController: UIViewController {
     }
     
     @IBAction func showAnimatedStatusProgressHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDStatusProgressView(title: "Title", subtitle: "Subtitle goes here")
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "Title", subtitle: "Subtitle goes here")
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0);
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))

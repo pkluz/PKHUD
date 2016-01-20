@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12010C881C3C42A7005DC6FC /* PKHUDStatusProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C871C3C42A7005DC6FC /* PKHUDStatusProgressView.swift */; };
 		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
 		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
@@ -18,11 +17,7 @@
 		F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */; };
 		F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */; };
 		F935B1611B2B8C8E003C3734 /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */; };
-		F935B1631B2B8CE2003C3734 /* PKHUDImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1621B2B8CE2003C3734 /* PKHUDImageView.swift */; };
 		F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */; };
-		F935B1691B2B8E10003C3734 /* PKHUDTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1681B2B8E10003C3734 /* PKHUDTitleView.swift */; };
-		F935B16B1B2B8EA6003C3734 /* PKHUDSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B16A1B2B8EA6003C3734 /* PKHUDSubtitleView.swift */; };
-		F935B16D1B2B8F8B003C3734 /* PKHUDStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B16C1B2B8F8B003C3734 /* PKHUDStatusView.swift */; };
 		F996320219514FAC001F73CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996320119514FAC001F73CA /* AppDelegate.swift */; };
 		F996320419514FAD001F73CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996320319514FAD001F73CA /* Images.xcassets */; };
 		F996322319514FD8001F73CA /* PKHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = F996322219514FD8001F73CA /* PKHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,7 +64,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		12010C871C3C42A7005DC6FC /* PKHUDStatusProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDStatusProgressView.swift; sourceTree = "<group>"; };
 		12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
@@ -80,11 +74,7 @@
 		F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSquareBaseView.swift; sourceTree = "<group>"; };
 		F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDWideBaseView.swift; sourceTree = "<group>"; };
 		F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDTextView.swift; sourceTree = "<group>"; };
-		F935B1621B2B8CE2003C3734 /* PKHUDImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDImageView.swift; sourceTree = "<group>"; };
 		F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
-		F935B1681B2B8E10003C3734 /* PKHUDTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDTitleView.swift; sourceTree = "<group>"; };
-		F935B16A1B2B8EA6003C3734 /* PKHUDSubtitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSubtitleView.swift; sourceTree = "<group>"; };
-		F935B16C1B2B8F8B003C3734 /* PKHUDStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDStatusView.swift; sourceTree = "<group>"; };
 		F99631FC19514FAC001F73CA /* PKHUD Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PKHUD Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F996320019514FAC001F73CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F996320119514FAC001F73CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,15 +125,10 @@
 				F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */,
 				F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */,
 				F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */,
-				F935B1621B2B8CE2003C3734 /* PKHUDImageView.swift */,
-				F935B1681B2B8E10003C3734 /* PKHUDTitleView.swift */,
-				F935B16A1B2B8EA6003C3734 /* PKHUDSubtitleView.swift */,
-				F935B16C1B2B8F8B003C3734 /* PKHUDStatusView.swift */,
 				F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */,
 				F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */,
 				F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */,
 				F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */,
-				12010C871C3C42A7005DC6FC /* PKHUDStatusProgressView.swift */,
 				12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */,
 			);
 			name = "Content Views";
@@ -345,21 +330,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F996325019514FEF001F73CA /* FrameView.swift in Sources */,
-				F935B1631B2B8CE2003C3734 /* PKHUDImageView.swift in Sources */,
-				12010C881C3C42A7005DC6FC /* PKHUDStatusProgressView.swift in Sources */,
 				F935B1611B2B8C8E003C3734 /* PKHUDTextView.swift in Sources */,
 				F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */,
 				F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */,
 				F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */,
-				F935B16D1B2B8F8B003C3734 /* PKHUDStatusView.swift in Sources */,
 				F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */,
 				F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */,
-				F935B16B1B2B8EA6003C3734 /* PKHUDSubtitleView.swift in Sources */,
 				F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */,
 				F996325219514FEF001F73CA /* Window.swift in Sources */,
 				F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */,
 				F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */,
-				F935B1691B2B8E10003C3734 /* PKHUDTitleView.swift in Sources */,
 				F996324F19514FEF001F73CA /* PKHUD.swift in Sources */,
 				F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */,

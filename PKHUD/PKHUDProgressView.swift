@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 /// PKHUDProgressView provides an indeterminate progress view.
-public class PKHUDProgressView: PKHUDImageView, PKHUDAnimating {
+public class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
     
     public init() {
         super.init(image: PKHUDAssets.progressImage, title: nil, subtitle: nil)
