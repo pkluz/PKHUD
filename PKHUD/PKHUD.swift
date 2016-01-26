@@ -77,11 +77,8 @@ public class PKHUD: NSObject {
         startAnimatingContentView()
     }
     
-    public func hide(animated anim: Bool = true) {
-        window.hideFrameView(animated: anim)
-        if dimsBackground {
-            window.hideBackground(animated: true)
-        }
+    public func hide(animated anim: Bool = true, completionBlock: ((Bool) -> Void)? = nil) {
+        window.hideFrameView(animated: anim, completionBlock: completionBlock);
         
         stopAnimatingContentView()
     }
