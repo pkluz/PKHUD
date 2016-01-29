@@ -13,50 +13,35 @@ class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        PKHUD.sharedHUD.dimsBackground = false
-        PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = false
+        HUD.dimsBackground = false
+        HUD.allowsInteraction = false
     }
 
     @IBAction func showAnimatedSuccessHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDSuccessView()
-        PKHUD.sharedHUD.show()
-        PKHUD.sharedHUD.hide(afterDelay: 2.0);
+        HUD.flash(.Success, withDelay: 2.0)
     }
     
     @IBAction func showAnimatedErrorHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDErrorView()
-        PKHUD.sharedHUD.show()
-        PKHUD.sharedHUD.hide(afterDelay: 2.0);
+        HUD.flash(.Failure, withDelay: 2.0)
     }
     
     @IBAction func showAnimatedProgressHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDProgressView()
-        PKHUD.sharedHUD.show()
-        
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            PKHUD.sharedHUD.contentView = PKHUDSuccessView()
-            PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        HUD.show(.Progress)
+     
+        delay(2.0) {
+            HUD.flash(.Success, withDelay: 2.0)
         }
     }
     
     @IBAction func showAnimatedStatusProgressHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDStatusProgressView(title: "Title", subtitle: "Subtitle goes here")
-        PKHUD.sharedHUD.show()
-        PKHUD.sharedHUD.hide(afterDelay: 2.0);
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            PKHUD.sharedHUD.contentView = PKHUDSuccessView()
-            PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        HUD.flash(.StatusProgress(title: "Title", subtitle: "Subtitle goes here"), withDelay: 2.0)
+        delay(2.0) {
+            HUD.flash(.Success)
         }
-
     }
 
-    
     @IBAction func showTextHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDTextView(text: "Requesting Licence…")
-        PKHUD.sharedHUD.show()
-        PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        HUD.flash(.Text("Requesting Licence…"), withDelay: 2.0)
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -65,5 +50,14 @@ class DemoViewController: UIViewController {
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
 }
