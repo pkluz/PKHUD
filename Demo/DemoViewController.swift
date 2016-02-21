@@ -13,7 +13,7 @@ class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         HUD.dimsBackground = false
         HUD.allowsInteraction = false
     }
@@ -48,6 +48,16 @@ class DemoViewController: UIViewController {
     @IBAction func showTextHUD(sender: AnyObject) {
         HUD.flash(.Label("Requesting Licence…"), withDelay: 2.0)
     }
+    
+    /*
+    
+    Please note that the above demonstrates the "porcelain" interface - a more concise and clean way to work with the HUD.
+    If you need more options and flexbility, feel free to use the underlying "plumbing". E.g.:
+    
+    PKHUD.sharedHUD.show()
+    PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Success!", subtitle: nil)
+    PKHUD.sharedHUD.hide(afterDelay: 2.0)
+    */
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.AllButUpsideDown;

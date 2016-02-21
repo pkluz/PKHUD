@@ -30,13 +30,7 @@ public class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         return layer
     }()
     
-    public required init() {
-        super.init(image: nil, title: nil, subtitle: nil)
-        layer.addSublayer(checkmarkShapeLayer)
-        checkmarkShapeLayer.position = layer.position
-    }
-    
-    public init(title: String?, subtitle: String?) {
+    public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
         layer.addSublayer(checkmarkShapeLayer)
         checkmarkShapeLayer.position = layer.position
