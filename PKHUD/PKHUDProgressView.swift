@@ -13,7 +13,7 @@ import QuartzCore
 public class PKHUDProgressView: PKHUDImageView, PKHUDAnimating {
     
     public init() {
-        super.init(image: PKHUDAssets.progressImage)
+        super.init(image: PKHUDAssets.progressActivityImage)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -22,13 +22,13 @@ public class PKHUDProgressView: PKHUDImageView, PKHUDAnimating {
     
     override func commonInit(image image: UIImage?) {
         super.commonInit(image: image)
-        let progressImage = PKHUDAssets.progressImage
+        let progressImage = PKHUDAssets.progressActivityImage
         imageView.image = progressImage
         imageView.alpha = 0.9
     }
     
     func startAnimation() {
-        imageView.layer.addAnimation(PKHUDAnimation.rotation, forKey: "progressAnimation")
+        imageView.layer.addAnimation(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
     }
     
     func stopAnimation() {

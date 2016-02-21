@@ -11,7 +11,7 @@ import UIKit
 public class PKHUDStatusProgressView: PKHUDStatusView, PKHUDAnimating   {
 
     public init(title: String?, subtitle: String?) {
-        super.init(title: title, subtitle: subtitle, image: PKHUDAssets.progressImage)
+        super.init(title: title, subtitle: subtitle, image: PKHUDAssets.progressActivityImage)
     }
 
     public required init?(coder aDecoder: NSCoder) {
@@ -21,10 +21,9 @@ public class PKHUDStatusProgressView: PKHUDStatusView, PKHUDAnimating   {
     
        
     func startAnimation() {
-        imageView.layer.addAnimation(PKHUDAnimation.rotation, forKey: "progressAnimation")
+        imageView.layer.addAnimation(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
     }
     
     func stopAnimation() {
     }
-
 }
