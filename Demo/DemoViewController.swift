@@ -37,6 +37,17 @@ class DemoViewController: UIViewController {
         }
     }
     
+    @IBAction func showCustomProgressHUD(sender: AnyObject) {
+        PKHUD.sharedHUD.contentView = PKHUDCustomProgressView(image: UIImage(named: "progress"))
+        PKHUD.sharedHUD.show()
+        
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
+        dispatch_after(delayTime, dispatch_get_main_queue()) {
+            PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+            PKHUD.sharedHUD.hide(afterDelay: 2.0)
+        }
+    }
+    
     @IBAction func showAnimatedStatusProgressHUD(sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDStatusProgressView(title: "Title", subtitle: "Subtitle goes here")
         PKHUD.sharedHUD.show()
