@@ -3,28 +3,22 @@
 //  PKHUD
 //
 //  Created by Mark Koh on 1/14/16.
-//  Copyright © 2016 NSExceptional. All rights reserved.
+//  Copyright © 2016 Mark Koh, NSExceptional. All rights reserved.
+//  Licensed under the MIT license.
 //
 
 import UIKit
 import QuartzCore
 
 /// PKHUDCustomProgressView provides a content view that rotates the supplies image automatically.
-public class PKHUDCustomProgressView: PKHUDImageView, PKHUDAnimating {
+public class PKHUDCustomProgressView: PKHUDSquareBaseView, PKHUDAnimating {
     
-    public override init(image: UIImage?) {
-        super.init(image: image)
+    public init(image: UIImage?) {
+        super.init(image: image, title: nil, subtitle: nil)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-    
-    override func commonInit(image image: UIImage?) {
-        super.commonInit(image: image)
-        let progressImage = image
-        imageView.image = progressImage
-        imageView.alpha = 0.9
     }
     
     func startAnimation() {

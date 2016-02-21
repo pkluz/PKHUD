@@ -3,7 +3,8 @@
 //  PKHUD
 //
 //  Created by Piergiuseppe Longo on 06/01/16.
-//  Copyright © 2016 NSExceptional. All rights reserved.
+//  Copyright © 2016 Piergiuseppe Longo, NSExceptional. All rights reserved.
+//  Licensed under the MIT license.
 //
 
 import Foundation
