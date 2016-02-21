@@ -10,23 +10,23 @@ import UIKit
 import QuartzCore
 
 /// PKHUDProgressView provides an indeterminate progress view.
-public class PKHUDProgressView: PKHUDImageView, PKHUDAnimating {
+public class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
     
     public init() {
-        super.init(image: PKHUDAssets.progressActivityImage)
-    }
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func commonInit(image image: UIImage?) {
-        super.commonInit(image: image)
-        let progressImage = PKHUDAssets.progressActivityImage
-        imageView.image = progressImage
+        super.init(image: PKHUDAssets.progressActivityImage, title: nil, subtitle: nil)
         imageView.alpha = 0.9
     }
     
+    public init(title: String?, subtitle: String?) {
+        super.init(image: PKHUDAssets.progressActivityImage, title: title, subtitle: subtitle)
+        imageView.alpha = 0.9
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        imageView.alpha = 0.9
+    }
+        
     func startAnimation() {
         imageView.layer.addAnimation(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
     }

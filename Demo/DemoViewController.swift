@@ -1,4 +1,4 @@
-//
+    //
 //  DemoViewController.swift
 //  PKHUD Demo
 //
@@ -25,6 +25,7 @@ class DemoViewController: UIViewController {
     
     @IBAction func showAnimatedErrorHUD(sender: AnyObject) {
         PKHUD.sharedHUD.contentView = PKHUDErrorView()
+
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
@@ -46,7 +47,7 @@ class DemoViewController: UIViewController {
     }
     
     @IBAction func showAnimatedStatusProgressHUD(sender: AnyObject) {
-        PKHUD.sharedHUD.contentView = PKHUDStatusProgressView(title: "Title", subtitle: "Subtitle goes here")
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "Title", subtitle: "Subtitle goes here")
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0) { finished in
             PKHUD.sharedHUD.contentView = PKHUDSuccessView()

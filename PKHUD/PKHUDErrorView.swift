@@ -32,13 +32,23 @@ public class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         return dash
     }
 
-    public override init() {
-        super.init()
+    public init() {
+        super.init(image: nil, title: "", subtitle: nil)
         layer.addSublayer(dashOneLayer)
         layer.addSublayer(dashTwoLayer)
         dashOneLayer.position = layer.position
         dashTwoLayer.position = layer.position
     }
+    
+    public init(title: String?, subtitle: String?) {
+        super.init(title: title, subtitle: subtitle)
+        layer.addSublayer(dashOneLayer)
+        layer.addSublayer(dashTwoLayer)
+        dashOneLayer.position = layer.position
+        dashTwoLayer.position = layer.position
+
+    }
+
     
     public required init?(coder aDecoder: NSCoder)
     {
