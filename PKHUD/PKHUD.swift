@@ -38,6 +38,10 @@ public class PKHUD: NSObject {
                                               .FlexibleBottomMargin ]
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     public var dimsBackground = true
     public var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
