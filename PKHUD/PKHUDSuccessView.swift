@@ -3,7 +3,8 @@
 //  PKHUD
 //
 //  Created by Philip Kluz on 9/27/15.
-//  Copyright (c) 2015 NSExceptional. All rights reserved.
+//  Copyright (c) 2016 NSExceptional. All rights reserved.
+//  Licensed under the MIT license.
 //
 
 import UIKit
@@ -26,22 +27,13 @@ public class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         layer.fillColor   = nil
         layer.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).CGColor
         layer.lineWidth   = 6.0
-        
         return layer
     }()
     
-    public required init() {
-        super.init(image: nil, title: nil, subtitle: nil)
-        layer.addSublayer(checkmarkShapeLayer)
-        checkmarkShapeLayer.position = layer.position
-
-    }
-    
-    public init(title: String?, subtitle: String?) {
+    public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
         layer.addSublayer(checkmarkShapeLayer)
         checkmarkShapeLayer.position = layer.position
-
     }
     
     

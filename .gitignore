@@ -19,6 +19,7 @@ xcuserdata
 
 # build products
 build/
+DerivedData/
 
 # Other source repository archive directories (protects when importing)
 .hg

@@ -3,7 +3,8 @@
 //  PKHUD
 //
 //  Created by Philip Kluz on 9/27/15.
-//  Copyright (c) 2015 NSExceptional. All rights reserved.
+//  Copyright (c) 2016 NSExceptional. All rights reserved.
+//  Licensed under the MIT license.
 //
 
 import UIKit
@@ -31,27 +32,16 @@ public class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         dash.fillMode = kCAFillModeForwards;
         return dash
     }
-
-    public init() {
-        super.init(image: nil, title: "", subtitle: nil)
-        layer.addSublayer(dashOneLayer)
-        layer.addSublayer(dashTwoLayer)
-        dashOneLayer.position = layer.position
-        dashTwoLayer.position = layer.position
-    }
     
-    public init(title: String?, subtitle: String?) {
+    public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
         layer.addSublayer(dashOneLayer)
         layer.addSublayer(dashTwoLayer)
         dashOneLayer.position = layer.position
         dashTwoLayer.position = layer.position
-
     }
 
-    
-    public required init?(coder aDecoder: NSCoder)
-    {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layer.addSublayer(dashOneLayer)
         layer.addSublayer(dashTwoLayer)
@@ -60,7 +50,6 @@ public class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
     }
     
     func rotationAnimation(angle: CGFloat) -> CABasicAnimation {
-        
         var animation : CABasicAnimation;
         if #available(iOS 9.0, *) {
             let springAnimation = CASpringAnimation(keyPath:"transform.rotation.z")

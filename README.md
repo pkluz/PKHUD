@@ -2,7 +2,7 @@
 <br />
 <br />
 <br />
-A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8**.
+A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8** and up.
 <br />
 <br />
 ## Features
@@ -11,7 +11,7 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,�
 - Size / **Device agnostic**.
 - Works on top of presented view controllers, alerts,...
 - Comes with several *free* resources - Checkmark, Cross, Progress Indicator,…
-- …as well as animated ones.
+- …as well as **animated** ones.
 - Builds as an **iOS 8 framework**.
 
 ![PKHUD.gif](https://cloud.githubusercontent.com/assets/1275218/10124182/09f4c406-654f-11e5-9cab-0f2e6f470887.gif)
@@ -27,22 +27,29 @@ After adding the framework to your project, you need to import the module
 import PKHUD
 ```
 
-Now, you can proceed to show an arbitrary HUD (and hide it soon after) like this:
+Now, you can proceed to show an arbitrary HUD (and have it automatically disappear a second later) like this:
+```swift
+HUD.flash(.Success, withDelay: 1.0)
+```
+
+alternatively, you can use the more verbose and flexible “plumbing” API:
+
 ```swift
 PKHUD.sharedHUD.contentView = PKHUDSuccessView()
 PKHUD.sharedHUD.show()
-PKHUD.sharedHUD.hide(afterDelay: 2.0)
+PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in 
+    // Completion Handler
+}
 ```
 
 You can also hot-swap content views - this can prove useful if you want to display a progress HUD first and transform it into a success or error HUD after an asynchronous operation has finished.
 ```swift
-PKHUD.sharedHUD.contentView = PKHUDProgressView()
-PKHUD.sharedHUD.show()
+HUD.show(.Progress)
         
-let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)))
-dispatch_after(delayTime, dispatch_get_main_queue()) {
-    PKHUD.sharedHUD.contentView = PKHUDSuccessView()
-    PKHUD.sharedHUD.hide(afterDelay: 2.0)
+// Now some long running task starts...
+delay(2.0) {
+    // ...and once it finishes we flash the HUD for a second.
+   HUD.flash(.Success, withDelay: 1.0)
 }
 ```
 

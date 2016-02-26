@@ -3,7 +3,8 @@
 //  PKHUD
 //
 //  Created by Piergiuseppe Longo on 06/01/16.
-//  Copyright © 2016 NSExceptional. All rights reserved.
+//  Copyright © 2016 Piergiuseppe Longo, NSExceptional. All rights reserved.
+//  Licensed under the MIT license.
 //
 
 import Foundation
@@ -11,7 +12,7 @@ import QuartzCore
 
 public final class PKHUDAnimation {
     
-    static let rotation: CAKeyframeAnimation = {
+    static let discreteRotation: CAAnimation = {
         let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         animation.values = [
             NSNumber(float: 0.0),
@@ -49,4 +50,13 @@ public final class PKHUDAnimation {
         return animation
     }()
 
+    
+    static let continuousRotation: CAAnimation = {
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        animation.fromValue = 0
+        animation.toValue = 2.0 * M_PI
+        animation.duration = 1.2
+        animation.repeatCount = Float(INT_MAX)
+        return animation
+    }()
 }
