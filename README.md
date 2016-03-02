@@ -29,7 +29,15 @@ import PKHUD
 
 Now, you can proceed to show an arbitrary HUD (and have it automatically disappear a second later) like this:
 ```swift
-HUD.flash(.Success, withDelay: 1.0)
+HUD.flash(.Success, delay: 1.0)
+```
+
+_or_ with a completion handler:
+
+```swift
+HUD.flash(.Success, delay: 1.0) { finished in 
+    // Completion Handler
+}
 ```
 
 alternatively, you can use the more verbose and flexible “plumbing” API:
@@ -49,7 +57,7 @@ HUD.show(.Progress)
 // Now some long running task starts...
 delay(2.0) {
     // ...and once it finishes we flash the HUD for a second.
-   HUD.flash(.Success, withDelay: 1.0)
+   HUD.flash(.Success, delay: 1.0)
 }
 ```
 

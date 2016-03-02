@@ -19,7 +19,7 @@ class DemoViewController: UIViewController {
     }
 
     @IBAction func showAnimatedSuccessHUD(sender: AnyObject) {
-        HUD.flash(.Success, withDelay: 2.0)
+        HUD.flash(.Success, delay: 2.0)
     }
     
     @IBAction func showAnimatedErrorHUD(sender: AnyObject) {
@@ -33,20 +33,22 @@ class DemoViewController: UIViewController {
         // Now some long running task starts...
         delay(2.0) {
             // ...and once it finishes we flash the HUD for a second.
-            HUD.flash(.Success, withDelay: 1.0)
+            HUD.flash(.Success, delay: 1.0)
         }
     }
     
     @IBAction func showCustomProgressHUD(sender: AnyObject) {
-        HUD.flash(.RotatingImage(UIImage(named: "progress")), withDelay: 2.0)
+        HUD.flash(.RotatingImage(UIImage(named: "progress")), delay: 2.0)
     }
     
     @IBAction func showAnimatedStatusProgressHUD(sender: AnyObject) {
-        HUD.flash(.LabeledProgress(title: "Title", subtitle: "Subtitle"), withDelay: 2.0)
+        HUD.flash(.LabeledProgress(title: "Title", subtitle: "Subtitle"), delay: 2.0)
     }
-
+    
     @IBAction func showTextHUD(sender: AnyObject) {
-        HUD.flash(.Label("Requesting Licence…"), withDelay: 2.0)
+        HUD.flash(.Label("Requesting Licence…"), delay: 2.0) { _ in
+            print("License Obtained.")
+        }
     }
     
     /*
@@ -60,7 +62,7 @@ class DemoViewController: UIViewController {
     */
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.AllButUpsideDown;
+        return UIInterfaceOrientationMask.AllButUpsideDown
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

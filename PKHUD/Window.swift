@@ -71,7 +71,7 @@ internal class Window: UIWindow {
         if anim {
             UIView.animateWithDuration(0.8, animations: {
                 self.frameView.alpha = 0.0
-                self.hideBackground(animated: false);
+                self.hideBackground(animated: false)
             }, completion: finalize)
         } else {
             self.frameView.alpha = 0.0
@@ -82,8 +82,8 @@ internal class Window: UIWindow {
     private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white:0.0, alpha:0.25)
-        view.alpha = 0.0;
-        return view;
+        view.alpha = 0.0
+        return view
     }()
     
     internal func showBackground(animated anim: Bool) {
@@ -92,7 +92,7 @@ internal class Window: UIWindow {
                 self.backgroundView.alpha = 1.0
             }
         } else {
-            backgroundView.alpha = 1.0;
+            backgroundView.alpha = 1.0
         }
     }
     
@@ -102,7 +102,7 @@ internal class Window: UIWindow {
                 self.backgroundView.alpha = 0.0
             }
         } else {
-            backgroundView.alpha = 0.0;
+            backgroundView.alpha = 0.0
         }
     }
 }

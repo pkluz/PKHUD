@@ -65,9 +65,9 @@ public final class HUD {
         HUD.hide(animated: true, completion: nil)
     }
     
-    public static func flash(content: HUDContentType, withDelay delay: NSTimeInterval) {
+    public static func flash(content: HUDContentType, delay: NSTimeInterval, completion: (Bool -> Void)? = nil) {
         HUD.show(content)
-        HUD.hide(afterDelay: delay, completion: nil)
+        HUD.hide(afterDelay: delay, completion: completion)
     }
     
     // MARK: Private methods
