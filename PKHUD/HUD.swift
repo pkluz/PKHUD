@@ -47,11 +47,15 @@ public final class HUD {
         PKHUD.sharedHUD.show()
     }
     
-    public static func hide(animated animated: Bool = false, completion: (Bool -> Void)? = nil) {
+    public static func hide(completion: (Bool -> Void)? = nil) {
+        PKHUD.sharedHUD.hide(animated: false, completion: completion)
+    }
+    
+    public static func hide(animated animated: Bool, completion: (Bool -> Void)? = nil) {
         PKHUD.sharedHUD.hide(animated: animated, completion: completion)
     }
     
-    public static func hide(afterDelay delay: NSTimeInterval = 1.0, completion: (Bool -> Void)? = nil) {
+    public static func hide(afterDelay delay: NSTimeInterval, completion: (Bool -> Void)? = nil) {
         PKHUD.sharedHUD.hide(afterDelay: delay, completion: completion)
     }
     
