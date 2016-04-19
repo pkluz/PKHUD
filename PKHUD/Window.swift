@@ -27,7 +27,7 @@ internal class Window: UIWindow {
     
     private func commonInit() {
         rootViewController = WindowRootViewController()
-        windowLevel = UIWindowLevelNormal + 500.0
+        windowLevel = UIWindowLevelNormal
         backgroundColor = UIColor.clearColor()
         
         addSubview(backgroundView)
@@ -42,6 +42,9 @@ internal class Window: UIWindow {
     }
     
     internal func showFrameView() {
+        if let keyWindow = UIApplication.sharedApplication().keyWindow {
+            self.windowLevel = keyWindow.windowLevel
+        }
         layer.removeAllAnimations()
         makeKeyAndVisible()
         frameView.center = center
