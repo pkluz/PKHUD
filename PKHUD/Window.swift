@@ -43,7 +43,8 @@ internal class Window: UIWindow {
     
     internal func showFrameView() {
         if let keyWindow = UIApplication.sharedApplication().keyWindow {
-            self.windowLevel = keyWindow.windowLevel
+            //just to be slighly above the current keyWindow
+            self.windowLevel = keyWindow.windowLevel + 0.01
         }
         layer.removeAllAnimations()
         makeKeyAndVisible()
