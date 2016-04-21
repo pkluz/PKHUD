@@ -23,6 +23,7 @@ internal class FrameView: UIVisualEffectView {
     }
     
     private func commonInit() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(white: 0.8, alpha: 0.36)
         layer.cornerRadius = 9.0
         layer.masksToBounds = true
@@ -56,7 +57,6 @@ internal class FrameView: UIVisualEffectView {
             _content.alpha = 0.85
             _content.clipsToBounds = true
             _content.contentMode = .Center
-            frame.size = _content.bounds.size
             addSubview(_content)
         }
     }
