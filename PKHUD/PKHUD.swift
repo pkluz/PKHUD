@@ -16,7 +16,7 @@ public class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
     
-    private let window = Window()
+    private let containerView = ContainerView()
     private var hideTimer: NSTimer?
     
     public typealias TimerAction = Bool -> Void
@@ -35,7 +35,7 @@ public class PKHUD: NSObject {
             name: UIApplicationWillEnterForegroundNotification,
             object: nil)
         userInteractionOnUnderlyingViewsEnabled = false
-        window.frameView.autoresizingMask = [ .FlexibleLeftMargin,
+        containerView.frameView.autoresizingMask = [ .FlexibleLeftMargin,
                                               .FlexibleRightMargin,
                                               .FlexibleTopMargin,
                                               .FlexibleBottomMargin ]
@@ -44,47 +44,51 @@ public class PKHUD: NSObject {
     public var dimsBackground = true
     public var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
-            return !window.userInteractionEnabled
+            return !containerView.userInteractionEnabled
         }
         set {
-            window.userInteractionEnabled = !newValue
+            containerView.userInteractionEnabled = !newValue
         }
     }
     
     public var isVisible: Bool {
-        return !window.hidden
+        return !containerView.hidden
     }
     
     public var contentView: UIView {
         get {
-            return window.frameView.content
+            return containerView.frameView.content
         }
         set {
-            window.frameView.content = newValue
+            containerView.frameView.content = newValue
             startAnimatingContentView()
         }
     }
     
     public var effect: UIVisualEffect? {
         get {
-            return window.frameView.effect
+            return containerView.frameView.effect
         }
         set {
-            window.frameView.effect = effect
+            containerView.frameView.effect = effect
         }
     }
     
-    public func show() {
-        window.showFrameView()
+    public func show(onView view: UIView) {
+        if self.containerView.superview == nil {
+            view.insertSubview(self.containerView, atIndex: 9999)
+            self.containerView.frame = view.bounds
+        }
+        containerView.showFrameView()
         if dimsBackground {
-            window.showBackground(animated: true)
+            containerView.showBackground(animated: true)
         }
         
         startAnimatingContentView()
     }
     
     public func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
-        window.hideFrameView(animated: anim, completion: completion)
+        containerView.hideFrameView(animated: anim, completion: completion)
         stopAnimatingContentView()
     }
     
@@ -121,15 +125,13 @@ public class PKHUD: NSObject {
     }
     
     internal func startAnimatingContentView() {
-        if isVisible && contentView.conformsToProtocol(PKHUDAnimating) {
-            let animatingContentView = contentView as! PKHUDAnimating
+        if let animatingContentView = contentView as? PKHUDAnimating where isVisible {
             animatingContentView.startAnimation()
         }
     }
     
     internal func stopAnimatingContentView() {
-        if contentView.conformsToProtocol(PKHUDAnimating) {
-            let animatingContentView = contentView as! PKHUDAnimating
+        if let animatingContentView = contentView as? PKHUDAnimating {
             animatingContentView.stopAnimation?()
         }
     }
