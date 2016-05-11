@@ -42,31 +42,31 @@ public final class HUD {
     public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
     
     // MARK: Public methods, PKHUD based
-    public static func show(content: HUDContentType, onView view: UIView? = nil) {
+    public static func show(content: HUDContentType, onController controller: UIViewController? = nil) {
         PKHUD.sharedHUD.contentView = contentView(content)
-        PKHUD.sharedHUD.show(onView: view)
+        PKHUD.sharedHUD.show(onController: controller)
     }
     
-    public static func hide(completion: (Bool -> Void)? = nil) {
+    public static func hide(completion: (Void -> Void)? = nil) {
         PKHUD.sharedHUD.hide(animated: false, completion: completion)
     }
     
-    public static func hide(animated animated: Bool, completion: (Bool -> Void)? = nil) {
+    public static func hide(animated animated: Bool, completion: (Void -> Void)? = nil) {
         PKHUD.sharedHUD.hide(animated: animated, completion: completion)
     }
     
-    public static func hide(afterDelay delay: NSTimeInterval, completion: (Bool -> Void)? = nil) {
+    public static func hide(afterDelay delay: NSTimeInterval, completion: (Void -> Void)? = nil) {
         PKHUD.sharedHUD.hide(afterDelay: delay, completion: completion)
     }
     
     // MARK: Public methods, HUD based
-    public static func flash(content: HUDContentType, onView view: UIView? = nil) {
-        HUD.show(content, onView: view)
+    public static func flash(content: HUDContentType, onController controller: UIViewController? = nil) {
+        HUD.show(content, onController: controller)
         HUD.hide(animated: true, completion: nil)
     }
     
-    public static func flash(content: HUDContentType, onView view: UIView? = nil, delay: NSTimeInterval, completion: (Bool -> Void)? = nil) {
-        HUD.show(content, onView: view)
+    public static func flash(content: HUDContentType, onController controller: UIViewController? = nil, delay: NSTimeInterval, completion: (Void -> Void)? = nil) {
+        HUD.show(content, onController: controller)
         HUD.hide(afterDelay: delay, completion: completion)
     }
     

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
+		4F035D251CE35879004F721C /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F035D241CE35879004F721C /* PresentationController.swift */; };
+		4F035D271CE358D0004F721C /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F035D261CE358D0004F721C /* OverlayViewController.swift */; };
+		4F035D291CE37CBC004F721C /* TransitionPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F035D281CE37CBC004F721C /* TransitionPresentationAnimator.swift */; };
+		4F035D2B1CE37CDA004F721C /* TransitionDismissalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F035D2A1CE37CDA004F721C /* TransitionDismissalAnimator.swift */; };
 		4F306C881CCA67B1006CD3AD /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F306C871CCA67B1006CD3AD /* ContainerView.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
@@ -68,6 +72,10 @@
 /* Begin PBXFileReference section */
 		12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
+		4F035D241CE35879004F721C /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		4F035D261CE358D0004F721C /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
+		4F035D281CE37CBC004F721C /* TransitionPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPresentationAnimator.swift; sourceTree = "<group>"; };
+		4F035D2A1CE37CDA004F721C /* TransitionDismissalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionDismissalAnimator.swift; sourceTree = "<group>"; };
 		4F306C871CCA67B1006CD3AD /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
@@ -208,6 +216,10 @@
 				F996324919514FEF001F73CA /* FrameView.swift */,
 				4F306C871CCA67B1006CD3AD /* ContainerView.swift */,
 				F996324C19514FEF001F73CA /* WindowRootViewController.swift */,
+				4F035D241CE35879004F721C /* PresentationController.swift */,
+				4F035D261CE358D0004F721C /* OverlayViewController.swift */,
+				4F035D281CE37CBC004F721C /* TransitionPresentationAnimator.swift */,
+				4F035D2A1CE37CDA004F721C /* TransitionDismissalAnimator.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -338,13 +350,17 @@
 				F996325019514FEF001F73CA /* FrameView.swift in Sources */,
 				640011571C5B6C080013F32B /* HUD.swift in Sources */,
 				3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */,
+				4F035D271CE358D0004F721C /* OverlayViewController.swift in Sources */,
 				F935B1611B2B8C8E003C3734 /* PKHUDTextView.swift in Sources */,
+				4F035D2B1CE37CDA004F721C /* TransitionDismissalAnimator.swift in Sources */,
+				4F035D251CE35879004F721C /* PresentationController.swift in Sources */,
 				F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */,
 				F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */,
 				F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */,
 				F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */,
 				F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */,
 				4F306C881CCA67B1006CD3AD /* ContainerView.swift in Sources */,
+				4F035D291CE37CBC004F721C /* TransitionPresentationAnimator.swift in Sources */,
 				F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */,
 				F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */,
 				F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */,

@@ -16,10 +16,10 @@ public class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
     
-    private let containerView = ContainerView()
+    private let overlayViewController = OverlayViewController()
     private var hideTimer: NSTimer?
     
-    public typealias TimerAction = Bool -> Void
+    public typealias TimerAction = Void -> Void
     private var timerActions = [String: TimerAction]()
     
     // MARK: Public
@@ -40,58 +40,57 @@ public class PKHUD: NSObject {
     public var dimsBackground = true
     public var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
-            return !containerView.userInteractionEnabled
+            return !overlayViewController.view.userInteractionEnabled
         }
         set {
-            containerView.userInteractionEnabled = !newValue
+            overlayViewController.view.userInteractionEnabled = !newValue
         }
     }
     
     public var isVisible: Bool {
-        return !containerView.hidden
+        return !overlayViewController.view.hidden
     }
     
     public var contentView: UIView {
         get {
-            return containerView.frameView.content
+            return overlayViewController.frameView.content
         }
         set {
-            containerView.frameView.content = newValue
+            overlayViewController.frameView.content = newValue
             startAnimatingContentView()
         }
     }
     
     public var effect: UIVisualEffect? {
         get {
-            return containerView.frameView.effect
+            return overlayViewController.frameView.effect
         }
         set {
-            containerView.frameView.effect = effect
+            overlayViewController.frameView.effect = effect
         }
     }
     
-    public func show(onView view: UIView? = nil) {
-        guard let view = view ?? UIApplication.sharedApplication().keyWindow else {
+    public func show(onController controller: UIViewController? = nil) {
+        guard let controller = controller ?? UIApplication.sharedApplication().keyWindow?.rootViewController else {
             return
         }
-        if self.containerView.superview == nil {
-            view.insertSubview(self.containerView, atIndex: 9999)
-            containerView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
-            containerView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-            containerView.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
-            containerView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
-        }
-        containerView.showFrameView()
-        if dimsBackground {
-            containerView.showBackground(animated: true)
-        }
         
-        startAnimatingContentView()
+        self.overlayViewController.dimsBackground = dimsBackground
+        
+
+        if self.overlayViewController.presentingViewController == nil {
+            controller.presentViewController(self.overlayViewController, animated: true, completion: nil)
+        } else {
+            startAnimatingContentView()
+        }
+
     }
     
     public func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
-        containerView.hideFrameView(animated: anim, completion: completion)
-        stopAnimatingContentView()
+        overlayViewController.dismissViewControllerAnimated(anim, completion: {
+            self.stopAnimatingContentView()
+            completion?()
+        })
     }
     
     public func hide(afterDelay delay: NSTimeInterval = 1.0, completion: TimerAction? = nil) {
