@@ -14,7 +14,7 @@ class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        HUD.dimsBackground = true
+        HUD.dimsBackground = false
         HUD.allowsInteraction = false
     }
 

@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name                      = 'PKHUD'
   s.module_name               = 'PKHUD'
-  s.version                   = '3.1.04'
-  s.summary                   = 'A Swift based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) for iOS 9 and up'
+  s.version                   = '3.1.03'
+  s.summary                   = 'A Swift based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) for iOS 8 and up'
   s.homepage                  = 'https://github.com/pkluz/PKHUD'
   s.license                   = 'MIT'
   s.author                    = { 'Philip Kluz' => 'Philip.Kluz@gmail.com' }

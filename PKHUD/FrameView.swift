@@ -58,8 +58,6 @@ internal class FrameView: UIVisualEffectView {
             _content.clipsToBounds = true
             _content.contentMode = .Center
             addSubview(_content)
-            self.widthAnchor.constraintEqualToAnchor(_content.widthAnchor).active = true
-            self.heightAnchor.constraintEqualToAnchor(_content.heightAnchor).active = true
         }
     }
 }
