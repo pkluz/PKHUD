@@ -31,21 +31,27 @@ internal class ContainerView: UIView {
         addSubview(backgroundView)
         addSubview(frameView)
         
-        backgroundView.topAnchor.constraintEqualToAnchor(self.topAnchor).active = true
-        backgroundView.rightAnchor.constraintEqualToAnchor(self.rightAnchor).active = true
-        backgroundView.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor).active = true
-        backgroundView.leftAnchor.constraintEqualToAnchor(self.leftAnchor).active = true
+        let left = NSLayoutConstraint(item: backgroundView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
+        let top = NSLayoutConstraint(item: backgroundView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
+        let right = NSLayoutConstraint(item: backgroundView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: backgroundView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
         
-        frameView.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor).active = true
-        frameView.centerYAnchor.constraintEqualToAnchor(self.centerYAnchor).active = true
+        let centerX = NSLayoutConstraint(item: frameView, attribute: .CenterX, relatedBy: .Equal, toItem: self, attribute: .CenterX, multiplier: 1, constant: 0)
+        let centerY = NSLayoutConstraint(item: frameView, attribute: .CenterY, relatedBy: .Equal, toItem: self, attribute: .CenterY, multiplier: 1, constant: 0)
+        
+        self.addConstraints([left, top, right, bottom])
+        self.addConstraints([centerX, centerY])
     }
     
     internal func showFrameView() {
         layer.removeAllAnimations()
         frameView.alpha = 1.0
-        frameView.widthAnchor.constraintEqualToAnchor(frameView.content.widthAnchor).active = true
-        frameView.heightAnchor.constraintEqualToAnchor(frameView.content.heightAnchor).active = true
-
+        
+        let width = NSLayoutConstraint(item: frameView, attribute: .Width, relatedBy: .Equal, toItem: frameView.content, attribute: .Width, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: frameView, attribute: .Height, relatedBy: .Equal, toItem: frameView.content, attribute: .Height, multiplier: 1, constant: 0)
+        
+        frameView.addConstraints([width, height])
+        
         hidden = false
     }
     

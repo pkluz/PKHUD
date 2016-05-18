@@ -75,11 +75,13 @@ public class PKHUD: NSObject {
             return
         }
         if self.containerView.superview == nil {
-            view.insertSubview(self.containerView, atIndex: 9999)
-            containerView.leftAnchor.constraintEqualToAnchor(view.leftAnchor).active = true
-            containerView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-            containerView.rightAnchor.constraintEqualToAnchor(view.rightAnchor).active = true
-            containerView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor).active = true
+            view.addSubview(self.containerView)
+            let left = NSLayoutConstraint(item: containerView, attribute: .Left, relatedBy: .Equal, toItem: view, attribute: .Left, multiplier: 1, constant: 0)
+            let top = NSLayoutConstraint(item: containerView, attribute: .Top, relatedBy: .Equal, toItem: view, attribute: .Top, multiplier: 1, constant: 0)
+            let right = NSLayoutConstraint(item: containerView, attribute: .Right, relatedBy: .Equal, toItem: view, attribute: .Right, multiplier: 1, constant: 0)
+            let bottom = NSLayoutConstraint(item: containerView, attribute: .Bottom, relatedBy: .Equal, toItem: view, attribute: .Bottom, multiplier: 1, constant: 0)
+            
+            view.addConstraints([left,top,right,bottom])
         }
         containerView.showFrameView()
         if dimsBackground {
