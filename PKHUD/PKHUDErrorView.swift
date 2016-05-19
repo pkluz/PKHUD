@@ -51,11 +51,15 @@ public class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
     
     func rotationAnimation(angle: CGFloat) -> CABasicAnimation {
         var animation : CABasicAnimation
-        let springAnimation = CASpringAnimation(keyPath:"transform.rotation.z")
-        springAnimation.damping = 1.5
-        springAnimation.mass = 0.22
-        springAnimation.initialVelocity = 0.5
-        animation = springAnimation
+        if #available(iOS 9.0, *) {
+            let springAnimation = CASpringAnimation(keyPath:"transform.rotation.z")
+            springAnimation.damping = 1.5
+            springAnimation.mass = 0.22
+            springAnimation.initialVelocity = 0.5
+            animation = springAnimation
+        } else {
+            animation = CABasicAnimation(keyPath:"transform.rotation.z")
+        }
         
         animation.fromValue = 0.0
         animation.toValue = angle * CGFloat(M_PI / 180.0)
