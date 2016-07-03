@@ -123,6 +123,7 @@ public class PKHUD: NSObject {
         
         if let key = key, let action = timerActions[key] {
             completion = action
+            timerActions[key] = nil
         }
         
         hide(animated: true, completion: completion);
