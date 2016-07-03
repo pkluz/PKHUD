@@ -53,12 +53,10 @@ internal class Window: UIWindow {
     
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
         let finalize: (finished: Bool) -> (Void) = { finished in
-            if finished {
-                self.hidden = true
-                self.resignKeyWindow()
-            }
-            
+            self.hidden = true
+            self.resignKeyWindow()
             self.willHide = false
+            
             completion?(finished)
         }
         
