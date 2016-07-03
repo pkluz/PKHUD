@@ -88,7 +88,11 @@ public class PKHUD: NSObject {
         stopAnimatingContentView()
     }
     
-    public func hide(afterDelay delay: NSTimeInterval = 1.0, completion: TimerAction? = nil) {
+    public func hide(animated: Bool, completion: TimerAction? = nil) {
+        hide(animated: animated, completion: completion)
+    }
+    
+    public func hide(afterDelay delay: NSTimeInterval, completion: TimerAction? = nil) {
         let key = NSUUID().UUIDString
         let userInfo = ["timerActionKey": key]
         if let completion = completion {
