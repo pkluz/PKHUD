@@ -17,9 +17,9 @@ public class PKHUD: NSObject {
     }
     
     private let window = Window()
-    private var hideTimer: NSTimer?
+    private var hideTimer: Timer?
     
-    public typealias TimerAction = Bool -> Void
+    public typealias TimerAction = (Bool) -> Void
     private var timerActions = [String: TimerAction]()
     
     // MARK: Public
@@ -30,33 +30,33 @@ public class PKHUD: NSObject {
     
     public override init () {
         super.init()
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
             selector: #selector(PKHUD.willEnterForeground(_:)),
-            name: UIApplicationWillEnterForegroundNotification,
+            name: NSNotification.Name.UIApplicationWillEnterForeground,
             object: nil)
         userInteractionOnUnderlyingViewsEnabled = false
-        window.frameView.autoresizingMask = [ .FlexibleLeftMargin,
-                                              .FlexibleRightMargin,
-                                              .FlexibleTopMargin,
-                                              .FlexibleBottomMargin ]
+        window.frameView.autoresizingMask = [ .flexibleLeftMargin,
+                                              .flexibleRightMargin,
+                                              .flexibleTopMargin,
+                                              .flexibleBottomMargin ]
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     public var dimsBackground = true
     public var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
-            return !window.userInteractionEnabled
+            return !window.isUserInteractionEnabled
         }
         set {
-            window.userInteractionEnabled = !newValue
+            window.isUserInteractionEnabled = !newValue
         }
     }
     
     public var isVisible: Bool {
-        return !window.hidden
+        return !window.isHidden
     }
     
     public var contentView: UIView {
@@ -92,19 +92,19 @@ public class PKHUD: NSObject {
         stopAnimatingContentView()
     }
     
-    public func hide(animated: Bool, completion: TimerAction? = nil) {
+    public func hide(_ animated: Bool, completion: TimerAction? = nil) {
         hide(animated: animated, completion: completion)
     }
     
-    public func hide(afterDelay delay: NSTimeInterval, completion: TimerAction? = nil) {
-        let key = NSUUID().UUIDString
+    public func hide(afterDelay delay: TimeInterval, completion: TimerAction? = nil) {
+        let key = UUID().uuidString
         let userInfo = ["timerActionKey": key]
         if let completion = completion {
             timerActions[key] = completion
         }
         
         hideTimer?.invalidate()
-        hideTimer = NSTimer.scheduledTimerWithTimeInterval(delay,
+        hideTimer = Timer.scheduledTimer(timeInterval: delay,
                                                            target: self,
                                                            selector: #selector(PKHUD.performDelayedHide(_:)),
                                                            userInfo: userInfo,
@@ -113,11 +113,11 @@ public class PKHUD: NSObject {
     
     // MARK: Internal
     
-    internal func willEnterForeground(notification: NSNotification?) {
+    internal func willEnterForeground(_ notification: Notification?) {
         self.startAnimatingContentView()
     }
     
-    internal func performDelayedHide(timer: NSTimer? = nil) {
+    internal func performDelayedHide(_ timer: Timer? = nil) {
         let key = timer?.userInfo?["timerActionKey"] as? String
         var completion: TimerAction?
         
@@ -130,14 +130,14 @@ public class PKHUD: NSObject {
     }
     
     internal func startAnimatingContentView() {
-        if isVisible && contentView.conformsToProtocol(PKHUDAnimating) {
+        if isVisible && contentView.conforms(to: PKHUDAnimating.self) {
             let animatingContentView = contentView as! PKHUDAnimating
             animatingContentView.startAnimation()
         }
     }
     
     internal func stopAnimatingContentView() {
-        if contentView.conformsToProtocol(PKHUDAnimating) {
+        if contentView.conforms(to: PKHUDAnimating.self) {
             let animatingContentView = contentView as! PKHUDAnimating
             animatingContentView.stopAnimation?()
         }

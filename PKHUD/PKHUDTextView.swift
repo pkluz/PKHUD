@@ -22,7 +22,7 @@ public class PKHUDTextView: PKHUDWideBaseView {
         commonInit("")
     }
     
-    func commonInit(text: String?) {
+    func commonInit(_ text: String?) {
         titleLabel.text = text
         addSubview(titleLabel)
     }
@@ -31,14 +31,14 @@ public class PKHUDTextView: PKHUDWideBaseView {
         super.layoutSubviews()
         
         let padding: CGFloat = 10.0
-        titleLabel.frame = CGRectInset(bounds, padding, padding)
+        titleLabel.frame = bounds.insetBy(dx: padding, dy: padding)
     }
     
     public let titleLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .Center
-        label.font = UIFont.boldSystemFontOfSize(17.0)
-        label.textColor = UIColor.blackColor().colorWithAlphaComponent(0.85)
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 17.0)
+        label.textColor = UIColor.black().withAlphaComponent(0.85)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 3
         return label

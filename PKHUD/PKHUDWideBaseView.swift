@@ -12,7 +12,7 @@ import UIKit
 /// PKHUDWideBaseView provides a wide base view, which you can subclass and add additional views to.
 public class PKHUDWideBaseView: UIView {
     
-    static let defaultWideBaseViewFrame = CGRect(origin: CGPointZero, size: CGSize(width: 265.0, height: 90.0))
+    static let defaultWideBaseViewFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 265.0, height: 90.0))
     
     public init() {
         super.init(frame: PKHUDWideBaseView.defaultWideBaseViewFrame)
