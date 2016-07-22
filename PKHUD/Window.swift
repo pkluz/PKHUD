@@ -15,7 +15,7 @@ internal class Window: UIWindow {
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
-        super.init(frame: UIApplication.sharedApplication().delegate!.window!!.bounds)
+        super.init(frame: UIApplication.shared().delegate!.window!!.bounds)
         commonInit()
     }
 
@@ -28,7 +28,7 @@ internal class Window: UIWindow {
     private func commonInit() {
         rootViewController = WindowRootViewController()
         windowLevel = UIWindowLevelNormal + 500.0
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear()
         
         addSubview(backgroundView)
         addSubview(frameView)
@@ -46,28 +46,28 @@ internal class Window: UIWindow {
         makeKeyAndVisible()
         frameView.center = center
         frameView.alpha = 1.0
-        hidden = false
+        isHidden = false
     }
     
     private var willHide = false
     
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
         let finalize: (finished: Bool) -> (Void) = { finished in
-            self.hidden = true
-            self.resignKeyWindow()
+            self.isHidden = true
+            self.resignKey()
             self.willHide = false
             
             completion?(finished)
         }
         
-        if hidden {
+        if isHidden {
             return
         }
         
         willHide = true
         
         if anim {
-            UIView.animateWithDuration(0.8, animations: {
+            UIView.animate(withDuration: 0.8, animations: {
                 self.frameView.alpha = 0.0
                 self.hideBackground(animated: false)
             }, completion: { bool in finalize(finished: true) } )
@@ -86,7 +86,7 @@ internal class Window: UIWindow {
     
     internal func showBackground(animated anim: Bool) {
         if anim {
-            UIView.animateWithDuration(0.175) {
+            UIView.animate(withDuration: 0.175) {
                 self.backgroundView.alpha = 1.0
             }
         } else {
@@ -96,7 +96,7 @@ internal class Window: UIWindow {
     
     internal func hideBackground(animated anim: Bool) {
         if anim {
-            UIView.animateWithDuration(0.65) {
+            UIView.animate(withDuration: 0.65) {
                 self.backgroundView.alpha = 0.0
             }
         } else {

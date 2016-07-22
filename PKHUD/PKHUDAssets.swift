@@ -18,8 +18,8 @@ public class PKHUDAssets: NSObject {
     public class var progressCircularImage: UIImage { return PKHUDAssets.bundledImage(named: "progress_circular") }
     
     internal class func bundledImage(named name: String) -> UIImage {
-        let bundle = NSBundle(forClass: PKHUDAssets.self)
-        let image = UIImage(named: name, inBundle:bundle, compatibleWithTraitCollection:nil)
+        let bundle = Bundle(for: PKHUDAssets.self)
+        let image = UIImage(named: name, in:bundle, compatibleWith:nil)
         if let image = image {
             return image
         }

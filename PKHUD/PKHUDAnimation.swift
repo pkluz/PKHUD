@@ -13,36 +13,37 @@ import QuartzCore
 public final class PKHUDAnimation {
     
     static let discreteRotation: CAAnimation = {
-        let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+        let animation = CAKeyframeAnimation.init(keyPath: "transform.rotation.z")
+        // NSNumber(value: 1.0 * Float.pi / 6.0) because of time spend, solve it
         animation.values = [
-            NSNumber(float: 0.0),
-            NSNumber(float: 1.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 2.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 3.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 4.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 5.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 6.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 7.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 8.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 9.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 10.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 11.0 * Float(M_PI) / 6.0),
-            NSNumber(float: 2.0 * Float(M_PI))
-        ]
+            0.0,
+            0.52,
+            1.04,
+            1.57,
+            2.09,
+            2.61,
+            3.14,
+            3.63,
+            4.18,
+            4.71,
+            5.16,
+            5.75,
+            6.28
+        ];
         animation.keyTimes = [
-            NSNumber(float: 0.0),
-            NSNumber(float: 1.0 / 12.0),
-            NSNumber(float: 2.0 / 12.0),
-            NSNumber(float: 3.0 / 12.0),
-            NSNumber(float: 4.0 / 12.0),
-            NSNumber(float: 5.0 / 12.0),
-            NSNumber(float: 0.5),
-            NSNumber(float: 7.0 / 12.0),
-            NSNumber(float: 8.0 / 12.0),
-            NSNumber(float: 9.0 / 12.0),
-            NSNumber(float: 10.0 / 12.0),
-            NSNumber(float: 11.0 / 12.0),
-            NSNumber(float: 1.0)
+            0.0,
+            0.08,
+            0.16,
+            0.25,
+            0.33,
+            0.41,
+            0.5,
+            0.58,
+            0.66,
+            0.75,
+            0.83,
+            0.91,
+            1.0
         ]
         animation.duration = 1.2
         animation.calculationMode = "discrete"

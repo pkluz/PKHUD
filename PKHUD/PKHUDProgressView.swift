@@ -22,7 +22,7 @@ public class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
     }
         
     func startAnimation() {
-        imageView.layer.addAnimation(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
+        imageView.layer.add(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
     }
     
     func stopAnimation() {
