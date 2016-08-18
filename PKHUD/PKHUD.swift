@@ -130,14 +130,14 @@ open class PKHUD: NSObject {
     }
     
     internal func startAnimatingContentView() {
-        if isVisible && contentView.conforms(to: PKHUDAnimating) {
+        if isVisible && contentView.conforms(to: PKHUDAnimating.self) {
             let animatingContentView = contentView as! PKHUDAnimating
             animatingContentView.startAnimation()
         }
     }
     
     internal func stopAnimatingContentView() {
-        if contentView.conforms(to: PKHUDAnimating) {
+        if contentView.conforms(to: PKHUDAnimating.self) {
             let animatingContentView = contentView as! PKHUDAnimating
             animatingContentView.stopAnimation?()
         }
