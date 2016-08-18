@@ -12,7 +12,7 @@ import UIKit
 /// Serves as a configuration relay controller, tapping into the main window's rootViewController settings.
 internal class WindowRootViewController: UIViewController {
     
-    internal override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController {
             return rootViewController.supportedInterfaceOrientations
         } else {
@@ -20,15 +20,15 @@ internal class WindowRootViewController: UIViewController {
         }
     }
     
-    internal override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override var preferredStatusBarStyle : UIStatusBarStyle {
         return self.presentingViewController?.preferredStatusBarStyle ?? UIApplication.shared.statusBarStyle
     }
     
-    internal override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return self.presentingViewController?.prefersStatusBarHidden ?? UIApplication.shared.isStatusBarHidden
     }
     
-    internal override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
+    override var preferredStatusBarUpdateAnimation : UIStatusBarAnimation {
         if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController {
             return rootViewController.preferredStatusBarUpdateAnimation
         } else {
@@ -36,7 +36,7 @@ internal class WindowRootViewController: UIViewController {
         }
     }
     
-    internal override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController {
             return rootViewController.shouldAutorotate
         } else {
