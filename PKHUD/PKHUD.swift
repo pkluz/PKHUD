@@ -118,7 +118,8 @@ open class PKHUD: NSObject {
     }
     
     internal func performDelayedHide(_ timer: Timer? = nil) {
-        let key = timer?.userInfo?["timerActionKey"] as? String
+        let userInfo = timer?.userInfo as? NSDictionary
+        let key = userInfo?["timerActionKey"] as? String
         var completion: TimerAction?
         
         if let key = key, let action = timerActions[key] {
