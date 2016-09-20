@@ -12,11 +12,13 @@ import PKHUDtvOS
 class ViewController: UIViewController {
 
     @IBAction func showHUD(sender: AnyObject) {
-        HUD.show(.RotatingImage(UIImage(named: "spinme")))
+        HUD.show(.RotatingImage(UIImage(named: "spin")))
+        HUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func detailsShow(sender: AnyObject) {
         HUD.show(.LabeledSuccess(title: "Awesome", subtitle: "You are"))
+        HUD.hide(afterDelay: 2.0)
     }
     
     @IBAction func dimShow(sender: AnyObject) {
