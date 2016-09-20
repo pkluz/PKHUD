@@ -12,6 +12,7 @@ import UIKit
 /// Serves as a configuration relay controller, tapping into the main window's rootViewController settings.
 internal class WindowRootViewController: UIViewController {
     
+    #if os(iOS)
     internal override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
             return rootViewController.supportedInterfaceOrientations()
@@ -43,4 +44,5 @@ internal class WindowRootViewController: UIViewController {
             return false
         }
     }
+    #endif
 }
