@@ -10,6 +10,28 @@
 		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
+		ACBE5EDE1D90F0E300F122EC /* PKHUDtvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = ACBE5EDD1D90F0E300F122EC /* PKHUDtvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACBE5EEA1D90F11300F122EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE5EE91D90F11300F122EC /* AppDelegate.swift */; };
+		ACBE5EEC1D90F11300F122EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE5EEB1D90F11300F122EC /* ViewController.swift */; };
+		ACBE5EEF1D90F11300F122EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBE5EED1D90F11300F122EC /* Main.storyboard */; };
+		ACBE5EF11D90F11300F122EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACBE5EF01D90F11300F122EC /* Assets.xcassets */; };
+		ACBE5EF61D90F18000F122EC /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */; };
+		ACBE5EF71D90F18000F122EC /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */; };
+		ACBE5EF81D90F18000F122EC /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */; };
+		ACBE5EF91D90F18000F122EC /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */; };
+		ACBE5EFA1D90F18000F122EC /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
+		ACBE5EFB1D90F18000F122EC /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
+		ACBE5EFC1D90F18000F122EC /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */; };
+		ACBE5EFD1D90F18000F122EC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
+		ACBE5EFE1D90F18000F122EC /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
+		ACBE5EFF1D90F18000F122EC /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; };
+		ACBE5F001D90F18000F122EC /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324B19514FEF001F73CA /* Window.swift */; };
+		ACBE5F011D90F18000F122EC /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324C19514FEF001F73CA /* WindowRootViewController.swift */; };
+		ACBE5F021D90F18A00F122EC /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
+		ACBE5F031D90F18A00F122EC /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* PKHUD.swift */; };
+		ACBE5F041D90F19600F122EC /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* PKHUDAssets.swift */; };
+		ACBE5F051D90F19600F122EC /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
+		ACBE5F081D90F1C900F122EC /* PKHUDtvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBE5EDB1D90F0E300F122EC /* PKHUDtvOS.framework */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
 		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
 		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
@@ -35,6 +57,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		ACBE5F061D90F1BB00F122EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F99631F419514FAC001F73CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACBE5EDA1D90F0E300F122EC;
+			remoteInfo = PKHUDtvOS;
+		};
 		F996323119514FD8001F73CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F99631F419514FAC001F73CA /* Project object */;
@@ -69,6 +98,15 @@
 		12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		ACBE5EDB1D90F0E300F122EC /* PKHUDtvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PKHUDtvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBE5EDD1D90F0E300F122EC /* PKHUDtvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKHUDtvOS.h; sourceTree = "<group>"; };
+		ACBE5EDF1D90F0E300F122EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACBE5EE71D90F11300F122EC /* PKHUD tvDEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PKHUD tvDEMO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBE5EE91D90F11300F122EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACBE5EEB1D90F11300F122EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACBE5EEE1D90F11300F122EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACBE5EF01D90F11300F122EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACBE5EF21D90F11300F122EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
 		F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
@@ -96,6 +134,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ACBE5ED71D90F0E300F122EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACBE5EE41D90F11300F122EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACBE5F081D90F1C900F122EC /* PKHUDtvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631F919514FAC001F73CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +167,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACBE5EDC1D90F0E300F122EC /* PKHUDtvOS */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE5EDD1D90F0E300F122EC /* PKHUDtvOS.h */,
+				ACBE5EDF1D90F0E300F122EC /* Info.plist */,
+			);
+			path = PKHUDtvOS;
+			sourceTree = "<group>";
+		};
+		ACBE5EE81D90F11300F122EC /* PKHUD tvDEMO */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE5EE91D90F11300F122EC /* AppDelegate.swift */,
+				ACBE5EEB1D90F11300F122EC /* ViewController.swift */,
+				ACBE5EED1D90F11300F122EC /* Main.storyboard */,
+				ACBE5EF01D90F11300F122EC /* Assets.xcassets */,
+				ACBE5EF21D90F11300F122EC /* Info.plist */,
+			);
+			path = "PKHUD tvDEMO";
+			sourceTree = "<group>";
+		};
 		F908BEC11BB84D010015E5A8 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +216,10 @@
 		F99631F319514FAC001F73CA = {
 			isa = PBXGroup;
 			children = (
+				ACBE5EE81D90F11300F122EC /* PKHUD tvDEMO */,
 				F99631FE19514FAC001F73CA /* PKHUD Demo */,
 				F996321F19514FD8001F73CA /* PKHUD */,
+				ACBE5EDC1D90F0E300F122EC /* PKHUDtvOS */,
 				F99631FD19514FAC001F73CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +229,8 @@
 			children = (
 				F99631FC19514FAC001F73CA /* PKHUD Demo.app */,
 				F996321E19514FD8001F73CA /* PKHUD.framework */,
+				ACBE5EDB1D90F0E300F122EC /* PKHUDtvOS.framework */,
+				ACBE5EE71D90F11300F122EC /* PKHUD tvDEMO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,6 +293,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		ACBE5ED81D90F0E300F122EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACBE5EDE1D90F0E300F122EC /* PKHUDtvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F996321B19514FD8001F73CA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +312,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		ACBE5EDA1D90F0E300F122EC /* PKHUDtvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACBE5EE21D90F0E300F122EC /* Build configuration list for PBXNativeTarget "PKHUDtvOS" */;
+			buildPhases = (
+				ACBE5ED61D90F0E300F122EC /* Sources */,
+				ACBE5ED71D90F0E300F122EC /* Frameworks */,
+				ACBE5ED81D90F0E300F122EC /* Headers */,
+				ACBE5ED91D90F0E300F122EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKHUDtvOS;
+			productName = PKHUDtvOS;
+			productReference = ACBE5EDB1D90F0E300F122EC /* PKHUDtvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ACBE5EE61D90F11300F122EC /* PKHUD tvDEMO */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACBE5EF31D90F11300F122EC /* Build configuration list for PBXNativeTarget "PKHUD tvDEMO" */;
+			buildPhases = (
+				ACBE5EE31D90F11300F122EC /* Sources */,
+				ACBE5EE41D90F11300F122EC /* Frameworks */,
+				ACBE5EE51D90F11300F122EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACBE5F071D90F1BB00F122EC /* PBXTargetDependency */,
+			);
+			name = "PKHUD tvDEMO";
+			productName = "PKHUD tvDEMO";
+			productReference = ACBE5EE71D90F11300F122EC /* PKHUD tvDEMO.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F99631FB19514FAC001F73CA /* PKHUD Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F996321319514FAD001F73CA /* Build configuration list for PBXNativeTarget "PKHUD Demo" */;
@@ -270,10 +392,16 @@
 		F99631F419514FAC001F73CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = NSExceptional;
 				TargetAttributes = {
+					ACBE5EDA1D90F0E300F122EC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					ACBE5EE61D90F11300F122EC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					F99631FB19514FAC001F73CA = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -288,6 +416,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F99631F319514FAC001F73CA;
 			productRefGroup = F99631FD19514FAC001F73CA /* Products */;
@@ -295,12 +424,30 @@
 			projectRoot = "";
 			targets = (
 				F99631FB19514FAC001F73CA /* PKHUD Demo */,
+				ACBE5EE61D90F11300F122EC /* PKHUD tvDEMO */,
 				F996321D19514FD8001F73CA /* PKHUD */,
+				ACBE5EDA1D90F0E300F122EC /* PKHUDtvOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ACBE5ED91D90F0E300F122EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACBE5EE51D90F11300F122EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACBE5EF11D90F11300F122EC /* Assets.xcassets in Resources */,
+				ACBE5EEF1D90F11300F122EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631FA19514FAC001F73CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,6 +469,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ACBE5ED61D90F0E300F122EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACBE5F041D90F19600F122EC /* PKHUDAssets.swift in Sources */,
+				ACBE5F051D90F19600F122EC /* PKHUDAnimating.swift in Sources */,
+				ACBE5F021D90F18A00F122EC /* HUD.swift in Sources */,
+				ACBE5F031D90F18A00F122EC /* PKHUD.swift in Sources */,
+				ACBE5EF61D90F18000F122EC /* PKHUDSquareBaseView.swift in Sources */,
+				ACBE5EF71D90F18000F122EC /* PKHUDWideBaseView.swift in Sources */,
+				ACBE5EF81D90F18000F122EC /* PKHUDTextView.swift in Sources */,
+				ACBE5EF91D90F18000F122EC /* PKHUDSystemActivityIndicatorView.swift in Sources */,
+				ACBE5EFA1D90F18000F122EC /* PKHUDSuccessView.swift in Sources */,
+				ACBE5EFB1D90F18000F122EC /* PKHUDErrorView.swift in Sources */,
+				ACBE5EFC1D90F18000F122EC /* PKHUDProgressView.swift in Sources */,
+				ACBE5EFD1D90F18000F122EC /* PKHUDAnimation.swift in Sources */,
+				ACBE5EFE1D90F18000F122EC /* PKHUDRotatingImageView.swift in Sources */,
+				ACBE5EFF1D90F18000F122EC /* FrameView.swift in Sources */,
+				ACBE5F001D90F18000F122EC /* Window.swift in Sources */,
+				ACBE5F011D90F18000F122EC /* WindowRootViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACBE5EE31D90F11300F122EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACBE5EEC1D90F11300F122EC /* ViewController.swift in Sources */,
+				ACBE5EEA1D90F11300F122EC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631F819514FAC001F73CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -357,6 +536,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		ACBE5F071D90F1BB00F122EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACBE5EDA1D90F0E300F122EC /* PKHUDtvOS */;
+			targetProxy = ACBE5F061D90F1BB00F122EC /* PBXContainerItemProxy */;
+		};
 		F996323219514FD8001F73CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F996321D19514FD8001F73CA /* PKHUD */;
@@ -369,7 +553,110 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		ACBE5EED1D90F11300F122EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACBE5EEE1D90F11300F122EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		ACBE5EE01D90F0E300F122EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PKHUDtvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NSExceptional.PKHUDtvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ACBE5EE11D90F0E300F122EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PKHUDtvOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NSExceptional.PKHUDtvOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ACBE5EF41D90F11300F122EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "PKHUD tvDEMO/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.PKHUD-demotvDEMO";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		ACBE5EF51D90F11300F122EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "PKHUD tvDEMO/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.PKHUD-demotvDEMO";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		F996321119514FAD001F73CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -528,6 +815,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ACBE5EE21D90F0E300F122EC /* Build configuration list for PBXNativeTarget "PKHUDtvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACBE5EE01D90F0E300F122EC /* Debug */,
+				ACBE5EE11D90F0E300F122EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ACBE5EF31D90F11300F122EC /* Build configuration list for PBXNativeTarget "PKHUD tvDEMO" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACBE5EF41D90F11300F122EC /* Debug */,
+				ACBE5EF51D90F11300F122EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F99631F719514FAC001F73CA /* Build configuration list for PBXProject "PKHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
