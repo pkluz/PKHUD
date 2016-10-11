@@ -69,9 +69,7 @@ class DemoViewController: UIViewController {
         get { return .lightContent }
     }
     
-    func delay(_ delay:Double, closure:@escaping ()->()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute:{
-            closure()
-        })
+    func delay(_ delay:Double, closure:@escaping () -> Swift.Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute:closure)
     }
 }
