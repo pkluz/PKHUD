@@ -18,8 +18,17 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 
 ## How To
 First you need to add the framework to your project. The recommended way is to use CocoaPods.
+
+To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
+
 ```ruby
 pod "PKHUD"
+```
+
+To install PKHUD for Swift 3.x using CocoaPods, include the following in your Podfile
+
+```ruby
+pod 'PKHUD_Swift_3'
 ```
 
 After adding the framework to your project, you need to import the module
