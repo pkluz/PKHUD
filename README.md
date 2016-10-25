@@ -1,4 +1,14 @@
+[![License](https://img.shields.io/cocoapods/l/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD) 
+[![Platform](https://img.shields.io/cocoapods/p/PKHUD.svg?style=flat)](http://cocoadocs.org/docsets/PKHUD/3.2.1/) 
+[![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD)
+![](https://img.shields.io/badge/Swift 3-compatible-4BC51D.svg?style=flat-square)
+[![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD_Swift_3.svg?style=flat)](https://cocoapods.org/pods/PKHUD_Swift_3)
+
+
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
+
+
+
 <br />
 <br />
 <br />
