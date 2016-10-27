@@ -2,8 +2,6 @@
 [![Platform](https://img.shields.io/cocoapods/p/PKHUD.svg?style=flat)](http://cocoadocs.org/docsets/PKHUD/3.2.1/) 
 [![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD)
 ![](https://img.shields.io/badge/Swift 3-compatible-4BC51D.svg?style=flat-square)
-[![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD_Swift_3.svg?style=flat)](https://cocoapods.org/pods/PKHUD_Swift_3)
-
 
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
 
@@ -32,13 +30,13 @@ First you need to add the framework to your project. The recommended way is to u
 To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
 
 ```ruby
-pod "PKHUD"
+  pod 'PKHUD', '~> 3.0'
 ```
 
 To install PKHUD for Swift 3.x using CocoaPods, include the following in your Podfile
 
 ```ruby
-pod 'PKHUD_Swift_3'
+  pod 'PKHUD', '~> 4.0'
 ```
 
 After adding the framework to your project, you need to import the module
