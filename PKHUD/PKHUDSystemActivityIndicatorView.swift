@@ -7,45 +7,69 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// PKHUDSystemActivityIndicatorView provides the system UIActivityIndicatorView as an alternative.
 public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDAnimating {
     
     public init() {
-        super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
-        commonInit()
-    }
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
+        super.init(image: nil, title: nil, subtitle: nil)
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func commonInit () {
-        backgroundColor = UIColor.clear
-        alpha = 0.8
+    public override func commonInit () {
+        super.commonInit()
         
-        self.addSubview(activityIndicatorView)
+        let layer: CALayer! = self.layer
+        layer.backgroundColor = Color.clear.cgColor
+        
+        #if os(iOS) || os(watchOS)
+            alpha = 0.8
+        #elseif os(OSX)
+            alphaValue = 0.8
+        #endif
+        
+        self.addSubview(activityIndicator)
+        
+        setCorrectFrames()
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        activityIndicatorView.center = self.center
+    override func setCorrectFrames() {
+        super.setCorrectFrames()
+        
+        let x = (self.frame.width - activityIndicator.frame.width) / 2
+        let y = (self.frame.height - activityIndicator.frame.height) / 2
+        
+        activityIndicator.frame.origin = CGPoint(x: x, y: y)
     }
     
-    let activityIndicatorView: UIActivityIndicatorView = {
+    #if os(iOS) || os(watchOS)
+    let activityIndicator: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activity.color = UIColor.black
         return activity
     }()
+    #elseif os(OSX)
+    let activityIndicator: NSProgressIndicator = {
+        let indicator = NSProgressIndicator(frame: NSRect(x: 0, y: 0, width: 40, height: 40))
+        indicator.wantsLayer = true
+        indicator.style = .spinningStyle
+        return indicator
+    }()
+    #endif
     
     func startAnimation() {
-        activityIndicatorView.startAnimating()
+        #if os(iOS) || os(watchOS)
+            activityIndicator.startAnimating()
+        #elseif os(OSX)
+            activityIndicator.startAnimation(self)
+        #endif
     }
 }

@@ -7,7 +7,61 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+    public typealias View = UIView
+    public typealias Img = UIImage
+    public typealias Color = UIColor
+    public typealias VisualEffectView = UIVisualEffectView
+    public typealias ImageView = UIImageView
+    public typealias BezierPath = UIBezierPath
+#elseif os(OSX)
+    import Cocoa
+    public typealias View = NSView
+    public typealias Img = NSImage
+    public typealias Color = NSColor
+    public typealias VisualEffectView = NSVisualEffectView
+    public typealias ImageView = NSImageView
+    public typealias BezierPath = NSBezierPath
+    extension NSAutoresizingMaskOptions {
+        static var flexibleLeftMargin: NSAutoresizingMaskOptions {
+            get {
+                return .viewMinXMargin
+            }
+        }
+        static var flexibleRightMargin: NSAutoresizingMaskOptions {
+            get {
+                return .viewMaxXMargin
+            }
+        }
+        static var flexibleTopMargin: NSAutoresizingMaskOptions {
+            get {
+                return .viewMinYMargin
+            }
+        }
+        static var flexibleBottomMargin: NSAutoresizingMaskOptions {
+            get {
+                return .viewMaxYMargin
+            }
+        }
+        static var flexibleHeight: NSAutoresizingMaskOptions {
+            get {
+                return .viewHeightSizable
+            }
+        }
+        static var flexibleWidth: NSAutoresizingMaskOptions {
+            get {
+                return .viewHeightSizable
+            }
+        }
+    }
+    extension ContainerView {
+        var isUserInteractionEnabled: Bool {
+            get { return self.userInteractionEnabled }
+            set (userInteraction) { self.userInteractionEnabled = userInteraction }
+        }
+    }
+#endif
 
 /// The PKHUD object controls showing and hiding of the HUD, as well as its contents and touch response behavior.
 open class PKHUD: NSObject {
@@ -16,7 +70,7 @@ open class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
     
-    public var viewToPresentOn: UIView? = nil
+    public var viewToPresentOn: View?
 
     fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
@@ -32,10 +86,12 @@ open class PKHUD: NSObject {
     
     public override init () {
         super.init()
+        #if os(iOS) || os(watchOS)
         NotificationCenter.default.addObserver(self,
             selector: #selector(PKHUD.willEnterForeground(_:)),
             name: NSNotification.Name.UIApplicationWillEnterForeground,
             object: nil)
+        #endif
         userInteractionOnUnderlyingViewsEnabled = false
         container.frameView.autoresizingMask = [ .flexibleLeftMargin,
                                                  .flexibleRightMargin,
@@ -43,7 +99,7 @@ open class PKHUD: NSObject {
                                                  .flexibleBottomMargin ]
     }
     
-    public convenience init(viewToPresentOn view: UIView) {
+    public convenience init(viewToPresentOn view: View) {
         self.init()
         viewToPresentOn = view
     }
@@ -51,7 +107,7 @@ open class PKHUD: NSObject {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     open var dimsBackground = true
     open var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
@@ -66,7 +122,7 @@ open class PKHUD: NSObject {
         return !container.isHidden
     }
     
-    open var contentView: UIView {
+    open var contentView: View {
         get {
             return container.frameView.content
         }
@@ -76,6 +132,7 @@ open class PKHUD: NSObject {
         }
     }
     
+    #if os(iOS) || os(watchOS)
     open var effect: UIVisualEffect? {
         get {
             return container.frameView.effect
@@ -84,15 +141,26 @@ open class PKHUD: NSObject {
             container.frameView.effect = effect
         }
     }
+    #endif
     
-    open func show(onView view: UIView? = nil) {
-        let view:UIView = view ?? viewToPresentOn ?? UIApplication.shared.keyWindow!
+    open func show() {
+        #if os(iOS) || os(watchOS)
+        guard let view = viewToPresentOn ?? UIApplication.shared.keyWindow ?? UIApplication.shared.windows.first else {
+            preconditionFailure("HUD has no view to present on")
+        }
+        #elseif os(OSX)
+        guard let view = viewToPresentOn ?? NSApplication.shared().orderedWindows.first?.contentView else {
+            preconditionFailure("HUD has no view to present on")
+        }
+        #endif
         if(!view.subviews.contains(container)) {
             view.addSubview(container)
             container.frame.origin = CGPoint.zero
             container.frame.size = view.frame.size
             container.autoresizingMask = [ .flexibleHeight, .flexibleWidth ]
         }
+
+
         container.showFrameView()
         if dimsBackground {
             container.showBackground(animated: true)

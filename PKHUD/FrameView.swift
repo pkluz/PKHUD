@@ -7,13 +7,34 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
-internal class FrameView: UIVisualEffectView {
+internal class FrameView: VisualEffectView {
+    
+    #if os(OSX)
+    override internal var isFlipped:Bool {
+        get {
+            return true
+        }
+    }
+    #endif
     
     internal init() {
-        super.init(effect: UIBlurEffect(style: .light))
+        #if os(iOS) || os(watchOS)
+            super.init(effect: UIBlurEffect(style: .light))
+        #elseif os(OSX)
+            super.init(frame: NSRect.zero)
+            self.material = .light
+            self.blendingMode = .withinWindow
+            
+            self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+        #endif
+
         commonInit()
     }
 
@@ -23,13 +44,26 @@ internal class FrameView: UIVisualEffectView {
     }
     
     fileprivate func commonInit() {
-        backgroundColor = UIColor(white: 0.8, alpha: 0.36)
+        #if os(OSX)
+            self.wantsLayer = true  // NSView will create a CALayer automatically
+        #endif
+        
+        let layer: CALayer! = self.layer
+
+        self.translatesAutoresizingMaskIntoConstraints = false
         layer.cornerRadius = 9.0
         layer.masksToBounds = true
         
-        contentView.addSubview(self.content)
+        #if os(iOS) || os(watchOS)
+            contentView.addSubview(self.content)
+        #elseif os(OSX)
+            self.addSubview(self.content)
+        #endif
+
         
+        #if os(iOS) || os(watchOS)
         let offset = 20.0
+        
         
         let motionEffectsX = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         motionEffectsX.maximumRelativeValue = offset
@@ -43,21 +77,36 @@ internal class FrameView: UIVisualEffectView {
         group.motionEffects = [motionEffectsX, motionEffectsY]
         
         addMotionEffect(group)
+        #endif
     }
     
-    fileprivate var _content = UIView()
-    internal var content: UIView {
+    fileprivate var _content = View()
+    internal var content: View {
         get {
             return _content
         }
         set {
             _content.removeFromSuperview()
             _content = newValue
-            _content.alpha = 0.85
-            _content.clipsToBounds = true
-            _content.contentMode = .center
-            frame.size = _content.bounds.size
-            addSubview(_content)
+
+            let superView: View
+            
+            #if os(iOS) || os(watchOS)
+                _content.alpha = 0.85
+                _content.contentMode = .center
+                _content.clipsToBounds = true
+                contentView.addSubview(_content)
+                superView = contentView
+            #elseif os(OSX)
+                _content.alphaValue = 0.85
+                addSubview(_content)
+                superView = self
+            #endif
+            
+            let centerX = NSLayoutConstraint(item: _content, attribute: .centerX, relatedBy: .equal, toItem: superView, attribute: .centerX, multiplier: 1, constant: 0)
+            let centerY = NSLayoutConstraint(item: _content, attribute: .centerY, relatedBy: .equal, toItem: superView, attribute: .centerY, multiplier: 1, constant: 0)
+            
+            superView.addConstraints([centerX, centerY])
         }
     }
 }
