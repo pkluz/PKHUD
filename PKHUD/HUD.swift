@@ -42,9 +42,9 @@ public final class HUD {
     public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
     
     // MARK: Public methods, PKHUD based
-    public static func show(_ content: HUDContentType) {
+    public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
         PKHUD.sharedHUD.contentView = contentView(content)
-        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.show(onView: view)
     }
     
     public static func hide(_ completion: ((Bool) -> Void)? = nil) {
@@ -60,13 +60,13 @@ public final class HUD {
     }
     
     // MARK: Public methods, HUD based
-    public static func flash(_ content: HUDContentType) {
-        HUD.show(content)
+    public static func flash(_ content: HUDContentType, onView view: UIView? = nil) {
+        HUD.show(content, onView: view)
         HUD.hide(animated: true, completion: nil)
     }
     
-    public static func flash(_ content: HUDContentType, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
-        HUD.show(content)
+    public static func flash(_ content: HUDContentType, onView view: UIView? = nil, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
+        HUD.show(content, onView: view)
         HUD.hide(afterDelay: delay, completion: completion)
     }
     

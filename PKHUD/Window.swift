@@ -10,12 +10,12 @@
 import UIKit
 
 /// The window used to display the PKHUD within. Placed atop the applications main window.
-internal class Window: UIWindow {
+internal class ContainerView: UIView {
     
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
-        super.init(frame: UIApplication.shared.delegate!.window!!.bounds)
+        super.init(frame: CGRect.zero)
         commonInit()
     }
 
@@ -26,8 +26,6 @@ internal class Window: UIWindow {
     }
     
     fileprivate func commonInit() {
-        rootViewController = WindowRootViewController()
-        windowLevel = UIWindowLevelNormal + 500.0
         backgroundColor = UIColor.clear
         
         addSubview(backgroundView)
@@ -43,7 +41,6 @@ internal class Window: UIWindow {
     
     internal func showFrameView() {
         layer.removeAllAnimations()
-        makeKeyAndVisible()
         frameView.center = center
         frameView.alpha = 1.0
         isHidden = false
@@ -54,7 +51,7 @@ internal class Window: UIWindow {
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
         let finalize: (_ finished: Bool) -> (Void) = { finished in
             self.isHidden = true
-            self.resignKey()
+            self.removeFromSuperview()
             self.willHide = false
             
             completion?(finished)
