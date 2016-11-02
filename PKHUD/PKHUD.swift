@@ -16,7 +16,9 @@ open class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
     
-    fileprivate let window = Window()
+    public var viewToPresentOn: UIView? = nil
+
+    fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
     
     public typealias TimerAction = (Bool) -> Void
@@ -35,10 +37,15 @@ open class PKHUD: NSObject {
             name: NSNotification.Name.UIApplicationWillEnterForeground,
             object: nil)
         userInteractionOnUnderlyingViewsEnabled = false
-        window.frameView.autoresizingMask = [ .flexibleLeftMargin,
-                                              .flexibleRightMargin,
-                                              .flexibleTopMargin,
-                                              .flexibleBottomMargin ]
+        container.frameView.autoresizingMask = [ .flexibleLeftMargin,
+                                                 .flexibleRightMargin,
+                                                 .flexibleTopMargin,
+                                                 .flexibleBottomMargin ]
+    }
+    
+    public convenience init(viewToPresentOn view: UIView) {
+        self.init()
+        viewToPresentOn = view
     }
     
     deinit {
@@ -48,47 +55,54 @@ open class PKHUD: NSObject {
     open var dimsBackground = true
     open var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
-            return !window.isUserInteractionEnabled
+            return !container.isUserInteractionEnabled
         }
         set {
-            window.isUserInteractionEnabled = !newValue
+            container.isUserInteractionEnabled = !newValue
         }
     }
     
     open var isVisible: Bool {
-        return !window.isHidden
+        return !container.isHidden
     }
     
     open var contentView: UIView {
         get {
-            return window.frameView.content
+            return container.frameView.content
         }
         set {
-            window.frameView.content = newValue
+            container.frameView.content = newValue
             startAnimatingContentView()
         }
     }
     
     open var effect: UIVisualEffect? {
         get {
-            return window.frameView.effect
+            return container.frameView.effect
         }
         set {
-            window.frameView.effect = effect
+            container.frameView.effect = effect
         }
     }
     
-    open func show() {
-        window.showFrameView()
+    open func show(onView view: UIView? = nil) {
+        let view:UIView = view ?? viewToPresentOn ?? UIApplication.shared.keyWindow!
+        if(!view.subviews.contains(container)) {
+            view.addSubview(container)
+            container.frame.origin = CGPoint.zero
+            container.frame.size = view.frame.size
+            container.autoresizingMask = [ .flexibleHeight, .flexibleWidth ]
+        }
+        container.showFrameView()
         if dimsBackground {
-            window.showBackground(animated: true)
+            container.showBackground(animated: true)
         }
         
         startAnimatingContentView()
     }
     
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
-        window.hideFrameView(animated: anim, completion: completion)
+        container.hideFrameView(animated: anim, completion: completion)
         stopAnimatingContentView()
     }
     
@@ -131,15 +145,13 @@ open class PKHUD: NSObject {
     }
     
     internal func startAnimatingContentView() {
-        if isVisible && contentView.conforms(to: PKHUDAnimating.self) {
-            let animatingContentView = contentView as! PKHUDAnimating
+        if let animatingContentView = contentView as? PKHUDAnimating, isVisible {
             animatingContentView.startAnimation()
         }
     }
     
     internal func stopAnimatingContentView() {
-        if contentView.conforms(to: PKHUDAnimating.self) {
-            let animatingContentView = contentView as! PKHUDAnimating
+        if let animatingContentView = contentView as? PKHUDAnimating {
             animatingContentView.stopAnimation?()
         }
     }
