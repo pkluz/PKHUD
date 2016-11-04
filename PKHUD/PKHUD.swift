@@ -15,14 +15,35 @@
     public typealias VisualEffectView = UIVisualEffectView
     public typealias ImageView = UIImageView
     public typealias BezierPath = UIBezierPath
+    public typealias BlurEffect = UIBlurEffect
+    public typealias Font = UIFont
+    public typealias ActivityIndicatorView = UIActivityIndicatorView
 #elseif os(OSX)
     import Cocoa
     public typealias View = NSView
     public typealias Img = NSImage
     public typealias Color = NSColor
-    public typealias VisualEffectView = NSVisualEffectView
+    public typealias VisualEffectView = NSInternalVisualEffectView
     public typealias ImageView = NSImageView
     public typealias BezierPath = NSBezierPath
+    public typealias BlurEffect = NSBlurEffect
+    public typealias Font = NSFont
+    public typealias ActivityIndicatorView = NSActivityIndicatorView
+
+    
+    public enum NSBlurEffectStyle : Int {
+        case extraLight
+        case light
+        case dark
+        case regular
+        case prominent
+    }
+    public class NSBlurEffect {
+        let style: NSBlurEffectStyle
+        init(style: NSBlurEffectStyle) {
+            self.style = style
+        }
+    }
     extension NSAutoresizingMaskOptions {
         static var flexibleLeftMargin: NSAutoresizingMaskOptions {
             get {
@@ -99,7 +120,7 @@ open class PKHUD: NSObject {
                                                  .flexibleBottomMargin ]
     }
     
-    public convenience init(viewToPresentOn view: View) {
+    public convenience init(viewToPresentOn view: View?) {
         self.init()
         viewToPresentOn = view
     }

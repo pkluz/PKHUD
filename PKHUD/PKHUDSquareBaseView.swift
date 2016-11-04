@@ -9,9 +9,112 @@
 
 #if os(iOS) || os(watchOS)
     import UIKit
+    public typealias Label = UILabel
+    
+    extension UILabel {
+        func size() -> CGSize {
+            return self.sizeThatFits(CGSize(width: self.frame.width, height: CGFloat(Int.max)))
+        }
+    }
 #elseif os(OSX)
     import Cocoa
+    public class Label: NSTextField {
+        override init(frame frameRect: NSRect) {
+            super.init(frame: frameRect)
+            
+            self.isEditable = false
+            self.isBezeled = false
+            self.drawsBackground = false
+            self.isSelectable = false
+        }
+        
+        required public init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        public var text: String? {
+            get {
+                return self.stringValue
+            }
+            set {
+                self.stringValue = newValue ?? ""
+            }
+        }
+        
+        public var textAlignment: NSTextAlignment {
+            get {
+                return self.alignment
+            }
+            set {
+                self.alignment = newValue
+            }
+        }
+        
+        public var adjustsFontSizeToFitWidth: Bool {
+            get {
+                return false
+            }
+            set {}
+        }
+        
+        public var minimumScaleFactor: CGFloat {
+            get {
+                return 1
+            }
+            set {}
+        }
+        
+        public var numberOfLines: Int {
+            get {
+                return self.maximumNumberOfLines
+            }
+            set {
+                self.maximumNumberOfLines = newValue
+            }
+        }
+        
+        func size() -> CGSize {
+            return self.sizeThatFits(CGSize(width: self.frame.width, height: CGFloat(Int.max)))
+        }
+    }
+    
+    public enum NSViewContentMode : Int {
+        case scaleToFill
+        case scaleAspectFit // contents scaled to fit with fixed aspect. remainder is transparent
+        case scaleAspectFill // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+        case redraw // redraw on bounds change (calls -setNeedsDisplay)
+        case center // contents remain same size. positioned adjusted.
+        case top
+        case bottom
+        case left
+        case right
+        case topLeft
+        case topRight
+        case bottomLeft
+        case bottomRight
+    }
+    
+    extension NSImageView {
+        var contentMode: NSViewContentMode {
+            get {
+                switch (self.layer ?? CALayer()).contentsGravity {
+                default:
+                    return .center
+                }
+            }
+            set {
+                switch newValue {
+                case .center:
+                    self.layer?.contentsGravity = kCAGravityCenter
+                default:
+                    break
+                }
+            }
+        }
+    }
 #endif
+
+
 
 /// PKHUDSquareBaseView provides a square view, which you can subclass and add additional views to.
 open class PKHUDSquareBaseView: View {
@@ -20,12 +123,10 @@ open class PKHUDSquareBaseView: View {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
     }
     
     #if os(OSX)
@@ -35,106 +136,59 @@ open class PKHUDSquareBaseView: View {
         }
     }
     #endif
-    
-    open func commonInit() {
-        self.setCorrectFrames()
-        
-        #if os(OSX)
-            self.wantsLayer = true  // NSView will create a CALayer automatically
-        #endif
-    }
 
     public init(image: Img? = nil, title: String? = nil, subtitle: String? = nil) {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
-        
-        commonInit()
-        
         self.imageView.image = image
-        #if os(iOS) || os(watchOS)
-            titleLabel.text = title
-            subtitleLabel.text = subtitle
-        #elseif os(OSX)
-            titleLabel.stringValue = title ?? ""
-            subtitleLabel.stringValue = subtitle ?? ""
-        #endif
+        titleLabel.text = title
+        subtitleLabel.text = subtitle
         
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
+        
+        self.layoutIfNeeded()
     }
 
     open let imageView: ImageView = {
         let imageView = ImageView()
-
-        #if os(iOS) || os(watchOS)
-            imageView.alpha = 0.85
-        #elseif os(OSX)
-            imageView.alphaValue = 0.85
-            imageView.wantsLayer = true
-        #endif
-
-        let layer: CALayer! = imageView.layer
-
-        layer.contentsGravity = kCAGravityCenter
+        imageView.alpha = 0.85
+        imageView.clipsToBounds = true
+        imageView.contentMode = .center
         return imageView
     }()
     
-    #if os(iOS) || os(watchOS)
-    public let titleLabel: UILabel = {
-        let label = UILabel()
+    open let titleLabel: Label = {
+        let label = Label()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 17.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.85)
+        label.font = Font.boldSystemFont(ofSize: 17.0)
+        label.textColor = Color.black.withAlphaComponent(0.85)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.25
         return label
     }()
-    #elseif os(OSX)
-    open let titleLabel: NSTextField = {
-        let textField = NSTextField()
-        textField.alignment = .center
-        textField.font = NSFont.systemFont(ofSize: 17.0)
-        textField.textColor = Color.black.withAlphaComponent(0.85)
-        textField.isBezeled = false
-        textField.drawsBackground = false
-        textField.isEditable = false
-        textField.isSelectable = false
-        return textField
-    }()
-    #endif
     
-    #if os(iOS) || os(watchOS)
-    public let subtitleLabel: UILabel = {
-        let label = UILabel()
+    open let subtitleLabel: Label = {
+        let label = Label()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 14.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.7)
+        label.font = Font.systemFont(ofSize: 14.0)
+        label.textColor = Color.black.withAlphaComponent(0.7)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.25
         return label
     }()
-    #elseif os(OSX)
-    open let subtitleLabel: NSTextField = {
-        let textField = NSTextField()
-        textField.alignment = .center
-        textField.font = NSFont.systemFont(ofSize: 14.0)
-        textField.textColor = Color.black.withAlphaComponent(0.7)
-        textField.maximumNumberOfLines = 2
-        textField.isBezeled = false
-        textField.drawsBackground = false
-        textField.isEditable = false
-        textField.isSelectable = false
-        return textField
-    }()
-    #endif
-    
+
     #if os(OSX)
     open override var allowsVibrancy: Bool {
         return true
     }
     #endif
     
-    func setCorrectFrames() {
-        self.translatesAutoresizingMaskIntoConstraints = true
-        
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+    
         let viewWidth = bounds.size.width
         let viewHeight = bounds.size.height
         

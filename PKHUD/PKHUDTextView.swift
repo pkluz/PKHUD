@@ -9,8 +9,18 @@
 
 #if os(iOS) || os(watchOS)
     import UIKit
+    extension UIFont {
+        static var labelViewFont: UIFont {
+            return UIFont.boldSystemFont(ofSize: 17.0)
+        }
+    }
 #elseif os(OSX)
     import Cocoa
+    extension NSFont {
+        static var labelViewFont: NSFont {
+            return NSFont.systemFont(ofSize: 17.0)
+        }
+    }
 #endif
 
 /// PKHUDTextView provides a wide, three line text view, which you can use to display information.
@@ -27,52 +37,32 @@ open class PKHUDTextView: PKHUDWideBaseView {
     }
     
     func commonInit(_ text: String?) {
-        #if os(iOS) || os(watchOS)
-            titleLabel.text = text
-        #elseif os(OSX)
-            titleLabel.stringValue = text ?? ""
-        #endif
-        
+        titleLabel.text = text
         addSubview(titleLabel)
-
-        setCorrectFrames()
+        
+        layoutIfNeeded()
     }
     
-    #if os(iOS) || os(watchOS)
-        public let titleLabel: UILabel = {
-            let label = UILabel()
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.textAlignment = .center
-            label.font = UIFont.boldSystemFont(ofSize: 17.0)
-            label.textColor = UIColor.black.withAlphaComponent(0.85)
-            label.adjustsFontSizeToFitWidth = true
-            label.numberOfLines = 3
-            return label
-        }()
-    #elseif os(OSX)
-        open let titleLabel: NSTextField = {
-            let textField = NSTextField()
-            textField.alignment = .center
-            textField.translatesAutoresizingMaskIntoConstraints = false
-            textField.font = NSFont.systemFont(ofSize: 17.0)
-            textField.textColor = Color.black.withAlphaComponent(0.85)
-            textField.maximumNumberOfLines = 3
-            textField.isBezeled = false
-            textField.drawsBackground = false
-            textField.isEditable = false
-            textField.isSelectable = false
-            return textField
-        }()
-    #endif
-    
-    func setCorrectFrames() {
-        translatesAutoresizingMaskIntoConstraints = false
-        let left = NSLayoutConstraint(item: titleLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 10)
-        let right = NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -10)
+    open override func layoutSubviews() {
+        super.layoutSubviews()
         
-        let centerY = NSLayoutConstraint(item: titleLabel, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
+        let padding: CGFloat = 10.0
+        titleLabel.frame = bounds.insetBy(dx: padding, dy: padding)
         
-        self.addConstraints([left, right])
-        self.addConstraints([centerY])
+        let maxHeight = titleLabel.frame.height
+        let calcHeight = min(titleLabel.size().height, maxHeight)
+        let newY = (maxHeight - calcHeight) / 2 + padding
+        titleLabel.frame.size.height = calcHeight
+        titleLabel.frame.origin.y = newY
     }
+    
+    open let titleLabel: Label = {
+        let label = Label()
+        label.textAlignment = .center
+        label.font = Font.labelViewFont
+        label.textColor = Color.black.withAlphaComponent(0.85)
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 3
+        return label
+    }()
 }

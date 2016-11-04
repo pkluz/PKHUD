@@ -23,17 +23,9 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         let dash = CAShapeLayer()
         dash.frame = CGRect(x: 0.0, y: 0.0, width: 88.0, height: 88.0)
         dash.path = {
-            #if os(iOS) || os(watchOS)
-                let path = UIBezierPath()
-                path.move(to: CGPoint(x: 0.0, y: 44.0))
-                path.addLine(to: CGPoint(x: 88.0, y: 44.0))
-
-            #elseif os(OSX)
-                let path = NSBezierPath()
-                path.move(to: CGPoint(x: 0.0, y: 44.0))
-                path.line(to: CGPoint(x: 88.0, y: 44.0))
-            #endif
-                
+            let path = BezierPath()
+            path.move(to: CGPoint(x: 0.0, y: 44.0))
+            path.addLine(to: CGPoint(x: 88.0, y: 44.0))
             return path.cgPath
         }()
         dash.lineCap     = kCALineCapRound
@@ -45,27 +37,20 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         return dash
     }
     
-    public init() {
-        super.init(image: nil, title: nil, subtitle: nil)
-    }
-    
-    public init(title: String?, subtitle: String?) {
+    public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
+        self.addSublayer(dashOneLayer)
+        self.addSublayer(dashTwoLayer)
+        dashOneLayer.position = self.center
+        dashTwoLayer.position = self.center
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    open override func commonInit() {
-        super.commonInit()
-
-        let layer: CALayer! = self.layer
-
-        layer.addSublayer(dashOneLayer)
-        layer.addSublayer(dashTwoLayer)
-        dashOneLayer.position = CGPoint(x: layer.frame.width/2, y: layer.frame.height/2)
-        dashTwoLayer.position = CGPoint(x: layer.frame.width/2, y: layer.frame.height/2)
+        super.init(coder: aDecoder)
+        self.addSublayer(dashOneLayer)
+        self.addSublayer(dashTwoLayer)
+        dashOneLayer.position = self.center
+        dashTwoLayer.position = self.center
     }
     
     func rotationAnimation(_ angle: CGFloat) -> CABasicAnimation {

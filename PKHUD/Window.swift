@@ -13,6 +13,41 @@
         func removeAllAnimations() {
             layer.removeAllAnimations()
         }
+        
+        func add(_ anim: CAAnimation, forKey: String?) {
+            self.layer.add(anim, forKey: forKey)
+        }
+        
+        var cornerRadius: CGFloat {
+            get {
+                return self.layer.cornerRadius
+            }
+            set (radius) {
+                self.layer.cornerRadius = radius
+            }
+        }
+        
+        var masksToBounds: Bool {
+            get {
+                return self.layer.masksToBounds
+            }
+            set (masks) {
+                self.layer.masksToBounds = masks
+            }
+        }
+        
+        func addSublayer(_ layer: CALayer) {
+            self.layer.addSublayer(layer)
+        }
+        
+        var position: CGPoint {
+            get {
+                return self.layer.position
+            }
+            set {
+                self.layer.position = newValue
+            }
+        }
     }
 #elseif os(OSX)
     import Cocoa
@@ -55,6 +90,69 @@
             self.wantsLayer = true
             self.layer?.removeAllAnimations()
         }
+        
+        func add(_ anim: CAAnimation, forKey: String?) {
+            self.wantsLayer = true
+            self.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.layer?.position = CGPoint(x: (self.superview?.frame.width ?? 0)/2, y: (self.superview?.frame.height ?? 0)/2)
+            self.layer?.add(anim, forKey: forKey)
+        }
+        
+        var clipsToBounds: Bool {
+            get {
+                return true
+            }
+            set {}
+        }
+        
+        var cornerRadius: CGFloat {
+            get {
+                self.wantsLayer = true
+                return self.layer!.cornerRadius
+            }
+            set (radius) {
+                self.wantsLayer = true
+                self.layer?.cornerRadius = radius
+            }
+        }
+        
+        var masksToBounds: Bool {
+            get {
+                self.wantsLayer = true
+                return self.layer!.masksToBounds
+            }
+            set (masks) {
+                self.wantsLayer = true
+                self.layer?.masksToBounds = masks
+            }
+        }
+        
+        func addSublayer(_ layer: CALayer) {
+            self.wantsLayer = true
+
+            layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.layer?.addSublayer(layer)
+        }
+        
+        var position: CGPoint {
+            get {
+                self.wantsLayer = true
+                self.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                return self.layer!.position
+            }
+            set {
+                self.wantsLayer = true
+                self.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                self.layer?.position = newValue
+                self.layout()
+            }
+        }
+        
+        func layoutIfNeeded() {
+            self.layoutSubviews()
+        }
+        
+        func layoutSubviews() {}
     }
 #endif
 

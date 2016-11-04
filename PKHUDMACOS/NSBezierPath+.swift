@@ -57,4 +57,8 @@ extension NSBezierPath {
         points.deallocate(capacity: 3)
         return path
     }
+    
+    func addLine(to point: NSPoint) {
+        self.line(to: point)
+    }
 }

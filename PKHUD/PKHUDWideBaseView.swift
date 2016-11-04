@@ -20,10 +20,6 @@ open class PKHUDWideBaseView: View {
     
     public init() {
         super.init(frame: PKHUDWideBaseView.defaultWideBaseViewFrame)
-        let width = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: PKHUDWideBaseView.defaultWideBaseViewFrame.width)
-        let height = NSLayoutConstraint(item: self, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: PKHUDWideBaseView.defaultWideBaseViewFrame.height)
-        
-        self.addConstraints([width, height])
     }
     
     public override init(frame: CGRect) {

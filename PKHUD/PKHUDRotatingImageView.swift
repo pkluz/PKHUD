@@ -19,10 +19,7 @@ import QuartzCore
 open class PKHUDRotatingImageView: PKHUDSquareBaseView, PKHUDAnimating {
     
     func startAnimation() {
-        let imageViewLayer: CALayer! = imageView.layer
-        imageViewLayer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        imageViewLayer.position = CGPoint(x: self.frame.width/2, y: self.frame.height/2)
-        imageViewLayer.add(PKHUDAnimation.continuousRotation, forKey: "progressAnimation")
+        imageView.add(PKHUDAnimation.continuousRotation, forKey: "progressAnimation")
     }
     
     func stopAnimation() {

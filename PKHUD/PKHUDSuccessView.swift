@@ -19,14 +19,8 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
     var checkmarkShapeLayer: CAShapeLayer = {
         let checkmarkPath = BezierPath()
         checkmarkPath.move(to: CGPoint(x: 4.0, y: 27.0))
-        
-        #if os(iOS) || os(watchOS)
-            checkmarkPath.addLine(to: CGPoint(x: 34.0, y: 56.0))
-            checkmarkPath.addLine(to: CGPoint(x: 88.0, y: 0.0))
-        #elseif os(OSX)
-        checkmarkPath.line(to: CGPoint(x: 34.0, y: 56.0))
-        checkmarkPath.line(to: CGPoint(x: 88.0, y: 0.0))
-        #endif
+        checkmarkPath.addLine(to: CGPoint(x: 34.0, y: 56.0))
+        checkmarkPath.addLine(to: CGPoint(x: 88.0, y: 0.0))
         
         let layer = CAShapeLayer()
         layer.frame = CGRect(x: 3.0, y: 3.0, width: 88.0, height: 56.0)
@@ -42,24 +36,15 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
     
     public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
-        commonInit()
+        self.addSublayer(checkmarkShapeLayer)
+        checkmarkShapeLayer.position = self.center
     }
     
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
-    }
-    
-    open override func commonInit() {
-        #if os(OSX)
-            self.wantsLayer = true  // NSView will create a CALayer automatically
-        #endif
-
-        let layer: CALayer! = self.layer
-
-        layer.addSublayer(checkmarkShapeLayer)
-        checkmarkShapeLayer.position = CGPoint(x: layer.frame.width/2, y: layer.frame.height/2)
+        self.addSublayer(checkmarkShapeLayer)
+        checkmarkShapeLayer.position = self.center
     }
     
     open func startAnimation() {
