@@ -9,79 +9,8 @@
 
 #if os(iOS) || os(watchOS)
     import UIKit
-    public typealias View = UIView
-    public typealias Img = UIImage
-    public typealias Color = UIColor
-    public typealias VisualEffectView = UIVisualEffectView
-    public typealias ImageView = UIImageView
-    public typealias BezierPath = UIBezierPath
-    public typealias BlurEffect = UIBlurEffect
-    public typealias Font = UIFont
-    public typealias ActivityIndicatorView = UIActivityIndicatorView
 #elseif os(OSX)
     import Cocoa
-    public typealias View = NSView
-    public typealias Img = NSImage
-    public typealias Color = NSColor
-    public typealias VisualEffectView = NSInternalVisualEffectView
-    public typealias ImageView = NSImageView
-    public typealias BezierPath = NSBezierPath
-    public typealias BlurEffect = NSBlurEffect
-    public typealias Font = NSFont
-    public typealias ActivityIndicatorView = NSActivityIndicatorView
-
-    
-    public enum NSBlurEffectStyle : Int {
-        case extraLight
-        case light
-        case dark
-        case regular
-        case prominent
-    }
-    public class NSBlurEffect {
-        let style: NSBlurEffectStyle
-        init(style: NSBlurEffectStyle) {
-            self.style = style
-        }
-    }
-    extension NSAutoresizingMaskOptions {
-        static var flexibleLeftMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMinXMargin
-            }
-        }
-        static var flexibleRightMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMaxXMargin
-            }
-        }
-        static var flexibleTopMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMinYMargin
-            }
-        }
-        static var flexibleBottomMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMaxYMargin
-            }
-        }
-        static var flexibleHeight: NSAutoresizingMaskOptions {
-            get {
-                return .viewHeightSizable
-            }
-        }
-        static var flexibleWidth: NSAutoresizingMaskOptions {
-            get {
-                return .viewHeightSizable
-            }
-        }
-    }
-    extension ContainerView {
-        var isUserInteractionEnabled: Bool {
-            get { return self.userInteractionEnabled }
-            set (userInteraction) { self.userInteractionEnabled = userInteraction }
-        }
-    }
 #endif
 
 /// The PKHUD object controls showing and hiding of the HUD, as well as its contents and touch response behavior.
@@ -128,7 +57,7 @@ open class PKHUD: NSObject {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
+    
     open var dimsBackground = true
     open var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {

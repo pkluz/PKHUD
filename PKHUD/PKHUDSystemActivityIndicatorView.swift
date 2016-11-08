@@ -11,35 +11,6 @@
     import UIKit
 #elseif os(OSX)
     import Cocoa
-    public enum NSActivityIndicatorViewStyle : Int {
-        case whiteLarge
-        case white
-        case gray
-    }
-    
-    public class NSActivityIndicatorView: NSProgressIndicator {
-        public init(activityIndicatorStyle style: NSActivityIndicatorViewStyle) {
-            super.init(frame: CGRect.zero)
-            
-            self.wantsLayer = true
-            self.style = .spinningStyle
-        }
-        
-        required public init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        public func startAnimating() {
-            self.startAnimation(nil)
-        }
-        
-        public var color: Color {
-            get {
-                return Color.black
-            }
-            set {}
-        }
-    }
 #endif
 
 /// PKHUDSystemActivityIndicatorView provides the system UIActivityIndicatorView as an alternative.

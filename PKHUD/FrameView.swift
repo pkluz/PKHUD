@@ -11,29 +11,6 @@
     import UIKit
 #elseif os(OSX)
     import Cocoa
-    public class NSInternalVisualEffectView: NSVisualEffectView {
-        init(effect: BlurEffect) {
-            super.init(frame: NSRect.zero)
-            
-            let material: NSVisualEffectMaterial
-            if case .dark = effect.style {
-                material = .dark
-            } else {
-                material = .light
-            }
-            
-            self.material = material
-            self.blendingMode = .withinWindow
-            self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
-        }
-        
-        required public init?(coder: NSCoder) {
-            super.init(coder: coder)
-        }
-        var contentView: NSView {
-            return self
-        }
-    }
 #endif
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.

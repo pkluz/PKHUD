@@ -33,6 +33,8 @@
 		4F2077001DCA2429006CCD41 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; };
 		4F2077021DCA2430006CCD41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996325419514FF3001F73CA /* Images.xcassets */; };
 		4F2077041DCA2638006CCD41 /* NSBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2077031DCA2638006CCD41 /* NSBezierPath+.swift */; };
+		4FF09D241DD1BA960010FD7E /* Extensions-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF09D231DD1BA960010FD7E /* Extensions-iOS.swift */; };
+		4FF09D261DD1BAA80010FD7E /* Extensions-macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF09D251DD1BAA80010FD7E /* Extensions-macOS.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
 		DAE72D5B1DCAE2EF00538227 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE72D5A1DCAE2EF00538227 /* Window.swift */; };
 		DAE72D5C1DCAE52D00538227 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE72D5A1DCAE2EF00538227 /* Window.swift */; };
@@ -120,6 +122,8 @@
 		4F2076E61DCA2397006CCD41 /* PKHUDMACOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKHUDMACOS.h; sourceTree = "<group>"; };
 		4F2076E71DCA2397006CCD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F2077031DCA2638006CCD41 /* NSBezierPath+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+.swift"; sourceTree = "<group>"; };
+		4FF09D231DD1BA960010FD7E /* Extensions-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions-iOS.swift"; sourceTree = "<group>"; };
+		4FF09D251DD1BAA80010FD7E /* Extensions-macOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions-macOS.swift"; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		DAE72D5A1DCAE2EF00538227 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				F996324919514FEF001F73CA /* FrameView.swift */,
+				4FF09D231DD1BA960010FD7E /* Extensions-iOS.swift */,
+				4FF09D251DD1BAA80010FD7E /* Extensions-macOS.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				4F2076FC1DCA2425006CCD41 /* PKHUDErrorView.swift in Sources */,
 				4F2076FD1DCA2425006CCD41 /* PKHUDProgressView.swift in Sources */,
 				4F2077001DCA2429006CCD41 /* FrameView.swift in Sources */,
+				4FF09D261DD1BAA80010FD7E /* Extensions-macOS.swift in Sources */,
 				4F2076FE1DCA2425006CCD41 /* PKHUDAnimation.swift in Sources */,
 				4F2076F31DCA2413006CCD41 /* PKHUD.swift in Sources */,
 				4F2076FF1DCA2425006CCD41 /* PKHUDRotatingImageView.swift in Sources */,
@@ -544,6 +551,7 @@
 				F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */,
 				F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */,
 				F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */,
+				4FF09D241DD1BA960010FD7E /* Extensions-iOS.swift in Sources */,
 				F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */,
 				F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */,
 				F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */,

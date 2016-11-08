@@ -9,18 +9,8 @@
 
 #if os(iOS) || os(watchOS)
     import UIKit
-    extension UIFont {
-        static var labelViewFont: UIFont {
-            return UIFont.boldSystemFont(ofSize: 17.0)
-        }
-    }
 #elseif os(OSX)
     import Cocoa
-    extension NSFont {
-        static var labelViewFont: NSFont {
-            return NSFont.systemFont(ofSize: 17.0)
-        }
-    }
 #endif
 
 /// PKHUDTextView provides a wide, three line text view, which you can use to display information.
