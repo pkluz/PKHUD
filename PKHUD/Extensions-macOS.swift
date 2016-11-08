@@ -18,6 +18,9 @@ typealias BlurEffect = NSBlurEffect
 typealias Font = NSFont
 typealias ActivityIndicatorView = NSActivityIndicatorView
 
+
+// MARK: - iOS style extensions
+
 extension CGColor {
     var color: NSColor? {
         get {
@@ -122,19 +125,6 @@ extension NSView {
     func layoutSubviews() {}
 }
 
-enum NSBlurEffectStyle : Int {
-    case extraLight
-    case light
-    case dark
-    case regular
-    case prominent
-}
-class NSBlurEffect {
-    let style: NSBlurEffectStyle
-    init(style: NSBlurEffectStyle) {
-        self.style = style
-    }
-}
 extension NSAutoresizingMaskOptions {
     static var flexibleLeftMargin: NSAutoresizingMaskOptions {
         get {
@@ -171,6 +161,126 @@ extension ContainerView {
     var isUserInteractionEnabled: Bool {
         get { return self.userInteractionEnabled }
         set (userInteraction) { self.userInteractionEnabled = userInteraction }
+    }
+}
+
+
+
+
+
+extension NSImageView {
+    var contentMode: NSViewContentMode {
+        get {
+            switch (self.layer ?? CALayer()).contentsGravity {
+            default:
+                return .center
+            }
+        }
+        set {
+            switch newValue {
+            case .center:
+                self.layer?.contentsGravity = kCAGravityCenter
+            default:
+                break
+            }
+        }
+    }
+}
+
+extension NSFont {
+    static var labelViewFont: NSFont {
+        return NSFont.systemFont(ofSize: 17.0)
+    }
+}
+
+
+//MARK: - shimmed enums ported from iOS
+
+enum NSViewContentMode : Int {
+    case scaleToFill
+    case scaleAspectFit // contents scaled to fit with fixed aspect. remainder is transparent
+    case scaleAspectFill // contents scaled to fill with fixed aspect. some portion of content may be clipped.
+    case redraw // redraw on bounds change (calls -setNeedsDisplay)
+    case center // contents remain same size. positioned adjusted.
+    case top
+    case bottom
+    case left
+    case right
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+}
+
+enum NSActivityIndicatorViewStyle : Int {
+    case whiteLarge
+    case white
+    case gray
+}
+
+enum NSBlurEffectStyle : Int {
+    case extraLight
+    case light
+    case dark
+    case regular
+    case prominent
+}
+
+
+// MARK: - Ported classes to be more compatible with iOS apis
+
+class NSActivityIndicatorView: NSProgressIndicator {
+    init(activityIndicatorStyle style: NSActivityIndicatorViewStyle) {
+        super.init(frame: CGRect.zero)
+        
+        self.wantsLayer = true
+        self.style = .spinningStyle
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func startAnimating() {
+        self.startAnimation(nil)
+    }
+    
+    var color: Color {
+        get {
+            return Color.black
+        }
+        set {}
+    }
+}
+
+class NSInternalVisualEffectView: NSVisualEffectView {
+    init(effect: BlurEffect) {
+        super.init(frame: NSRect.zero)
+        
+        let material: NSVisualEffectMaterial
+        if case .dark = effect.style {
+            material = .dark
+        } else {
+            material = .light
+        }
+        
+        self.material = material
+        self.blendingMode = .withinWindow
+        self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    var contentView: NSView {
+        return self
+    }
+}
+
+class NSBlurEffect {
+    let style: NSBlurEffectStyle
+    init(style: NSBlurEffectStyle) {
+        self.style = style
     }
 }
 
@@ -231,100 +341,5 @@ open class Label: NSTextField {
     
     func size() -> CGSize {
         return self.sizeThatFits(CGSize(width: self.frame.width, height: CGFloat(Int.max)))
-    }
-}
-
-enum NSViewContentMode : Int {
-    case scaleToFill
-    case scaleAspectFit // contents scaled to fit with fixed aspect. remainder is transparent
-    case scaleAspectFill // contents scaled to fill with fixed aspect. some portion of content may be clipped.
-    case redraw // redraw on bounds change (calls -setNeedsDisplay)
-    case center // contents remain same size. positioned adjusted.
-    case top
-    case bottom
-    case left
-    case right
-    case topLeft
-    case topRight
-    case bottomLeft
-    case bottomRight
-}
-
-extension NSImageView {
-    var contentMode: NSViewContentMode {
-        get {
-            switch (self.layer ?? CALayer()).contentsGravity {
-            default:
-                return .center
-            }
-        }
-        set {
-            switch newValue {
-            case .center:
-                self.layer?.contentsGravity = kCAGravityCenter
-            default:
-                break
-            }
-        }
-    }
-}
-
-extension NSFont {
-    static var labelViewFont: NSFont {
-        return NSFont.systemFont(ofSize: 17.0)
-    }
-}
-
-internal enum NSActivityIndicatorViewStyle : Int {
-    case whiteLarge
-    case white
-    case gray
-}
-
-class NSActivityIndicatorView: NSProgressIndicator {
-    init(activityIndicatorStyle style: NSActivityIndicatorViewStyle) {
-        super.init(frame: CGRect.zero)
-        
-        self.wantsLayer = true
-        self.style = .spinningStyle
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func startAnimating() {
-        self.startAnimation(nil)
-    }
-    
-    var color: Color {
-        get {
-            return Color.black
-        }
-        set {}
-    }
-}
-
-class NSInternalVisualEffectView: NSVisualEffectView {
-    init(effect: BlurEffect) {
-        super.init(frame: NSRect.zero)
-        
-        let material: NSVisualEffectMaterial
-        if case .dark = effect.style {
-            material = .dark
-        } else {
-            material = .light
-        }
-        
-        self.material = material
-        self.blendingMode = .withinWindow
-        self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    var contentView: NSView {
-        return self
     }
 }
