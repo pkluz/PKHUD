@@ -25,8 +25,10 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 
 ![PKHUD.gif](https://cloud.githubusercontent.com/assets/1275218/10124182/09f4c406-654f-11e5-9cab-0f2e6f470887.gif)
 
-## How To
-First you need to add the framework to your project. The recommended way is to use CocoaPods.
+## Installation
+**The recommended way is to use CocoaPods.**
+
+### CocoaPods
 
 To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
 
@@ -39,6 +41,27 @@ To install PKHUD for Swift 3.x using CocoaPods, include the following in your Po
 ```ruby
   pod 'PKHUD', '~> 4.0'
 ```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate PKHUD into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "pkluz/PKHUD" ~> 4.0
+```
+
+Run `carthage update` to build the framework and drag the built `PKHUD.framework` into your Xcode project.
+
+## How To
 
 After adding the framework to your project, you need to import the module
 ```swift
