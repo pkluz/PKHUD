@@ -46,7 +46,7 @@
         var backgroundColor: Color {
             get {
                 self.wantsLayer = true
-                return self.layer!.backgroundColor!.color!
+                return self.layer?.backgroundColor?.color ?? Color.white
             }
             set (color) {
                 self.wantsLayer = true
