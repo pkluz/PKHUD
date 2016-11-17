@@ -74,7 +74,7 @@ open class PKHUD: NSObject {
             return window.frameView.effect
         }
         set {
-            window.frameView.effect = effect
+            window.frameView.effect = newValue
         }
     }
     
