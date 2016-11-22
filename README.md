@@ -104,6 +104,14 @@ delay(2.0) {
 
 Please note that there are _multiple_ types of content views that ship with PKHUD. You can find them as separate files in the project folder as well as in the `ContentViews` group in Xcode.
 
+## Communication _(Hat Tip AlamoFire)_
+
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/pkhud). (Tag 'pkhud')
+- If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/pkhud).
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
+
 ## Customization
 
 There are two properties at your disposal to customize general behavior.
