@@ -46,12 +46,14 @@ open class PKHUD: NSObject {
     }
     
     open var dimsBackground = true
+    // If we want to allow user interaction, the root view controller's interaction has
+    // to be disabled otherwise the view controller handles all the interactions.
     open var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
-            return !window.isUserInteractionEnabled
+            return !(window.rootViewController?.view.isUserInteractionEnabled ?? true)
         }
         set {
-            window.isUserInteractionEnabled = !newValue
+            window.rootViewController?.view.isUserInteractionEnabled = !newValue
         }
     }
     
