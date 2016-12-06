@@ -7,13 +7,17 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// PKHUDCheckmarkView provides an animated success (checkmark) view.
 open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
     
     var checkmarkShapeLayer: CAShapeLayer = {
-        let checkmarkPath = UIBezierPath()
+        let checkmarkPath = BezierPath()
         checkmarkPath.move(to: CGPoint(x: 4.0, y: 27.0))
         checkmarkPath.addLine(to: CGPoint(x: 34.0, y: 56.0))
         checkmarkPath.addLine(to: CGPoint(x: 88.0, y: 0.0))
@@ -25,22 +29,22 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         layer.lineCap     = kCALineCapRound
         layer.lineJoin    = kCALineJoinRound
         layer.fillColor   = nil
-        layer.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
+        layer.strokeColor = Color(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
         layer.lineWidth   = 6.0
         return layer
     }()
     
     public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
-        layer.addSublayer(checkmarkShapeLayer)
-        checkmarkShapeLayer.position = layer.position
+        self.addSublayer(checkmarkShapeLayer)
+        checkmarkShapeLayer.position = self.center
     }
     
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layer.addSublayer(checkmarkShapeLayer)
-        checkmarkShapeLayer.position = layer.position
+        self.addSublayer(checkmarkShapeLayer)
+        checkmarkShapeLayer.position = self.center
     }
     
     open func startAnimation() {

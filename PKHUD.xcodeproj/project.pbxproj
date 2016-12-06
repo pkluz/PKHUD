@@ -9,7 +9,35 @@
 /* Begin PBXBuildFile section */
 		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
+		4F2076D01DCA1D2E006CCD41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2076CF1DCA1D2E006CCD41 /* AppDelegate.swift */; };
+		4F2076D21DCA1D2E006CCD41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2076D11DCA1D2E006CCD41 /* ViewController.swift */; };
+		4F2076D41DCA1D2E006CCD41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2076D31DCA1D2E006CCD41 /* Assets.xcassets */; };
+		4F2076D71DCA1D2E006CCD41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2076D51DCA1D2E006CCD41 /* Main.storyboard */; };
+		4F2076E81DCA2397006CCD41 /* PKHUDMACOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2076E61DCA2397006CCD41 /* PKHUDMACOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F2076EB1DCA2397006CCD41 /* PKHUDMACOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2076E41DCA2397006CCD41 /* PKHUDMACOS.framework */; };
+		4F2076EC1DCA2397006CCD41 /* PKHUDMACOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2076E41DCA2397006CCD41 /* PKHUDMACOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4F2076F11DCA23FC006CCD41 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
+		4F2076F21DCA240C006CCD41 /* PKHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = F996322219514FD8001F73CA /* PKHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F2076F31DCA2413006CCD41 /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* PKHUD.swift */; };
+		4F2076F41DCA2416006CCD41 /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* PKHUDAssets.swift */; };
+		4F2076F61DCA241E006CCD41 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
+		4F2076F71DCA2421006CCD41 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */; };
+		4F2076F81DCA2425006CCD41 /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */; };
+		4F2076F91DCA2425006CCD41 /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */; };
+		4F2076FA1DCA2425006CCD41 /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */; };
+		4F2076FB1DCA2425006CCD41 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
+		4F2076FC1DCA2425006CCD41 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
+		4F2076FD1DCA2425006CCD41 /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */; };
+		4F2076FE1DCA2425006CCD41 /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
+		4F2076FF1DCA2425006CCD41 /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
+		4F2077001DCA2429006CCD41 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; };
+		4F2077021DCA2430006CCD41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996325419514FF3001F73CA /* Images.xcassets */; };
+		4F2077041DCA2638006CCD41 /* NSBezierPath+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2077031DCA2638006CCD41 /* NSBezierPath+.swift */; };
+		4FF09D241DD1BA960010FD7E /* Shim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF09D231DD1BA960010FD7E /* Shim.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
+		DA319B041DD427CB00B60484 /* Shim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF09D231DD1BA960010FD7E /* Shim.swift */; };
+		DAE72D5B1DCAE2EF00538227 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE72D5A1DCAE2EF00538227 /* Window.swift */; };
+		DAE72D5C1DCAE52D00538227 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE72D5A1DCAE2EF00538227 /* Window.swift */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
 		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
 		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
@@ -28,13 +56,18 @@
 		F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* PKHUDAssets.swift */; };
 		F996324F19514FEF001F73CA /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* PKHUD.swift */; };
 		F996325019514FEF001F73CA /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; };
-		F996325219514FEF001F73CA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324B19514FEF001F73CA /* Window.swift */; };
-		F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324C19514FEF001F73CA /* WindowRootViewController.swift */; };
 		F996325519514FF3001F73CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996325419514FF3001F73CA /* Images.xcassets */; };
 		F996325919515052001F73CA /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996325819515052001F73CA /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4F2076E91DCA2397006CCD41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F99631F419514FAC001F73CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F2076E31DCA2397006CCD41;
+			remoteInfo = PKHUDMACOS;
+		};
 		F996323119514FD8001F73CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F99631F419514FAC001F73CA /* Project object */;
@@ -52,6 +85,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		4F2076F01DCA2397006CCD41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4F2076EC1DCA2397006CCD41 /* PKHUDMACOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F996323A19514FD8001F73CA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,7 +112,19 @@
 /* Begin PBXFileReference section */
 		12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
+		4F2076CD1DCA1D2E006CCD41 /* PKHUD macOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PKHUD macOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2076CF1DCA1D2E006CCD41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F2076D11DCA1D2E006CCD41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F2076D31DCA1D2E006CCD41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F2076D61DCA1D2E006CCD41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F2076D81DCA1D2E006CCD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2076E41DCA2397006CCD41 /* PKHUDMACOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PKHUDMACOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F2076E61DCA2397006CCD41 /* PKHUDMACOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKHUDMACOS.h; sourceTree = "<group>"; };
+		4F2076E71DCA2397006CCD41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F2077031DCA2638006CCD41 /* NSBezierPath+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+.swift"; sourceTree = "<group>"; };
+		4FF09D231DD1BA960010FD7E /* Shim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shim.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		DAE72D5A1DCAE2EF00538227 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
 		F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
@@ -89,13 +145,26 @@
 		F996324619514FEF001F73CA /* PKHUDAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAssets.swift; sourceTree = "<group>"; };
 		F996324819514FEF001F73CA /* PKHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUD.swift; sourceTree = "<group>"; };
 		F996324919514FEF001F73CA /* FrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
-		F996324B19514FEF001F73CA /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
-		F996324C19514FEF001F73CA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
 		F996325419514FF3001F73CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F996325819515052001F73CA /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4F2076CA1DCA1D2E006CCD41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2076EB1DCA2397006CCD41 /* PKHUDMACOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2076E01DCA2397006CCD41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631F919514FAC001F73CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +183,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F2076CE1DCA1D2E006CCD41 /* PKHUD macOS Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4F2076CF1DCA1D2E006CCD41 /* AppDelegate.swift */,
+				4F2076D11DCA1D2E006CCD41 /* ViewController.swift */,
+				4F2076D31DCA1D2E006CCD41 /* Assets.xcassets */,
+				4F2076D51DCA1D2E006CCD41 /* Main.storyboard */,
+				4F2076D81DCA1D2E006CCD41 /* Info.plist */,
+			);
+			name = "PKHUD macOS Demo";
+			path = macOSDemo;
+			sourceTree = "<group>";
+		};
+		4F2076E51DCA2397006CCD41 /* PKHUDMACOS */ = {
+			isa = PBXGroup;
+			children = (
+				4F2077031DCA2638006CCD41 /* NSBezierPath+.swift */,
+				4F2076E61DCA2397006CCD41 /* PKHUDMACOS.h */,
+				4F2076E71DCA2397006CCD41 /* Info.plist */,
+			);
+			path = PKHUDMACOS;
+			sourceTree = "<group>";
+		};
 		F908BEC11BB84D010015E5A8 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +217,7 @@
 		F935B15B1B2B8C03003C3734 /* Content Views */ = {
 			isa = PBXGroup;
 			children = (
+				DAE72D5A1DCAE2EF00538227 /* Window.swift */,
 				F908BEC11BB84D010015E5A8 /* Protocol */,
 				F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */,
 				F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */,
@@ -144,6 +237,8 @@
 			children = (
 				F99631FE19514FAC001F73CA /* PKHUD Demo */,
 				F996321F19514FD8001F73CA /* PKHUD */,
+				4F2076CE1DCA1D2E006CCD41 /* PKHUD macOS Demo */,
+				4F2076E51DCA2397006CCD41 /* PKHUDMACOS */,
 				F99631FD19514FAC001F73CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +248,8 @@
 			children = (
 				F99631FC19514FAC001F73CA /* PKHUD Demo.app */,
 				F996321E19514FD8001F73CA /* PKHUD.framework */,
+				4F2076CD1DCA1D2E006CCD41 /* PKHUD macOS Demo.app */,
+				4F2076E41DCA2397006CCD41 /* PKHUDMACOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,8 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				F996324919514FEF001F73CA /* FrameView.swift */,
-				F996324B19514FEF001F73CA /* Window.swift */,
-				F996324C19514FEF001F73CA /* WindowRootViewController.swift */,
+				4FF09D231DD1BA960010FD7E /* Shim.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -215,6 +311,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4F2076E11DCA2397006CCD41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2076E81DCA2397006CCD41 /* PKHUDMACOS.h in Headers */,
+				4F2076F21DCA240C006CCD41 /* PKHUD.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F996321B19514FD8001F73CA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -226,6 +331,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		4F2076CC1DCA1D2E006CCD41 /* PKHUD macOS Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2076D91DCA1D2E006CCD41 /* Build configuration list for PBXNativeTarget "PKHUD macOS Demo" */;
+			buildPhases = (
+				4F2076C91DCA1D2E006CCD41 /* Sources */,
+				4F2076CA1DCA1D2E006CCD41 /* Frameworks */,
+				4F2076CB1DCA1D2E006CCD41 /* Resources */,
+				4F2076F01DCA2397006CCD41 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F2076EA1DCA2397006CCD41 /* PBXTargetDependency */,
+			);
+			name = "PKHUD macOS Demo";
+			productName = "PKHUD macOS Demo";
+			productReference = 4F2076CD1DCA1D2E006CCD41 /* PKHUD macOS Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F2076E31DCA2397006CCD41 /* PKHUDMACOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2076ED1DCA2397006CCD41 /* Build configuration list for PBXNativeTarget "PKHUDMACOS" */;
+			buildPhases = (
+				4F2076DF1DCA2397006CCD41 /* Sources */,
+				4F2076E01DCA2397006CCD41 /* Frameworks */,
+				4F2076E11DCA2397006CCD41 /* Headers */,
+				4F2076E21DCA2397006CCD41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PKHUDMACOS;
+			productName = PKHUDMACOS;
+			productReference = 4F2076E41DCA2397006CCD41 /* PKHUDMACOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		F99631FB19514FAC001F73CA /* PKHUD Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F996321319514FAD001F73CA /* Build configuration list for PBXNativeTarget "PKHUD Demo" */;
@@ -270,10 +412,19 @@
 		F99631F419514FAC001F73CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = NSExceptional;
 				TargetAttributes = {
+					4F2076CC1DCA1D2E006CCD41 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					4F2076E31DCA2397006CCD41 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
 					F99631FB19514FAC001F73CA = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 5EHDAGHZ78;
@@ -291,6 +442,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F99631F319514FAC001F73CA;
 			productRefGroup = F99631FD19514FAC001F73CA /* Products */;
@@ -299,11 +451,30 @@
 			targets = (
 				F99631FB19514FAC001F73CA /* PKHUD Demo */,
 				F996321D19514FD8001F73CA /* PKHUD */,
+				4F2076CC1DCA1D2E006CCD41 /* PKHUD macOS Demo */,
+				4F2076E31DCA2397006CCD41 /* PKHUDMACOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F2076CB1DCA1D2E006CCD41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2076D41DCA1D2E006CCD41 /* Assets.xcassets in Resources */,
+				4F2076D71DCA1D2E006CCD41 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2076E21DCA2397006CCD41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2077021DCA2430006CCD41 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631FA19514FAC001F73CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +496,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4F2076C91DCA1D2E006CCD41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2076D21DCA1D2E006CCD41 /* ViewController.swift in Sources */,
+				4F2076D01DCA1D2E006CCD41 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2076DF1DCA2397006CCD41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F2076FC1DCA2425006CCD41 /* PKHUDErrorView.swift in Sources */,
+				4F2076FD1DCA2425006CCD41 /* PKHUDProgressView.swift in Sources */,
+				4F2077001DCA2429006CCD41 /* FrameView.swift in Sources */,
+				4F2076FE1DCA2425006CCD41 /* PKHUDAnimation.swift in Sources */,
+				4F2076F31DCA2413006CCD41 /* PKHUD.swift in Sources */,
+				4F2076FF1DCA2425006CCD41 /* PKHUDRotatingImageView.swift in Sources */,
+				4F2076F91DCA2425006CCD41 /* PKHUDTextView.swift in Sources */,
+				4F2077041DCA2638006CCD41 /* NSBezierPath+.swift in Sources */,
+				4F2076F81DCA2425006CCD41 /* PKHUDWideBaseView.swift in Sources */,
+				4F2076F61DCA241E006CCD41 /* PKHUDAnimating.swift in Sources */,
+				4F2076FB1DCA2425006CCD41 /* PKHUDSuccessView.swift in Sources */,
+				4F2076FA1DCA2425006CCD41 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
+				DAE72D5C1DCAE52D00538227 /* Window.swift in Sources */,
+				4F2076F41DCA2416006CCD41 /* PKHUDAssets.swift in Sources */,
+				4F2076F11DCA23FC006CCD41 /* HUD.swift in Sources */,
+				DA319B041DD427CB00B60484 /* Shim.swift in Sources */,
+				4F2076F71DCA2421006CCD41 /* PKHUDSquareBaseView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631F819514FAC001F73CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,24 +546,29 @@
 				640011571C5B6C080013F32B /* HUD.swift in Sources */,
 				3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */,
 				F935B1611B2B8C8E003C3734 /* PKHUDTextView.swift in Sources */,
-				F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */,
 				F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */,
 				F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */,
 				F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */,
+				4FF09D241DD1BA960010FD7E /* Shim.swift in Sources */,
 				F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */,
 				F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */,
-				F996325219514FEF001F73CA /* Window.swift in Sources */,
 				F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */,
 				F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */,
 				F996324F19514FEF001F73CA /* PKHUD.swift in Sources */,
 				F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */,
+				DAE72D5B1DCAE2EF00538227 /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4F2076EA1DCA2397006CCD41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F2076E31DCA2397006CCD41 /* PKHUDMACOS */;
+			targetProxy = 4F2076E91DCA2397006CCD41 /* PBXContainerItemProxy */;
+		};
 		F996323219514FD8001F73CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F996321D19514FD8001F73CA /* PKHUD */;
@@ -372,7 +581,126 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4F2076D51DCA1D2E006CCD41 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F2076D61DCA1D2E006CCD41 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		4F2076DA1DCA1D2E006CCD41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = macOSDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.PKHUD-macOS-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4F2076DB1DCA1D2E006CCD41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = macOSDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.PKHUD-macOS-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		4F2076EE1DCA2397006CCD41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PKHUDMACOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NSExceptional.PKHUDMACOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4F2076EF1DCA2397006CCD41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PKHUDMACOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NSExceptional.PKHUDMACOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		F996321119514FAD001F73CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -546,6 +874,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F2076D91DCA1D2E006CCD41 /* Build configuration list for PBXNativeTarget "PKHUD macOS Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2076DA1DCA1D2E006CCD41 /* Debug */,
+				4F2076DB1DCA1D2E006CCD41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2076ED1DCA2397006CCD41 /* Build configuration list for PBXNativeTarget "PKHUDMACOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2076EE1DCA2397006CCD41 /* Debug */,
+				4F2076EF1DCA2397006CCD41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F99631F719514FAC001F73CA /* Build configuration list for PBXProject "PKHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -7,7 +7,11 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// The PKHUD object controls showing and hiding of the HUD, as well as its contents and touch response behavior.
 open class PKHUD: NSObject {
@@ -16,7 +20,9 @@ open class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
     
-    fileprivate let window = Window()
+    public var viewToPresentOn: View?
+
+    fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
     
     public typealias TimerAction = (Bool) -> Void
@@ -30,15 +36,22 @@ open class PKHUD: NSObject {
     
     public override init () {
         super.init()
+        #if os(iOS) || os(watchOS)
         NotificationCenter.default.addObserver(self,
             selector: #selector(PKHUD.willEnterForeground(_:)),
             name: NSNotification.Name.UIApplicationWillEnterForeground,
             object: nil)
+        #endif
         userInteractionOnUnderlyingViewsEnabled = false
-        window.frameView.autoresizingMask = [ .flexibleLeftMargin,
-                                              .flexibleRightMargin,
-                                              .flexibleTopMargin,
-                                              .flexibleBottomMargin ]
+        container.frameView.autoresizingMask = [ .flexibleLeftMargin,
+                                                 .flexibleRightMargin,
+                                                 .flexibleTopMargin,
+                                                 .flexibleBottomMargin ]
+    }
+    
+    public convenience init(viewToPresentOn view: View?) {
+        self.init()
+        viewToPresentOn = view
     }
     
     deinit {
@@ -48,47 +61,66 @@ open class PKHUD: NSObject {
     open var dimsBackground = true
     open var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
-            return !window.isUserInteractionEnabled
+            return !container.isUserInteractionEnabled
         }
         set {
-            window.isUserInteractionEnabled = !newValue
+            container.isUserInteractionEnabled = !newValue
         }
     }
     
     open var isVisible: Bool {
-        return !window.isHidden
+        return !container.isHidden
     }
     
-    open var contentView: UIView {
+    open var contentView: View {
         get {
-            return window.frameView.content
+            return container.frameView.content
         }
         set {
-            window.frameView.content = newValue
+            container.frameView.content = newValue
             startAnimatingContentView()
         }
     }
     
+    #if os(iOS) || os(watchOS)
     open var effect: UIVisualEffect? {
         get {
-            return window.frameView.effect
+            return container.frameView.effect
         }
         set {
-            window.frameView.effect = newValue
+            container.frameView.effect = newValue
         }
     }
+    #endif
     
     open func show() {
-        window.showFrameView()
+        #if os(iOS) || os(watchOS)
+        guard let view = viewToPresentOn ?? UIApplication.shared.keyWindow ?? UIApplication.shared.windows.first else {
+            preconditionFailure("HUD has no view to present on")
+        }
+        #elseif os(OSX)
+        guard let view = viewToPresentOn ?? NSApplication.shared().orderedWindows.first?.contentView else {
+            preconditionFailure("HUD has no view to present on")
+        }
+        #endif
+        if(!view.subviews.contains(container)) {
+            view.addSubview(container)
+            container.frame.origin = CGPoint.zero
+            container.frame.size = view.frame.size
+            container.autoresizingMask = [ .flexibleHeight, .flexibleWidth ]
+        }
+
+
+        container.showFrameView()
         if dimsBackground {
-            window.showBackground(animated: true)
+            container.showBackground(animated: true)
         }
         
         startAnimatingContentView()
     }
     
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
-        window.hideFrameView(animated: anim, completion: completion)
+        container.hideFrameView(animated: anim, completion: completion)
         stopAnimatingContentView()
     }
     
@@ -131,15 +163,13 @@ open class PKHUD: NSObject {
     }
     
     internal func startAnimatingContentView() {
-        if isVisible && contentView.conforms(to: PKHUDAnimating.self) {
-            let animatingContentView = contentView as! PKHUDAnimating
+        if let animatingContentView = contentView as? PKHUDAnimating, isVisible {
             animatingContentView.startAnimation()
         }
     }
     
     internal func stopAnimatingContentView() {
-        if contentView.conforms(to: PKHUDAnimating.self) {
-            let animatingContentView = contentView as! PKHUDAnimating
+        if let animatingContentView = contentView as? PKHUDAnimating {
             animatingContentView.stopAnimation?()
         }
     }

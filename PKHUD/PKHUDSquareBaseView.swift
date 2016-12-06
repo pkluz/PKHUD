@@ -7,10 +7,16 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
+
+
 
 /// PKHUDSquareBaseView provides a square view, which you can subclass and add additional views to.
-open class PKHUDSquareBaseView: UIView {
+open class PKHUDSquareBaseView: View {
     
     static let defaultSquareBaseViewFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 156.0, height: 156.0))
 
@@ -22,7 +28,15 @@ open class PKHUDSquareBaseView: UIView {
         super.init(coder: aDecoder)
     }
     
-    public init(image: UIImage? = nil, title: String? = nil, subtitle: String? = nil) {
+    #if os(OSX)
+    override open var isFlipped:Bool {
+        get {
+            return true
+        }
+    }
+    #endif
+
+    public init(image: Img? = nil, title: String? = nil, subtitle: String? = nil) {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
         self.imageView.image = image
         titleLabel.text = title
@@ -31,37 +45,45 @@ open class PKHUDSquareBaseView: UIView {
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
+        
+        self.layoutIfNeeded()
     }
 
-    open let imageView: UIImageView = {
-        let imageView = UIImageView()
+    open let imageView: ImageView = {
+        let imageView = ImageView()
         imageView.alpha = 0.85
         imageView.clipsToBounds = true
         imageView.contentMode = .center
         return imageView
     }()
     
-    open let titleLabel: UILabel = {
-        let label = UILabel()
+    open let titleLabel: Label = {
+        let label = Label()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 17.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.85)
+        label.font = Font.boldSystemFont(ofSize: 17.0)
+        label.textColor = Color.black.withAlphaComponent(0.85)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.25
         return label
     }()
     
-    open let subtitleLabel: UILabel = {
-        let label = UILabel()
+    open let subtitleLabel: Label = {
+        let label = Label()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.7)
+        label.font = Font.systemFont(ofSize: 14.0)
+        label.textColor = Color.black.withAlphaComponent(0.7)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.25
         return label
     }()
+
+    #if os(OSX)
+    open override var allowsVibrancy: Bool {
+        return true
+    }
+    #endif
     
     open override func layoutSubviews() {
         super.layoutSubviews()

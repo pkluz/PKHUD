@@ -7,7 +7,11 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// PKHUDTextView provides a wide, three line text view, which you can use to display information.
 open class PKHUDTextView: PKHUDWideBaseView {
@@ -25,6 +29,8 @@ open class PKHUDTextView: PKHUDWideBaseView {
     func commonInit(_ text: String?) {
         titleLabel.text = text
         addSubview(titleLabel)
+        
+        layoutIfNeeded()
     }
     
     open override func layoutSubviews() {
@@ -32,13 +38,19 @@ open class PKHUDTextView: PKHUDWideBaseView {
         
         let padding: CGFloat = 10.0
         titleLabel.frame = bounds.insetBy(dx: padding, dy: padding)
+        
+        let maxHeight = titleLabel.frame.height
+        let calcHeight = min(titleLabel.size().height, maxHeight)
+        let newY = (maxHeight - calcHeight) / 2 + padding
+        titleLabel.frame.size.height = calcHeight
+        titleLabel.frame.origin.y = newY
     }
     
-    open let titleLabel: UILabel = {
-        let label = UILabel()
+    open let titleLabel: Label = {
+        let label = Label()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 17.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.85)
+        label.font = Font.labelViewFont
+        label.textColor = Color.black.withAlphaComponent(0.85)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 3
         return label

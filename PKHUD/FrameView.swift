@@ -7,13 +7,25 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
-internal class FrameView: UIVisualEffectView {
+internal class FrameView: VisualEffectView {
+    
+    #if os(OSX)
+    override internal var isFlipped:Bool {
+        get {
+            return true
+        }
+    }
+    #endif
     
     internal init() {
-        super.init(effect: UIBlurEffect(style: .light))
+        super.init(effect: BlurEffect(style: .light))
         commonInit()
     }
 
@@ -23,12 +35,13 @@ internal class FrameView: UIVisualEffectView {
     }
     
     fileprivate func commonInit() {
-        backgroundColor = UIColor(white: 0.8, alpha: 0.36)
-        layer.cornerRadius = 9.0
-        layer.masksToBounds = true
+        backgroundColor = Color(white: 0.8, alpha: 0.36)
+        self.cornerRadius = 9.0
+        self.masksToBounds = true
         
         contentView.addSubview(self.content)
         
+        #if os(iOS) || os(watchOS)
         let offset = 20.0
         
         let motionEffectsX = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
@@ -43,10 +56,11 @@ internal class FrameView: UIVisualEffectView {
         group.motionEffects = [motionEffectsX, motionEffectsY]
         
         addMotionEffect(group)
+        #endif
     }
     
-    fileprivate var _content = UIView()
-    internal var content: UIView {
+    fileprivate var _content = View()
+    internal var content: View {
         get {
             return _content
         }
@@ -55,7 +69,6 @@ internal class FrameView: UIVisualEffectView {
             _content = newValue
             _content.alpha = 0.85
             _content.clipsToBounds = true
-            _content.contentMode = .center
             frame.size = _content.bounds.size
             addSubview(_content)
         }
