@@ -15,7 +15,7 @@ internal class WindowRootViewController: UIViewController {
         if let rootViewController = UIApplication.sharedApplication().delegate?.window??.rootViewController {
             return rootViewController.supportedInterfaceOrientations()
         } else {
-            return UIInterfaceOrientationMask.Portrait
+            return .Portrait
         }
     }
     
