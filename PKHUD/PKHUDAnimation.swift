@@ -11,7 +11,7 @@ import Foundation
 import QuartzCore
 
 public final class PKHUDAnimation {
-    
+
     static let discreteRotation: CAAnimation = {
         let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         animation.values = [
@@ -50,7 +50,6 @@ public final class PKHUDAnimation {
         return animation
     }()
 
-    
     static let continuousRotation: CAAnimation = {
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
         animation.fromValue = 0

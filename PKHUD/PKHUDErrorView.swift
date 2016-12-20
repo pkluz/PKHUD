@@ -11,10 +11,10 @@ import UIKit
 
 /// PKHUDErrorView provides an animated error (cross) view.
 open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
-    
+
     var dashOneLayer = PKHUDErrorView.generateDashLayer()
     var dashTwoLayer = PKHUDErrorView.generateDashLayer()
-    
+
     class func generateDashLayer() -> CAShapeLayer {
         let dash = CAShapeLayer()
         dash.frame = CGRect(x: 0.0, y: 0.0, width: 88.0, height: 88.0)
@@ -32,7 +32,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         dash.fillMode    = kCAFillModeForwards
         return dash
     }
-    
+
     public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
         layer.addSublayer(dashOneLayer)
@@ -48,9 +48,9 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         dashOneLayer.position = layer.position
         dashTwoLayer.position = layer.position
     }
-    
+
     func rotationAnimation(_ angle: CGFloat) -> CABasicAnimation {
-        var animation : CABasicAnimation
+        var animation: CABasicAnimation
         if #available(iOS 9.0, *) {
             let springAnimation = CASpringAnimation(keyPath:"transform.rotation.z")
             springAnimation.damping = 1.5
@@ -60,21 +60,21 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         } else {
             animation = CABasicAnimation(keyPath:"transform.rotation.z")
         }
-        
+
         animation.fromValue = 0.0
         animation.toValue = angle * CGFloat(M_PI / 180.0)
         animation.duration = 1.0
         animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         return animation
     }
-    
+
     func startAnimation() {
         let dashOneAnimation = rotationAnimation(-45.0)
         let dashTwoAnimation = rotationAnimation(45.0)
-        
+
         dashOneLayer.transform = CATransform3DMakeRotation(-45 * CGFloat(M_PI/180), 0.0, 0.0, 1.0)
         dashTwoLayer.transform = CATransform3DMakeRotation(45 * CGFloat(M_PI/180), 0.0, 0.0, 1.0)
-        
+
         dashOneLayer.add(dashOneAnimation, forKey: "dashOneAnimation")
         dashTwoLayer.add(dashTwoAnimation, forKey: "dashTwoAnimation")
     }

@@ -11,25 +11,25 @@ import UIKit
 
 /// The PKHUD object controls showing and hiding of the HUD, as well as its contents and touch response behavior.
 open class PKHUD: NSObject {
-    
+
     fileprivate struct Constants {
         static let sharedHUD = PKHUD()
     }
-    
+
     public var viewToPresentOn: UIView? = nil
 
     fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
-    
+
     public typealias TimerAction = (Bool) -> Void
     fileprivate var timerActions = [String: TimerAction]()
-    
+
     // MARK: Public
-    
+
     open class var sharedHUD: PKHUD {
         return Constants.sharedHUD
     }
-    
+
     public override init () {
         super.init()
         NotificationCenter.default.addObserver(self,
@@ -42,16 +42,16 @@ open class PKHUD: NSObject {
                                                  .flexibleTopMargin,
                                                  .flexibleBottomMargin ]
     }
-    
+
     public convenience init(viewToPresentOn view: UIView) {
         self.init()
         viewToPresentOn = view
     }
-    
+
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     open var dimsBackground = true
     open var userInteractionOnUnderlyingViewsEnabled: Bool {
         get {
@@ -61,11 +61,11 @@ open class PKHUD: NSObject {
             container.isUserInteractionEnabled = !newValue
         }
     }
-    
+
     open var isVisible: Bool {
         return !container.isHidden
     }
-    
+
     open var contentView: UIView {
         get {
             return container.frameView.content
@@ -75,7 +75,7 @@ open class PKHUD: NSObject {
             startAnimatingContentView()
         }
     }
-    
+
     open var effect: UIVisualEffect? {
         get {
             return container.frameView.effect
@@ -84,10 +84,10 @@ open class PKHUD: NSObject {
             container.frameView.effect = newValue
         }
     }
-    
+
     open func show(onView view: UIView? = nil) {
-        let view:UIView = view ?? viewToPresentOn ?? UIApplication.shared.keyWindow!
-        if(!view.subviews.contains(container)) {
+        let view: UIView = view ?? viewToPresentOn ?? UIApplication.shared.keyWindow!
+        if  !view.subviews.contains(container) {
             view.addSubview(container)
             container.frame.origin = CGPoint.zero
             container.frame.size = view.frame.size
@@ -97,26 +97,26 @@ open class PKHUD: NSObject {
         if dimsBackground {
             container.showBackground(animated: true)
         }
-        
+
         startAnimatingContentView()
     }
-    
+
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
         container.hideFrameView(animated: anim, completion: completion)
         stopAnimatingContentView()
     }
-    
+
     open func hide(_ animated: Bool, completion: TimerAction? = nil) {
         hide(animated: animated, completion: completion)
     }
-    
+
     open func hide(afterDelay delay: TimeInterval, completion: TimerAction? = nil) {
         let key = UUID().uuidString
         let userInfo = ["timerActionKey": key]
         if let completion = completion {
             timerActions[key] = completion
         }
-        
+
         hideTimer?.invalidate()
         hideTimer = Timer.scheduledTimer(timeInterval: delay,
                                                            target: self,
@@ -124,32 +124,32 @@ open class PKHUD: NSObject {
                                                            userInfo: userInfo,
                                                            repeats: false)
     }
-    
+
     // MARK: Internal
-    
+
     internal func willEnterForeground(_ notification: Notification?) {
         self.startAnimatingContentView()
     }
-    
+
     internal func performDelayedHide(_ timer: Timer? = nil) {
-        let userInfo = timer?.userInfo as? Dictionary<String, AnyObject>
+        let userInfo = timer?.userInfo as? [String:AnyObject]
         let key = userInfo?["timerActionKey"] as? String
         var completion: TimerAction?
-        
+
         if let key = key, let action = timerActions[key] {
             completion = action
             timerActions[key] = nil
         }
-        
-        hide(animated: true, completion: completion);
+
+        hide(animated: true, completion: completion)
     }
-    
+
     internal func startAnimatingContentView() {
         if let animatingContentView = contentView as? PKHUDAnimating, isVisible {
             animatingContentView.startAnimation()
         }
     }
-    
+
     internal func stopAnimatingContentView() {
         if let animatingContentView = contentView as? PKHUDAnimating {
             animatingContentView.stopAnimation?()
