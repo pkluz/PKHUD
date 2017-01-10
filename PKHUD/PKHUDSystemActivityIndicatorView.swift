@@ -45,7 +45,7 @@ public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDA
         return activity
     }()
 
-    func startAnimation() {
+    public func startAnimation() {
         activityIndicatorView.startAnimating()
     }
 }
