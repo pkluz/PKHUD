@@ -12,7 +12,7 @@ import QuartzCore
 
 /// PKHUDProgressView provides an indeterminate progress view.
 open class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
-    
+
     public init(title: String? = nil, subtitle: String? = nil) {
         super.init(image: PKHUDAssets.progressActivityImage, title: title, subtitle: subtitle)
     }
@@ -20,11 +20,11 @@ open class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-        
-    func startAnimation() {
+
+    public func startAnimation() {
         imageView.layer.add(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
     }
-    
-    func stopAnimation() {
+
+    public func stopAnimation() {
     }
 }

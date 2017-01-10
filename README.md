@@ -1,4 +1,13 @@
+[![License](https://img.shields.io/cocoapods/l/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD) 
+[![Platform](https://img.shields.io/cocoapods/p/PKHUD.svg?style=flat)](http://cocoadocs.org/docsets/PKHUD/3.2.1/) 
+[![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![](https://img.shields.io/badge/Swift 3-compatible-4BC51D.svg?style=flat-square)
+
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
+
+
+
 <br />
 <br />
 <br />
@@ -16,20 +25,43 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 
 ![PKHUD.gif](https://cloud.githubusercontent.com/assets/1275218/10124182/09f4c406-654f-11e5-9cab-0f2e6f470887.gif)
 
-## How To
-First you need to add the framework to your project. The recommended way is to use CocoaPods.
+## Installation
+**The recommended way is to use CocoaPods.**
+
+### CocoaPods
 
 To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
 
 ```ruby
-pod "PKHUD"
+  pod 'PKHUD', '~> 3.0'
 ```
 
 To install PKHUD for Swift 3.x using CocoaPods, include the following in your Podfile
 
 ```ruby
-pod 'PKHUD_Swift_3'
+  pod 'PKHUD', '~> 4.0'
 ```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate PKHUD into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "pkluz/PKHUD" ~> 4.0
+```
+
+Run `carthage update` to build the framework and drag the built `PKHUD.framework` into your Xcode project.
+
+## How To
 
 After adding the framework to your project, you need to import the module
 ```swift
@@ -71,6 +103,14 @@ delay(2.0) {
 ```
 
 Please note that there are _multiple_ types of content views that ship with PKHUD. You can find them as separate files in the project folder as well as in the `ContentViews` group in Xcode.
+
+## Communication _(Hat Tip AlamoFire)_
+
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/pkhud). (Tag 'pkhud')
+- If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/pkhud).
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ## Customization
 
