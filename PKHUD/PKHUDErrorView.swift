@@ -68,7 +68,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         return animation
     }
 
-    func startAnimation() {
+    public func startAnimation() {
         let dashOneAnimation = rotationAnimation(-45.0)
         let dashTwoAnimation = rotationAnimation(45.0)
 
@@ -79,7 +79,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         dashTwoLayer.add(dashTwoAnimation, forKey: "dashTwoAnimation")
     }
 
-    func stopAnimation() {
+    public func stopAnimation() {
         dashOneLayer.removeAnimation(forKey: "dashOneAnimation")
         dashTwoLayer.removeAnimation(forKey: "dashTwoAnimation")
     }
