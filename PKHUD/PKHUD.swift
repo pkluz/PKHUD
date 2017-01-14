@@ -24,6 +24,16 @@ open class PKHUD: NSObject {
     public typealias TimerAction = (Bool) -> Void
     fileprivate var timerActions = [String: TimerAction]()
 
+    var finished = false
+
+    /// Grace period is the time (in seconds) that the invoked method may be run without
+    /// showing the HUD. If the task finishes before the grace time runs out, the HUD will
+    /// not be shown at all.
+    /// This may be used to prevent HUD display for very short tasks.
+    /// Defaults to 0 (no grace time).
+    public var graceTime: TimeInterval = 0
+    fileprivate var graceTimer: Timer?
+
     // MARK: Public
 
     open class var sharedHUD: PKHUD {
@@ -92,16 +102,29 @@ open class PKHUD: NSObject {
             container.frame.origin = CGPoint.zero
             container.frame.size = view.frame.size
             container.autoresizingMask = [ .flexibleHeight, .flexibleWidth ]
+            container.isHidden = true
         }
-        container.showFrameView()
         if dimsBackground {
             container.showBackground(animated: true)
         }
 
-        startAnimatingContentView()
+        finished = false
+
+        // If the grace time is set, postpone the HUD display
+        if graceTime > 0.0 {
+            let timer = Timer(timeInterval: graceTime, target: self, selector: #selector(PKHUD.handleGraceTimer(_:)), userInfo: nil, repeats: false)
+            RunLoop.current.add(timer, forMode: .commonModes)
+            graceTimer = timer
+        }else{
+            container.showFrameView()
+            startAnimatingContentView()
+        }
     }
 
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
+        graceTimer?.invalidate()
+        finished = true
+
         container.hideFrameView(animated: anim, completion: completion)
         stopAnimatingContentView()
     }
@@ -131,6 +154,20 @@ open class PKHUD: NSObject {
         self.startAnimatingContentView()
     }
 
+    internal func startAnimatingContentView() {
+        if let animatingContentView = contentView as? PKHUDAnimating, isVisible {
+            animatingContentView.startAnimation()
+        }
+    }
+
+    internal func stopAnimatingContentView() {
+        if let animatingContentView = contentView as? PKHUDAnimating {
+            animatingContentView.stopAnimation?()
+        }
+    }
+    
+    // MARK: Timer callbacks
+    
     internal func performDelayedHide(_ timer: Timer? = nil) {
         let userInfo = timer?.userInfo as? [String:AnyObject]
         let key = userInfo?["timerActionKey"] as? String
@@ -144,15 +181,12 @@ open class PKHUD: NSObject {
         hide(animated: true, completion: completion)
     }
 
-    internal func startAnimatingContentView() {
-        if let animatingContentView = contentView as? PKHUDAnimating, isVisible {
-            animatingContentView.startAnimation()
-        }
-    }
+    internal func handleGraceTimer(_ timer: Timer? = nil) {
+        // Show the HUD only if the task is still running
 
-    internal func stopAnimatingContentView() {
-        if let animatingContentView = contentView as? PKHUDAnimating {
-            animatingContentView.stopAnimation?()
+        if !finished {
+            container.showFrameView()
+            startAnimatingContentView()
         }
     }
 }
