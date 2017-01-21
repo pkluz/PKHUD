@@ -116,11 +116,15 @@ open class PKHUD: NSObject {
             RunLoop.current.add(timer, forMode: .commonModes)
             graceTimer = timer
         }else{
-            container.showFrameView()
-            startAnimatingContentView()
+            showContent()
         }
     }
 
+    func showContent() {
+        container.showFrameView()
+        startAnimatingContentView()
+    }
+    
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
         graceTimer?.invalidate()
         finished = true
@@ -185,8 +189,7 @@ open class PKHUD: NSObject {
         // Show the HUD only if the task is still running
 
         if !finished {
-            container.showFrameView()
-            startAnimatingContentView()
+            showContent()
         }
     }
 }
