@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
+		12CE19F41E25784D0062D873 /* PKHUDDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */; };
+		12CE19FD1E2578680062D873 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
@@ -35,6 +37,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		12CE19F61E25784D0062D873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F99631F419514FAC001F73CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F99631FB19514FAC001F73CA;
+			remoteInfo = "PKHUD Demo";
+		};
+		12CE19FB1E2578640062D873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F99631F419514FAC001F73CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F996321D19514FD8001F73CA;
+			remoteInfo = PKHUD;
+		};
 		F996323119514FD8001F73CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F99631F419514FAC001F73CA /* Project object */;
@@ -67,6 +83,9 @@
 
 /* Begin PBXFileReference section */
 		12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
+		12CE19F11E25784C0062D873 /* PKHUDDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKHUDDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKHUDDemoUITests.swift; sourceTree = "<group>"; };
+		12CE19F51E25784D0062D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
@@ -96,6 +115,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12CE19EE1E25784C0062D873 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12CE19FD1E2578680062D873 /* PKHUD.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631F919514FAC001F73CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,6 +141,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12CE19F21E25784D0062D873 /* PKHUDDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */,
+				12CE19F51E25784D0062D873 /* Info.plist */,
+			);
+			path = PKHUDDemoUITests;
+			sourceTree = "<group>";
+		};
 		F908BEC11BB84D010015E5A8 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +180,7 @@
 			children = (
 				F99631FE19514FAC001F73CA /* PKHUD Demo */,
 				F996321F19514FD8001F73CA /* PKHUD */,
+				12CE19F21E25784D0062D873 /* PKHUDDemoUITests */,
 				F99631FD19514FAC001F73CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +190,7 @@
 			children = (
 				F99631FC19514FAC001F73CA /* PKHUD Demo.app */,
 				F996321E19514FD8001F73CA /* PKHUD.framework */,
+				12CE19F11E25784C0062D873 /* PKHUDDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +264,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		12CE19F01E25784C0062D873 /* PKHUDDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12CE19FA1E25784D0062D873 /* Build configuration list for PBXNativeTarget "PKHUDDemoUITests" */;
+			buildPhases = (
+				12CE19ED1E25784C0062D873 /* Sources */,
+				12CE19EE1E25784C0062D873 /* Frameworks */,
+				12CE19EF1E25784C0062D873 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12CE19FC1E2578640062D873 /* PBXTargetDependency */,
+				12CE19F71E25784D0062D873 /* PBXTargetDependency */,
+			);
+			name = PKHUDDemoUITests;
+			productName = PKHUDDemoUITests;
+			productReference = 12CE19F11E25784C0062D873 /* PKHUDDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F99631FB19514FAC001F73CA /* PKHUD Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F996321319514FAD001F73CA /* Build configuration list for PBXNativeTarget "PKHUD Demo" */;
@@ -271,10 +328,15 @@
 		F99631F419514FAC001F73CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = NSExceptional;
 				TargetAttributes = {
+					12CE19F01E25784C0062D873 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F99631FB19514FAC001F73CA;
+					};
 					F99631FB19514FAC001F73CA = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 0800;
@@ -300,11 +362,19 @@
 			targets = (
 				F99631FB19514FAC001F73CA /* PKHUD Demo */,
 				F996321D19514FD8001F73CA /* PKHUD */,
+				12CE19F01E25784C0062D873 /* PKHUDDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12CE19EF1E25784C0062D873 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631FA19514FAC001F73CA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +413,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12CE19ED1E25784C0062D873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12CE19F41E25784D0062D873 /* PKHUDDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F99631F819514FAC001F73CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,6 +456,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		12CE19F71E25784D0062D873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F99631FB19514FAC001F73CA /* PKHUD Demo */;
+			targetProxy = 12CE19F61E25784D0062D873 /* PBXContainerItemProxy */;
+		};
+		12CE19FC1E2578640062D873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F996321D19514FD8001F73CA /* PKHUD */;
+			targetProxy = 12CE19FB1E2578640062D873 /* PBXContainerItemProxy */;
+		};
 		F996323219514FD8001F73CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F996321D19514FD8001F73CA /* PKHUD */;
@@ -391,6 +479,42 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		12CE19F81E25784D0062D873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = PKHUDDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = NSExceptional.PKHUDDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "PKHUD Demo";
+			};
+			name = Debug;
+		};
+		12CE19F91E25784D0062D873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = PKHUDDemoUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = NSExceptional.PKHUDDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "PKHUD Demo";
+			};
+			name = Release;
+		};
 		F996321119514FAD001F73CA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -564,6 +688,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12CE19FA1E25784D0062D873 /* Build configuration list for PBXNativeTarget "PKHUDDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12CE19F81E25784D0062D873 /* Debug */,
+				12CE19F91E25784D0062D873 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		F99631F719514FAC001F73CA /* Build configuration list for PBXProject "PKHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
