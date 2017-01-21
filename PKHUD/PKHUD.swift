@@ -41,6 +41,9 @@ open class PKHUD: NSObject {
                                                  .flexibleRightMargin,
                                                  .flexibleTopMargin,
                                                  .flexibleBottomMargin ]
+        
+        self.container.isAccessibilityElement = true
+        self.container.accessibilityIdentifier = "PKHUD"
     }
 
     public convenience init(viewToPresentOn view: UIView) {
