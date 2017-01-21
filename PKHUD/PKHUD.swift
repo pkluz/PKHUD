@@ -117,6 +117,7 @@ open class PKHUD: NSObject {
     }
 
     func showContent() {
+        graceTimer?.invalidate()
         container.showFrameView()
         startAnimatingContentView()
     }
