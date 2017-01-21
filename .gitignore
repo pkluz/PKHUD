@@ -35,3 +35,7 @@ ThirdParty/boost/*
 # Maya temporary
 .mayaSwatches/
 UserInterfaceState.xcuserstate
+
+fastlane/report.xml
+
+fastlane/test_output/report.html

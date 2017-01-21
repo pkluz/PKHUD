@@ -1,0 +1,22 @@
+fastlane_version "2.7.0"
+default_platform :ios
+
+platform :ios do
+    
+    before_all do |lane, options|
+        swiftlint(mode: :autocorrect)
+        scan
+    end
+    
+    lane :test do
+    end
+    
+    lane :pod do  |options|
+        desc "Release a new pod Version"          
+        pod_lib_lint        
+        increment_version_number(bump_type: options[:bump_type])     
+        version_bump_podspec(bump_type: options[:bump_type])
+        error do |lane, exception|
+        end
+    end    
+end

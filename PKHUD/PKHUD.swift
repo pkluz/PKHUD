@@ -49,7 +49,7 @@ open class PKHUD: NSObject {
                                                  .flexibleRightMargin,
                                                  .flexibleTopMargin,
                                                  .flexibleBottomMargin ]
-        
+
         self.container.isAccessibilityElement = true
         self.container.accessibilityIdentifier = "PKHUD"
     }
@@ -114,7 +114,7 @@ open class PKHUD: NSObject {
             let timer = Timer(timeInterval: graceTime, target: self, selector: #selector(PKHUD.handleGraceTimer(_:)), userInfo: nil, repeats: false)
             RunLoop.current.add(timer, forMode: .commonModes)
             graceTimer = timer
-        }else{
+        } else {
             showContent()
         }
     }
@@ -124,7 +124,7 @@ open class PKHUD: NSObject {
         container.showFrameView()
         startAnimatingContentView()
     }
-    
+
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
         graceTimer?.invalidate()
 
@@ -168,9 +168,9 @@ open class PKHUD: NSObject {
             animatingContentView.stopAnimation?()
         }
     }
-    
+
     // MARK: Timer callbacks
-    
+
     internal func performDelayedHide(_ timer: Timer? = nil) {
         let userInfo = timer?.userInfo as? [String:AnyObject]
         let key = userInfo?["timerActionKey"] as? String
