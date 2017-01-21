@@ -24,8 +24,6 @@ open class PKHUD: NSObject {
     public typealias TimerAction = (Bool) -> Void
     fileprivate var timerActions = [String: TimerAction]()
 
-    var finished = false
-
     /// Grace period is the time (in seconds) that the invoked method may be run without
     /// showing the HUD. If the task finishes before the grace time runs out, the HUD will
     /// not be shown at all.
@@ -108,8 +106,6 @@ open class PKHUD: NSObject {
             container.showBackground(animated: true)
         }
 
-        finished = false
-
         // If the grace time is set, postpone the HUD display
         if graceTime > 0.0 {
             let timer = Timer(timeInterval: graceTime, target: self, selector: #selector(PKHUD.handleGraceTimer(_:)), userInfo: nil, repeats: false)
@@ -127,7 +123,6 @@ open class PKHUD: NSObject {
     
     open func hide(animated anim: Bool = true, completion: TimerAction? = nil) {
         graceTimer?.invalidate()
-        finished = true
 
         container.hideFrameView(animated: anim, completion: completion)
         stopAnimatingContentView()
@@ -187,7 +182,7 @@ open class PKHUD: NSObject {
 
     internal func handleGraceTimer(_ timer: Timer? = nil) {
         // Show the HUD only if the task is still running
-        if !finished {
+        if (graceTimer?.isValid)! {
             showContent()
         }
     }
