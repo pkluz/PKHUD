@@ -187,7 +187,6 @@ open class PKHUD: NSObject {
 
     internal func handleGraceTimer(_ timer: Timer? = nil) {
         // Show the HUD only if the task is still running
-
         if !finished {
             showContent()
         }
