@@ -5,7 +5,7 @@ platform :ios do
     
     before_all do |lane, options|
         swiftlint(mode: :autocorrect)
-#        scan
+        scan
     end
     
     lane :test do
