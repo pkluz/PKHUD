@@ -23,13 +23,8 @@ internal class ContainerView: View {
         }
     }
     var userInteractionEnabled = false
-    override func hitTest(_ aPoint: NSPoint) -> NSView? {
-        if userInteractionEnabled {
-            return super.hitTest(aPoint)
-        }
-        return nil
-    }
     #endif
+    
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
