@@ -13,14 +13,14 @@ extension NSBezierPath {
     var cgPath: CGPath {
         
         get {
-            return self.transformToCGPath()
+            return self.transformToCGPathWithoutClosing()
         }
     }
     
-    /// Transforms the NSBezierPath into a CGPathRef
+    /// Transforms the NSBezierPath into a CGPathRef without closing it automatically (hit detection is not needed here
     ///
     /// :returns: The transformed NSBezierPath
-    private func transformToCGPath() -> CGPath {
+    private func transformToCGPathWithoutClosing() -> CGPath {
         
         // Create path
         let path = CGMutablePath()
@@ -29,29 +29,22 @@ extension NSBezierPath {
         
         if numElements > 0 {
             
-            var didClosePath = true
-            
             for index in 0..<numElements {
                 
                 let pathType = self.element(at: index, associatedPoints: points)
                 
                 switch pathType {
-                    
                 case .moveToBezierPathElement:
                     path.move(to: CGPoint(x: points[0].x,y: points[0].y))
                 case .lineToBezierPathElement:
                     path.addLine(to: CGPoint(x: points[0].x,y: points[0].y))
-                    didClosePath = false
                 case .curveToBezierPathElement:
                     path.addCurve(to: CGPoint(x: points[0].x,y: points[0].y), control1: CGPoint(x: points[1].x,y: points[1].y), control2: CGPoint(x: points[2].x,y: points[2].y))
-                    didClosePath = false
                 case .closePathBezierPathElement:
                     path.closeSubpath()
-                    didClosePath = true
                 }
             }
             
-            if !didClosePath { path.closeSubpath() }
         }
         
         points.deallocate(capacity: 3)
