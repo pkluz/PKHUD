@@ -268,6 +268,24 @@
     }
     
     public class NSInternalVisualEffectView: NSVisualEffectView {
+        
+        public override var frame: NSRect {
+            didSet {
+                // update the view mask to reflect the dimensions changes
+                self.maskImage = self.roundedCornerMaskImage(size: self.frame.size, cornerRadius: 9.0)
+            }
+        }
+        
+        func roundedCornerMaskImage(size: CGSize, cornerRadius: CGFloat) -> NSImage {
+            let maskImage = NSImage(size: size, flipped: false) { rect in
+                let bezierPath = NSBezierPath(roundedRect: rect, xRadius: cornerRadius, yRadius: cornerRadius)
+                NSColor.black.set()
+                bezierPath.fill()
+                return true
+            }
+            return maskImage
+        }
+        
         init(effect: BlurEffect) {
             super.init(frame: NSRect.zero)
             
