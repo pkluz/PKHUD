@@ -245,7 +245,7 @@
     
     public class NSActivityIndicatorView: NSProgressIndicator {
         public init(activityIndicatorStyle style: NSActivityIndicatorViewStyle) {
-            super.init(frame: CGRect.zero)
+            super.init(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             
             self.wantsLayer = true
             self.style = .spinningStyle
