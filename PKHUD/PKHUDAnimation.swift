@@ -16,18 +16,18 @@ public final class PKHUDAnimation {
         let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         animation.values = [
             NSNumber(value: 0.0 as Float),
-            NSNumber(value: 1.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 2.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 3.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 4.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 5.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 6.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 7.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 8.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 9.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 10.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 11.0 * Float(M_PI) / 6.0 as Float),
-            NSNumber(value: 2.0 * Float(M_PI) as Float)
+            NSNumber(value: 1.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 2.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 3.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 4.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 5.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 6.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 7.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 8.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 9.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 10.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 11.0 * Float(Double.pi) / 6.0 as Float),
+            NSNumber(value: 2.0 * Float(Double.pi) as Float)
         ]
         animation.keyTimes = [
             NSNumber(value: 0.0 as Float),
@@ -53,7 +53,7 @@ public final class PKHUDAnimation {
     static let continuousRotation: CAAnimation = {
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
         animation.fromValue = 0
-        animation.toValue = 2.0 * M_PI
+        animation.toValue = 2.0 * Double.pi
         animation.duration = 1.2
         animation.repeatCount = Float(INT_MAX)
         return animation
