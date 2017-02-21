@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/pkluz/PKHUD.svg?branch=master)](https://travis-ci.org/PGLongo/PGLFormatter)
 [![License](https://img.shields.io/cocoapods/l/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD) 
 [![Platform](https://img.shields.io/cocoapods/p/PKHUD.svg?style=flat)](http://cocoadocs.org/docsets/PKHUD/3.2.1/) 
 [![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD)
