@@ -71,13 +71,13 @@ import PKHUD
 
 Now, you can proceed to show an arbitrary HUD (and have it automatically disappear a second later) like this:
 ```swift
-HUD.flash(.Success, delay: 1.0)
+HUD.flash(.success, delay: 1.0)
 ```
 
 _or_ with a completion handler:
 
 ```swift
-HUD.flash(.Success, delay: 1.0) { finished in 
+HUD.flash(.success, delay: 1.0) { finished in 
     // Completion Handler
 }
 ```
@@ -94,12 +94,12 @@ PKHUD.sharedHUD.hide(afterDelay: 1.0) { success in
 
 You can also hot-swap content views - this can prove useful if you want to display a progress HUD first and transform it into a success or error HUD after an asynchronous operation has finished.
 ```swift
-HUD.show(.Progress)
+HUD.show(.progress)
         
 // Now some long running task starts...
 delay(2.0) {
     // ...and once it finishes we flash the HUD for a second.
-   HUD.flash(.Success, delay: 1.0)
+   HUD.flash(.success, delay: 1.0)
 }
 ```
 
