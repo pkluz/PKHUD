@@ -125,6 +125,13 @@ Additionally you are free to create you own custom content views. They can desce
 
 **Note**: It's neither possible to customize the general look and feel, nor do I plan to add that feature. You are free to provide any content views you wish but the blurring, corner radius and shading will remain the same.
 
+## Credits
+
+PKHUD is owned and maintained by Philip Kluz. Other mantainers are:
+
+- Piergiuseppe Longo [twitter](https://twitter.com/pglongo)
+
+
 ## License
 
 The MIT License (MIT)
