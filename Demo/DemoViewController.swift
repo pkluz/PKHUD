@@ -39,8 +39,13 @@ class DemoViewController: UIViewController {
 
     @IBAction func showCustomProgressHUD(_ sender: AnyObject) {
         HUD.flash(.rotatingImage(UIImage(named: "progress")), delay: 2.0)
+        
     }
 
+    @IBAction func showCustomAnimationTypeHUD(_ sender: Any) {
+        HUD.flash(.customTransition(image: UIImage(named: "progress"), animationType: .flip), delay: 2.0)
+    }
+    
     @IBAction func showAnimatedStatusProgressHUD(_ sender: AnyObject) {
         HUD.flash(.labeledProgress(title: "Title", subtitle: "Subtitle"), delay: 2.0)
     }

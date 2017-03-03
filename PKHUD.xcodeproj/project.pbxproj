@@ -12,6 +12,7 @@
 		12CE19FD1E2578680062D873 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
+		A242E8841E695A02004BC326 /* PKHUDCustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = A242E8831E695A02004BC326 /* PKHUDCustomTransition.swift */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
 		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
 		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
@@ -88,6 +89,7 @@
 		12CE19F51E25784D0062D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		A242E8831E695A02004BC326 /* PKHUDCustomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDCustomTransition.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
 		F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */,
 				12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */,
 				3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */,
+				A242E8831E695A02004BC326 /* PKHUDCustomTransition.swift */,
 			);
 			name = "Content Views";
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */,
 				F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */,
 				F996324F19514FEF001F73CA /* PKHUD.swift in Sources */,
+				A242E8841E695A02004BC326 /* PKHUDCustomTransition.swift in Sources */,
 				F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */,
 			);
@@ -695,6 +699,7 @@
 				12CE19F91E25784D0062D873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F99631F719514FAC001F73CA /* Build configuration list for PBXProject "PKHUD" */ = {
 			isa = XCConfigurationList;

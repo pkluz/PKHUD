@@ -11,6 +11,7 @@ import UIKit
 
 /// PKHUDSquareBaseView provides a square view, which you can subclass and add additional views to.
 open class PKHUDSquareBaseView: UIView {
+    var animationType: AnimationType = .flip
 
     static let defaultSquareBaseViewFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 156.0, height: 156.0))
 
@@ -22,12 +23,13 @@ open class PKHUDSquareBaseView: UIView {
         super.init(coder: aDecoder)
     }
 
-    public init(image: UIImage? = nil, title: String? = nil, subtitle: String? = nil) {
+    public init(image: UIImage? = nil, animationType: AnimationType = .flip, title: String? = nil, subtitle: String? = nil) {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
         self.imageView.image = image
         titleLabel.text = title
         subtitleLabel.text = subtitle
-
+        self.animationType = animationType
+        
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)

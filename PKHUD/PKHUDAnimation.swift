@@ -58,4 +58,28 @@ public final class PKHUDAnimation {
         animation.repeatCount = Float(INT_MAX)
         return animation
     }()
+    
+    static let customAnimation: CAAnimation = {
+        let playing = true
+        let flip = CABasicAnimation(keyPath: "transform")
+        var t = CATransform3DIdentity
+        var z = CATransform3DIdentity
+        t.m34 = 1/1000.0
+        t = CATransform3DRotate(t, CGFloat(M_PI) * (playing ? 0.5 : 1.5), 0, 1, 0)
+        flip.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        flip.fromValue = NSValue(caTransform3D: z)
+        flip.toValue = NSValue(caTransform3D: t)
+        flip.repeatCount = Float(INT_MAX)
+        flip.duration = 0.15
+        return flip
+    }()
+    
+    static let flipAnimation: CAAnimation = {
+        let flip = CABasicAnimation(keyPath: "transform.rotation.y")
+        flip.fromValue = 0
+        flip.toValue = Double(1) * 2 * M_PI
+        flip.duration = CFTimeInterval(1)
+        flip.repeatCount = Float(INT_MAX)
+        return flip
+    }()
 }
