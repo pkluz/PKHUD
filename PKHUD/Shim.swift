@@ -297,14 +297,11 @@
             }
             
             self.material = material
-            
+            self.blendingMode = .withinWindow
+
             if #available(macOS 10.12, *) {
-                self.blendingMode = .withinWindow
-            } else {
-                self.blendingMode = .behindWindow
+                self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
             }
-            
-            self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
         }
         
         required public init?(coder: NSCoder) {
