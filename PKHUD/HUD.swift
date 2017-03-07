@@ -27,10 +27,9 @@ public enum HUDContentType {
     case systemActivity
 }
 
-
 public enum AnimationType {
     case flip
-    case fade
+    case fadeIn
     case rotate
 }
 
