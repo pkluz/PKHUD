@@ -7,8 +7,6 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
-
 @objc public protocol PKHUDAnimating {
 
     func startAnimation()
