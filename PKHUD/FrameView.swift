@@ -10,10 +10,11 @@
 import UIKit
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
-internal class FrameView: UIVisualEffectView {
+internal class FrameView: UIView {
+    private var visualEffectView: UIVisualEffectView!
 
     internal init() {
-        super.init(effect: UIBlurEffect(style: .light))
+        super.init(frame: .zero)
         commonInit()
     }
 
@@ -23,11 +24,20 @@ internal class FrameView: UIVisualEffectView {
     }
 
     fileprivate func commonInit() {
+        let blurEffect = UIBlurEffect(style: .light)
+
+        visualEffectView = UIVisualEffectView(effect: blurEffect)
+
+        visualEffectView.frame = bounds
+        visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        addSubview(visualEffectView)
+
         backgroundColor = UIColor(white: 0.8, alpha: 0.36)
         layer.cornerRadius = 9.0
         layer.masksToBounds = true
 
-        contentView.addSubview(self.content)
+        visualEffectView.contentView.addSubview(content)
 
         let offset = 20.0
 
@@ -43,6 +53,11 @@ internal class FrameView: UIVisualEffectView {
         group.motionEffects = [motionEffectsX, motionEffectsY]
 
         addMotionEffect(group)
+    }
+
+    internal var effect: UIVisualEffect? {
+        get { return visualEffectView.effect }
+        set { visualEffectView.effect = newValue }
     }
 
     fileprivate var _content = UIView()
