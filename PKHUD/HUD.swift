@@ -40,6 +40,10 @@ public final class HUD {
     }
 
     public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
+    
+    public static var titleFont: UIFont?
+    
+    public static var subtitleFont: UIFont?
 
     // MARK: Public methods, PKHUD based
     public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
@@ -75,28 +79,54 @@ public final class HUD {
         switch content {
         case .success:
             return PKHUDSuccessView()
+            
         case .error:
             return PKHUDErrorView()
+            
         case .progress():
             return PKHUDProgressView()
+            
         case let .image(image):
             return PKHUDSquareBaseView(image: image)
+            
         case let .rotatingImage(image):
             return PKHUDRotatingImageView(image: image)
 
         case let .labeledSuccess(title, subtitle):
-            return PKHUDSuccessView(title: title, subtitle: subtitle)
+            return PKHUDSuccessView(title: title,
+                                    titleFont: titleFont,
+                                    subtitle: subtitle,
+                                    subtitleFont: subtitleFont)
+            
         case let .labeledError(title, subtitle):
-            return PKHUDErrorView(title: title, subtitle: subtitle)
+            return PKHUDErrorView(title: title,
+                                  titleFont: titleFont,
+                                  subtitle: subtitle,
+                                  subtitleFont: subtitleFont)
+            
         case let .labeledProgress(title, subtitle):
-            return PKHUDProgressView(title: title, subtitle: subtitle)
+            return PKHUDProgressView(title: title,
+                                     titleFont: titleFont,
+                                     subtitle: subtitle,
+                                     subtitleFont: subtitleFont)
+            
         case let .labeledImage(image, title, subtitle):
-            return PKHUDSquareBaseView(image: image, title: title, subtitle: subtitle)
+            return PKHUDSquareBaseView(image: image,
+                                       title: title,
+                                       titleFont: titleFont,
+                                       subtitle: subtitle,
+                                       subtitleFont: subtitleFont)
+            
         case let .labeledRotatingImage(image, title, subtitle):
-            return PKHUDRotatingImageView(image: image, title: title, subtitle: subtitle)
+            return PKHUDRotatingImageView(image: image,
+                                          title: title,
+                                          titleFont: titleFont,
+                                          subtitle: subtitle,
+                                          subtitleFont: subtitleFont)
 
         case let .label(text):
-            return PKHUDTextView(text: text)
+            return PKHUDTextView(text: text, font: titleFont)
+            
         case .systemActivity:
             return PKHUDSystemActivityIndicatorView()
         }

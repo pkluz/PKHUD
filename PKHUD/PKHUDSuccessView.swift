@@ -30,8 +30,16 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         return layer
     }()
 
-    public init(title: String? = nil, subtitle: String? = nil) {
-        super.init(title: title, subtitle: subtitle)
+    public init(title: String? = nil,
+                titleFont: UIFont? = UIFont.boldSystemFont(ofSize: 17.0),
+                subtitle: String? = nil,
+                subtitleFont: UIFont? = UIFont.boldSystemFont(ofSize: 14.0)) {
+        
+        super.init(title: title,
+                   titleFont: titleFont,
+                   subtitle: subtitle,
+                   subtitleFont: subtitleFont)
+        
         layer.addSublayer(checkmarkShapeLayer)
         checkmarkShapeLayer.position = layer.position
     }

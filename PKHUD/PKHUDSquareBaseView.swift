@@ -13,7 +13,7 @@ import UIKit
 open class PKHUDSquareBaseView: UIView {
 
     static let defaultSquareBaseViewFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 156.0, height: 156.0))
-
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -22,17 +22,25 @@ open class PKHUDSquareBaseView: UIView {
         super.init(coder: aDecoder)
     }
 
-    public init(image: UIImage? = nil, title: String? = nil, subtitle: String? = nil) {
+    public init(image: UIImage? = nil,
+                title: String? = nil,
+                titleFont: UIFont? = UIFont.boldSystemFont(ofSize: 17.0),
+                subtitle: String? = nil,
+                subtitleFont: UIFont? = UIFont.boldSystemFont(ofSize: 14.0)) {
+        
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
+        
         self.imageView.image = image
         titleLabel.text = title
+        titleLabel.font = titleFont
         subtitleLabel.text = subtitle
+        subtitleLabel.font = subtitleFont
 
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
     }
-
+    
     open let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.alpha = 0.85
@@ -44,7 +52,6 @@ open class PKHUDSquareBaseView: UIView {
     open let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 17.0)
         label.textColor = UIColor.black.withAlphaComponent(0.85)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.25
@@ -54,7 +61,6 @@ open class PKHUDSquareBaseView: UIView {
     open let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14.0)
         label.textColor = UIColor.black.withAlphaComponent(0.7)
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
