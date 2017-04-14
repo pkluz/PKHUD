@@ -6,15 +6,10 @@
 
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
 
-
-
-<br />
-<br />
-<br />
 A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8** and up.
-<br />
-<br />
+
 ## Features
+
 - Official iOS 8 blur effect via **UIVisualEffectsView**.
 - Proper **rotation support**.
 - Size / **Device agnostic**.
