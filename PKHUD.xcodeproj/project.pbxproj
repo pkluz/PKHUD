@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
+		120B1FD31EAE4DB200686A99 /* HUDConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B1FD21EAE4DB200686A99 /* HUDConfig.swift */; };
+		120B1FD51EAE4DCF00686A99 /* HUDLabelConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120B1FD41EAE4DCF00686A99 /* HUDLabelConfig.swift */; };
 		12CE19F41E25784D0062D873 /* PKHUDDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */; };
 		12CE19FD1E2578680062D873 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
@@ -83,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
+		120B1FD21EAE4DB200686A99 /* HUDConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDConfig.swift; sourceTree = "<group>"; };
+		120B1FD41EAE4DCF00686A99 /* HUDLabelConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDLabelConfig.swift; sourceTree = "<group>"; };
 		12CE19F11E25784C0062D873 /* PKHUDDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PKHUDDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKHUDDemoUITests.swift; sourceTree = "<group>"; };
 		12CE19F51E25784D0062D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120B1FD11EAE4D9F00686A99 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				120B1FD21EAE4DB200686A99 /* HUDConfig.swift */,
+				120B1FD41EAE4DCF00686A99 /* HUDLabelConfig.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		12CE19F21E25784D0062D873 /* PKHUDDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +174,7 @@
 		F935B15B1B2B8C03003C3734 /* Content Views */ = {
 			isa = PBXGroup;
 			children = (
+				120B1FD11EAE4D9F00686A99 /* Config */,
 				F908BEC11BB84D010015E5A8 /* Protocol */,
 				F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */,
 				F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */,
@@ -340,7 +354,7 @@
 					F99631FB19514FAC001F73CA = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					F996321D19514FD8001F73CA = {
 						CreatedOnToolsVersion = 6.0;
@@ -445,8 +459,10 @@
 				F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */,
 				F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */,
 				F996325219514FEF001F73CA /* Window.swift in Sources */,
+				120B1FD31EAE4DB200686A99 /* HUDConfig.swift in Sources */,
 				F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */,
 				F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */,
+				120B1FD51EAE4DCF00686A99 /* HUDLabelConfig.swift in Sources */,
 				F996324F19514FEF001F73CA /* PKHUD.swift in Sources */,
 				F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */,
 				12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */,
@@ -608,12 +624,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -622,12 +641,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -695,6 +717,7 @@
 				12CE19F91E25784D0062D873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F99631F719514FAC001F73CA /* Build configuration list for PBXProject "PKHUD" */ = {
 			isa = XCConfigurationList;

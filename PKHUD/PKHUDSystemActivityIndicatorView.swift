@@ -13,7 +13,7 @@ import UIKit
 public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDAnimating {
 
     public init() {
-        super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
+        super.init(frame: HUDConfig.squareBaseViewFrame)
         commonInit()
     }
 
