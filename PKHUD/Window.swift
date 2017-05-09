@@ -27,6 +27,7 @@ internal class ContainerView: UIView {
 
     fileprivate func commonInit() {
         backgroundColor = UIColor.clear
+        isHidden = true
 
         addSubview(backgroundView)
         addSubview(frameView)
