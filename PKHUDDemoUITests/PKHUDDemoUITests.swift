@@ -59,7 +59,7 @@ class PKHUDUITests: XCTestCase {
         self.waitForHudToDisappear()
     }
 
-    func waitForCondition(element: XCUIElement, predicate: NSPredicate, timeout: TimeInterval = 5) {
+    func waitForCondition(element: XCUIElement, predicate: NSPredicate, timeout: TimeInterval = 3          ) {
         expectation(for: predicate, evaluatedWith: element, handler:nil)
         waitForExpectations(timeout: timeout, handler: nil)
     }
