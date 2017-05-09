@@ -23,6 +23,10 @@ class PKHUDUITests: XCTestCase {
         super.tearDown()
     }
 
+    func testAAAExpectIsVisibleToBeInitiallyFalse() {
+        XCTAssert(!PKHUD.sharedHUD.isVisible)
+    }
+
     func testAnimatedSuccessHUD() {
         app.buttons["Animated Success HUD"].tap()
         self.waitForHudToAppear()
