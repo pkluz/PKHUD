@@ -24,6 +24,14 @@ class PKHUDUITests: XCTestCase {
         super.tearDown()
     }
 
+    // This test checks the initial isVisible value.
+    // To ensure it runs first (before any other test might
+    // have changed the sharedHUD state), it is prefixed
+    // with three "A"s
+    func testAAAExpectIsVisibleToBeInitiallyFalse() {
+        XCTAssert(!PKHUD.sharedHUD.isVisible)
+    }
+
     func testAnimatedSuccessHUD() {
         app.buttons["Animated Success HUD"].tap()
         self.waitForHudToAppear()
