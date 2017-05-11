@@ -17,6 +17,7 @@ class PKHUDUITests: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         XCUIApplication().launch()
+        XCTAssertFalse(PKHUD.sharedHUD.isVisible)
     }
 
     override func tearDown() {
