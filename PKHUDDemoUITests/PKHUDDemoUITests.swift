@@ -70,6 +70,6 @@ class PKHUDUITests: XCTestCase {
     }
 
     func waitForHudToAppear() {
-            self.waitForCondition(element: app.otherElements["PKHUD"], predicate: NSPredicate(format: "exists == true"), timeout: 1)
+            self.waitForCondition(element: app.otherElements["PKHUD"], predicate: NSPredicate(format: "exists == true"), timeout: 1.5)
     }
 }
