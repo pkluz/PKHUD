@@ -70,7 +70,7 @@ internal class FrameView: VisualEffectView {
             _content.alpha = 0.85
             _content.clipsToBounds = true
             frame.size = _content.bounds.size
-            addSubview(_content)
+            contentView.addSubview(_content)
         }
     }
 }
