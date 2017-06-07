@@ -57,7 +57,7 @@ internal class FrameView: UIVisualEffectView {
             _content.clipsToBounds = true
             _content.contentMode = .center
             frame.size = _content.bounds.size
-            addSubview(_content)
+            contentView.addSubview(_content)
         }
     }
 }
