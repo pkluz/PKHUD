@@ -6,14 +6,8 @@
 
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
 
-
-
-<br />
-<br />
-<br />
 A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8** and up.
-<br />
-<br />
+
 ## Features
 - Official iOS 8 blur effect via **UIVisualEffectsView**.
 - Proper **rotation support**.
@@ -40,6 +34,12 @@ To install PKHUD for Swift 3.x using CocoaPods, include the following in your Po
 
 ```ruby
   pod 'PKHUD', '~> 4.0'
+```
+
+To install PKHUD for Swift 4.x, include the following in your Podfile
+
+```ruby
+  pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
 ```
 
 ### Carthage
