@@ -135,10 +135,10 @@ internal class ContainerView: UIView {
     }
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
         keyboardIsVisible = false
-        guard let userInfo = notification.userInfo else {
-            return
-        }
         if !self.isHidden {
+            guard let userInfo = notification.userInfo else {
+                return
+            }
             if let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber,
                 let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
                 animateHUDWith(duration: duration.doubleValue,
