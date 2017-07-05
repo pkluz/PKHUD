@@ -184,6 +184,14 @@ open class PKHUD: NSObject {
         }
     }
 
+    internal func registerForKeyboardNotifications() {
+        container.registerForKeyboardNotifications()
+    }
+
+    internal func deregisterFromKeyboardNotifications() {
+        container.deregisterFromKeyboardNotifications()
+    }
+
     // MARK: Timer callbacks
 
     internal func performDelayedHide(_ timer: Timer? = nil) {
