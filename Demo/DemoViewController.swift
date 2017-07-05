@@ -61,7 +61,7 @@ class DemoViewController: UIViewController {
             print("License Obtained.")
         }
     }
-    
+
     deinit {
         HUD.deregisterFromKeyboardNotifications()
     }

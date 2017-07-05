@@ -12,12 +12,6 @@
 		12CE19FD1E2578680062D873 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
 		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
-		AC86FD941F09A70B0091A92D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FD931F09A70B0091A92D /* AppDelegate.swift */; };
-		AC86FD961F09A70B0091A92D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FD951F09A70B0091A92D /* ViewController.swift */; };
-		AC86FD9B1F09A70B0091A92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC86FD9A1F09A70B0091A92D /* Assets.xcassets */; };
-		AC86FD9E1F09A70B0091A92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC86FD9C1F09A70B0091A92D /* LaunchScreen.storyboard */; };
-		AC86FDA41F09A7580091A92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC86FDA31F09A7580091A92D /* Main.storyboard */; };
-		AC86FDA51F09A7CE0091A92D /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
 		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
 		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
@@ -94,13 +88,6 @@
 		12CE19F51E25784D0062D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		AC86FD911F09A70B0091A92D /* PKHUD Keyboard Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PKHUD Keyboard Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC86FD931F09A70B0091A92D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AC86FD951F09A70B0091A92D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AC86FD9A1F09A70B0091A92D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AC86FD9D1F09A70B0091A92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AC86FD9F1F09A70B0091A92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC86FDA31F09A7580091A92D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
 		F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
@@ -136,14 +123,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC86FD8E1F09A70B0091A92D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC86FDA51F09A7CE0091A92D /* PKHUD.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F99631F919514FAC001F73CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,19 +148,6 @@
 				12CE19F51E25784D0062D873 /* Info.plist */,
 			);
 			path = PKHUDDemoUITests;
-			sourceTree = "<group>";
-		};
-		AC86FD921F09A70B0091A92D /* PKHUD Keyboard Demo */ = {
-			isa = PBXGroup;
-			children = (
-				AC86FD931F09A70B0091A92D /* AppDelegate.swift */,
-				AC86FD951F09A70B0091A92D /* ViewController.swift */,
-				AC86FDA31F09A7580091A92D /* Main.storyboard */,
-				AC86FD9A1F09A70B0091A92D /* Assets.xcassets */,
-				AC86FD9C1F09A70B0091A92D /* LaunchScreen.storyboard */,
-				AC86FD9F1F09A70B0091A92D /* Info.plist */,
-			);
-			path = "PKHUD Keyboard Demo";
 			sourceTree = "<group>";
 		};
 		F908BEC11BB84D010015E5A8 /* Protocol */ = {
@@ -215,7 +181,6 @@
 				F99631FE19514FAC001F73CA /* PKHUD Demo */,
 				F996321F19514FD8001F73CA /* PKHUD */,
 				12CE19F21E25784D0062D873 /* PKHUDDemoUITests */,
-				AC86FD921F09A70B0091A92D /* PKHUD Keyboard Demo */,
 				F99631FD19514FAC001F73CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -226,7 +191,6 @@
 				F99631FC19514FAC001F73CA /* PKHUD Demo.app */,
 				F996321E19514FD8001F73CA /* PKHUD.framework */,
 				12CE19F11E25784C0062D873 /* PKHUDDemoUITests.xctest */,
-				AC86FD911F09A70B0091A92D /* PKHUD Keyboard Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -319,23 +283,6 @@
 			productReference = 12CE19F11E25784C0062D873 /* PKHUDDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		AC86FD901F09A70B0091A92D /* PKHUD Keyboard Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC86FDA21F09A70B0091A92D /* Build configuration list for PBXNativeTarget "PKHUD Keyboard Demo" */;
-			buildPhases = (
-				AC86FD8D1F09A70B0091A92D /* Sources */,
-				AC86FD8E1F09A70B0091A92D /* Frameworks */,
-				AC86FD8F1F09A70B0091A92D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PKHUD Keyboard Demo";
-			productName = "PKHUD Keyboard Demo";
-			productReference = AC86FD911F09A70B0091A92D /* PKHUD Keyboard Demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 		F99631FB19514FAC001F73CA /* PKHUD Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F996321319514FAD001F73CA /* Build configuration list for PBXNativeTarget "PKHUD Demo" */;
@@ -390,10 +337,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = F99631FB19514FAC001F73CA;
 					};
-					AC86FD901F09A70B0091A92D = {
-						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
-					};
 					F99631FB19514FAC001F73CA = {
 						CreatedOnToolsVersion = 6.0;
 						LastSwiftMigration = 0800;
@@ -421,7 +364,6 @@
 				F99631FB19514FAC001F73CA /* PKHUD Demo */,
 				F996321D19514FD8001F73CA /* PKHUD */,
 				12CE19F01E25784C0062D873 /* PKHUDDemoUITests */,
-				AC86FD901F09A70B0091A92D /* PKHUD Keyboard Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -431,16 +373,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC86FD8F1F09A70B0091A92D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC86FDA41F09A7580091A92D /* Main.storyboard in Resources */,
-				AC86FD9E1F09A70B0091A92D /* LaunchScreen.storyboard in Resources */,
-				AC86FD9B1F09A70B0091A92D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,15 +419,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CE19F41E25784D0062D873 /* PKHUDDemoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC86FD8D1F09A70B0091A92D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC86FD961F09A70B0091A92D /* ViewController.swift in Sources */,
-				AC86FD941F09A70B0091A92D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,17 +479,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		AC86FD9C1F09A70B0091A92D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC86FD9D1F09A70B0091A92D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		12CE19F81E25784D0062D873 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -601,44 +513,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "PKHUD Demo";
-			};
-			name = Release;
-		};
-		AC86FDA01F09A70B0091A92D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = "PKHUD Keyboard Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.PKHUD-Keyboard-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		AC86FDA11F09A70B0091A92D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				INFOPLIST_FILE = "PKHUD Keyboard Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.PKHUD-Keyboard-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -823,14 +697,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		AC86FDA21F09A70B0091A92D /* Build configuration list for PBXNativeTarget "PKHUD Keyboard Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC86FDA01F09A70B0091A92D /* Debug */,
-				AC86FDA11F09A70B0091A92D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 		F99631F719514FAC001F73CA /* Build configuration list for PBXProject "PKHUD" */ = {
 			isa = XCConfigurationList;
