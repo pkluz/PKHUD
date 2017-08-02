@@ -77,7 +77,7 @@ public final class HUD {
             return PKHUDSuccessView()
         case .error:
             return PKHUDErrorView()
-        case .progress():
+        case .progress:
             return PKHUDProgressView()
         case let .image(image):
             return PKHUDSquareBaseView(image: image)
