@@ -27,19 +27,19 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
 
 ```ruby
-  pod 'PKHUD', '~> 3.0'
+pod 'PKHUD', '~> 3.0'
 ```
 
 To install PKHUD for Swift 3.x using CocoaPods, include the following in your Podfile
 
 ```ruby
-  pod 'PKHUD', '~> 4.0'
+pod 'PKHUD', '~> 4.0'
 ```
 
 To install PKHUD for Swift 4.x, include the following in your Podfile
 
 ```ruby
-  pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
+pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
 ```
 
 ### Carthage
