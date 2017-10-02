@@ -5,7 +5,7 @@ env:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
   - PROJECT=PKHUD.xcodeproj
-  - IOS_SDK=iphonesimulator10.3
+  - IOS_SDK=iphonesimulator11.0
   - IOS_FRAMEWORK_SCHEME="PKHUD"
   - EXAMPLE_SCHEME="PKHUD Demo"
   - UITEST_SCHEME="PKHUDDemoUITests"
