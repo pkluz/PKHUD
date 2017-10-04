@@ -39,7 +39,7 @@ pod 'PKHUD', '~> 4.0'
 To install PKHUD for Swift 4.x, include the following in your Podfile
 
 ```ruby
-pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
+pod 'PKHUD', '~> 5.0'
 ```
 
 ### Carthage
