@@ -16,7 +16,7 @@ open class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
 
-    public var viewToPresentOn: UIView? = nil
+    public var viewToPresentOn: UIView?
 
     fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
