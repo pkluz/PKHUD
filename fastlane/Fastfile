@@ -1,0 +1,30 @@
+fastlane_version "2.7.0"
+default_platform :ios
+
+platform :ios do
+    
+    before_all do |lane, options|
+        ensure_git_status_clean
+        swiftlint(mode: :autocorrect)
+        repo_clean = `git status --porcelain`.empty?
+        if repo_clean
+            UI.success('Code is clean, all good! 💪')        
+        else
+            git_commit(path: ".", message: "Fix style with SwiftLint")
+            push_to_git_remote
+        end
+        scan
+    end
+    
+    lane :test do
+    end
+    
+    lane :pod do  |options|
+        desc "Release a new pod Version"          
+        pod_lib_lint        
+        increment_version_number(bump_type: options[:bump_type])     
+        version_bump_podspec(bump_type: options[:bump_type])
+        error do |lane, exception|
+        end
+    end    
+end
