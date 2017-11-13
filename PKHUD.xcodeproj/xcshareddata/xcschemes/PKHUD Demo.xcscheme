@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F996321D19514FD8001F73CA"
-               BuildableName = "PKHUD.framework"
-               BlueprintName = "PKHUD"
+               BlueprintIdentifier = "F99631FB19514FAC001F73CA"
+               BuildableName = "PKHUD Demo.app"
+               BlueprintName = "PKHUD Demo"
                ReferencedContainer = "container:PKHUD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "12CE19F01E25784C0062D873"
+               BuildableName = "PKHUDDemoUITests.xctest"
+               BlueprintName = "PKHUDDemoUITests"
+               ReferencedContainer = "container:PKHUD.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F99631FB19514FAC001F73CA"
+            BuildableName = "PKHUD Demo.app"
+            BlueprintName = "PKHUD Demo"
+            ReferencedContainer = "container:PKHUD.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -44,15 +63,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F996321D19514FD8001F73CA"
-            BuildableName = "PKHUD.framework"
-            BlueprintName = "PKHUD"
+            BlueprintIdentifier = "F99631FB19514FAC001F73CA"
+            BuildableName = "PKHUD Demo.app"
+            BlueprintName = "PKHUD Demo"
             ReferencedContainer = "container:PKHUD.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -62,15 +82,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F996321D19514FD8001F73CA"
-            BuildableName = "PKHUD.framework"
-            BlueprintName = "PKHUD"
+            BlueprintIdentifier = "F99631FB19514FAC001F73CA"
+            BuildableName = "PKHUD Demo.app"
+            BlueprintName = "PKHUD Demo"
             ReferencedContainer = "container:PKHUD.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

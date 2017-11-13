@@ -10,12 +10,12 @@
 import UIKit
 
 /// The window used to display the PKHUD within. Placed atop the applications main window.
-internal class Window: UIWindow {
-    
+internal class ContainerView: UIView {
+
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
-        super.init(frame: UIApplication.sharedApplication().delegate!.window!!.bounds)
+        super.init(frame: CGRect.zero)
         commonInit()
     }
 
@@ -24,81 +24,79 @@ internal class Window: UIWindow {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
-    private func commonInit() {
-        rootViewController = WindowRootViewController()
-        windowLevel = UIWindowLevelNormal + 500.0
-        backgroundColor = UIColor.clearColor()
-        
+
+    fileprivate func commonInit() {
+        backgroundColor = UIColor.clear
+        isHidden = true
+
         addSubview(backgroundView)
         addSubview(frameView)
     }
-    
+
     internal override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         frameView.center = center
         backgroundView.frame = bounds
     }
-    
+
     internal func showFrameView() {
         layer.removeAllAnimations()
-        makeKeyAndVisible()
         frameView.center = center
         frameView.alpha = 1.0
-        hidden = false
+        isHidden = false
     }
-    
-    private var willHide = false
-    
+
+    fileprivate var willHide = false
+
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
-        let finalize: (finished: Bool) -> (Void) = { finished in
-            self.hidden = true
-            self.resignKeyWindow()
+        let finalize: (_ finished: Bool) -> Void = { finished in
+            self.isHidden = true
+            self.removeFromSuperview()
             self.willHide = false
-            
+
             completion?(finished)
         }
-        
-        if hidden {
+
+        if isHidden {
             return
         }
-        
+
         willHide = true
-        
+
         if anim {
-            UIView.animateWithDuration(0.8, animations: {
+            UIView.animate(withDuration: 0.8, animations: {
                 self.frameView.alpha = 0.0
                 self.hideBackground(animated: false)
-            }, completion: { bool in finalize(finished: true) } )
+            }, completion: { _ in finalize(true) })
         } else {
             self.frameView.alpha = 0.0
-            finalize(finished: true)
+            finalize(true)
         }
     }
-    
-    private let backgroundView: UIView = {
+
+    fileprivate let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white:0.0, alpha:0.25)
         view.alpha = 0.0
         return view
     }()
-    
+
     internal func showBackground(animated anim: Bool) {
         if anim {
-            UIView.animateWithDuration(0.175) {
+            UIView.animate(withDuration: 0.175, animations: {
                 self.backgroundView.alpha = 1.0
-            }
+            })
         } else {
             backgroundView.alpha = 1.0
         }
     }
-    
+
     internal func hideBackground(animated anim: Bool) {
         if anim {
-            UIView.animateWithDuration(0.65) {
+            UIView.animate(withDuration: 0.65, animations: {
                 self.backgroundView.alpha = 0.0
-            }
+            })
         } else {
             backgroundView.alpha = 0.0
         }

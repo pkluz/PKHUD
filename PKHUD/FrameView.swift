@@ -11,9 +11,9 @@ import UIKit
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
 internal class FrameView: UIVisualEffectView {
-    
+
     internal init() {
-        super.init(effect: UIBlurEffect(style: .Light))
+        super.init(effect: UIBlurEffect(style: .light))
         commonInit()
     }
 
@@ -21,31 +21,31 @@ internal class FrameView: UIVisualEffectView {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
-    private func commonInit() {
+
+    fileprivate func commonInit() {
         backgroundColor = UIColor(white: 0.8, alpha: 0.36)
         layer.cornerRadius = 9.0
         layer.masksToBounds = true
-        
+
         contentView.addSubview(self.content)
-        
+
         let offset = 20.0
-        
-        let motionEffectsX = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
+
+        let motionEffectsX = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
         motionEffectsX.maximumRelativeValue = offset
         motionEffectsX.minimumRelativeValue = -offset
-        
-        let motionEffectsY = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
+
+        let motionEffectsY = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
         motionEffectsY.maximumRelativeValue = offset
         motionEffectsY.minimumRelativeValue = -offset
-        
+
         let group = UIMotionEffectGroup()
         group.motionEffects = [motionEffectsX, motionEffectsY]
-        
+
         addMotionEffect(group)
     }
-    
-    private var _content = UIView()
+
+    fileprivate var _content = UIView()
     internal var content: UIView {
         get {
             return _content
@@ -55,9 +55,9 @@ internal class FrameView: UIVisualEffectView {
             _content = newValue
             _content.alpha = 0.85
             _content.clipsToBounds = true
-            _content.contentMode = .Center
+            _content.contentMode = .center
             frame.size = _content.bounds.size
-            addSubview(_content)
+            contentView.addSubview(_content)
         }
     }
 }
