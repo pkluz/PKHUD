@@ -44,6 +44,7 @@ public final class HUD {
     // MARK: Public methods, PKHUD based
     public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
         PKHUD.sharedHUD.contentView = contentView(content)
+        PKHUD.sharedHUD.contentView.setAccessibilityProperties(for: content)
         PKHUD.sharedHUD.show(onView: view)
     }
 
@@ -99,6 +100,33 @@ public final class HUD {
             return PKHUDTextView(text: text)
         case .systemActivity:
             return PKHUDSystemActivityIndicatorView()
+        }
+    }
+}
+
+fileprivate extension UIView {
+    fileprivate func setAccessibilityProperties(for content: HUDContentType) {
+        self.accessibilityLabel = "Please wait."
+        switch content {
+        case .success:
+            self.accessibilityLabel = "Success!"
+        case .error:
+            self.accessibilityLabel = "Error!"
+        case .image(_),
+             .rotatingImage(_):
+            self.accessibilityLabel = "Image"
+        case .label(let title):
+            guard let label = title else { break }
+            self.accessibilityLabel = label
+        case .labeledSuccess(let title, let subtitle),
+             .labeledError(let title, let subtitle),
+             .labeledProgress(let title, let subtitle),
+             .labeledImage(_, let title, let subtitle),
+             .labeledRotatingImage(_, let title, let subtitle):
+            guard title != nil || subtitle != nil else { break }
+            self.accessibilityLabel = (title ?? "") + "\n" + (subtitle ?? "")
+        default:
+            self.accessibilityLabel = "Please wait."
         }
     }
 }
