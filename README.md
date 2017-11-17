@@ -96,7 +96,7 @@ You can also hot-swap content views - this can prove useful if you want to displ
 HUD.show(.progress)
         
 // Now some long running task starts...
-delay(2.0) {
+DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
     // ...and once it finishes we flash the HUD for a second.
    HUD.flash(.success, delay: 1.0)
 }
