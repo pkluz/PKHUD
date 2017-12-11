@@ -131,6 +131,9 @@ PKHUD is owned and maintained by Philip Kluz. Other mantainers are:
 
 - Piergiuseppe Longo [twitter](https://twitter.com/pglongo)
 
+## Xamarin
+
+If you are Xamarin developer you can use this [port](https://github.com/Prin53/Xamarin.iOS.PKHUD).
 
 ## License
 
