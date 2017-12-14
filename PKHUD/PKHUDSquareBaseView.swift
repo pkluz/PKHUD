@@ -21,18 +21,21 @@ open class PKHUDSquareBaseView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    var animationType: AnimationType = .flip
 
-    public init(image: UIImage? = nil, title: String? = nil, subtitle: String? = nil) {
+    public init(image: UIImage? = nil, animationType: AnimationType = .flip, title: String? = nil, subtitle: String? = nil) {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
         self.imageView.image = image
         titleLabel.text = title
         subtitleLabel.text = subtitle
-
+        self.animationType = animationType
+        
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
     }
-
+    
     open let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.alpha = 0.85

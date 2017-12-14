@@ -58,4 +58,22 @@ public final class PKHUDAnimation {
         animation.repeatCount = Float(INT_MAX)
         return animation
     }()
+    
+    static let flipAnimation: CAAnimation = {
+        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
+        animation.fromValue = 0
+        animation.toValue = Double(1) * 2 * M_PI
+        animation.duration = CFTimeInterval(1)
+        animation.repeatCount = Float(INT_MAX)
+        return animation
+    }()
+    
+    static let fadeInAnimation: CAAnimation = {
+        let animation = CABasicAnimation(keyPath: "opacity")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = CFTimeInterval(1)
+        animation.repeatCount = Float(INT_MAX)
+        return animation
+    }()
 }

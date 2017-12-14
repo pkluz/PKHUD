@@ -15,6 +15,7 @@ public enum HUDContentType {
     case progress
     case image(UIImage?)
     case rotatingImage(UIImage?)
+    case customTransition(image: UIImage?, animationType: AnimationType )
 
     case labeledSuccess(title: String?, subtitle: String?)
     case labeledError(title: String?, subtitle: String?)
@@ -24,6 +25,12 @@ public enum HUDContentType {
 
     case label(String?)
     case systemActivity
+}
+
+public enum AnimationType {
+    case flip
+    case fadeIn
+    case rotate
 }
 
 public final class HUD {
@@ -83,6 +90,8 @@ public final class HUD {
             return PKHUDSquareBaseView(image: image)
         case let .rotatingImage(image):
             return PKHUDRotatingImageView(image: image)
+        case let .customTransition(image: image, animationType: animationType):
+            return PKHUDCustomTransition(image:image, animationType: animationType)
 
         case let .labeledSuccess(title, subtitle):
             return PKHUDSuccessView(title: title, subtitle: subtitle)
