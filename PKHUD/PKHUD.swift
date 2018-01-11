@@ -16,7 +16,7 @@ open class PKHUD: NSObject {
         static let sharedHUD = PKHUD()
     }
 
-    public var viewToPresentOn: UIView? = nil
+    public var viewToPresentOn: UIView?
 
     fileprivate let container = ContainerView()
     fileprivate var hideTimer: Timer?
@@ -168,7 +168,7 @@ open class PKHUD: NSObject {
 
     // MARK: Internal
 
-    internal func willEnterForeground(_ notification: Notification?) {
+    @objc internal func willEnterForeground(_ notification: Notification?) {
         self.startAnimatingContentView()
     }
 
@@ -194,7 +194,7 @@ open class PKHUD: NSObject {
 
     // MARK: Timer callbacks
 
-    internal func performDelayedHide(_ timer: Timer? = nil) {
+    @objc internal func performDelayedHide(_ timer: Timer? = nil) {
         let userInfo = timer?.userInfo as? [String:AnyObject]
         let key = userInfo?["timerActionKey"] as? String
         var completion: TimerAction?
@@ -207,7 +207,7 @@ open class PKHUD: NSObject {
         hide(animated: true, completion: completion)
     }
 
-    internal func handleGraceTimer(_ timer: Timer? = nil) {
+    @objc internal func handleGraceTimer(_ timer: Timer? = nil) {
         // Show the HUD only if the task is still running
         if (graceTimer?.isValid)! {
             showContent()

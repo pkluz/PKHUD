@@ -27,19 +27,19 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,â€
 To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
 
 ```ruby
-  pod 'PKHUD', '~> 3.0'
+pod 'PKHUD', '~> 3.0'
 ```
 
 To install PKHUD for Swift 3.x using CocoaPods, include the following in your Podfile
 
 ```ruby
-  pod 'PKHUD', '~> 4.0'
+pod 'PKHUD', '~> 4.0'
 ```
 
 To install PKHUD for Swift 4.x, include the following in your Podfile
 
 ```ruby
-  pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
+pod 'PKHUD', '~> 5.0'
 ```
 
 ### Carthage
@@ -96,7 +96,7 @@ You can also hot-swap content views - this can prove useful if you want to displ
 HUD.show(.progress)
         
 // Now some long running task starts...
-delay(2.0) {
+DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
     // ...and once it finishes we flash the HUD for a second.
    HUD.flash(.success, delay: 1.0)
 }
@@ -131,6 +131,9 @@ PKHUD is owned and maintained by Philip Kluz. Other mantainers are:
 
 - Piergiuseppe Longo [twitter](https://twitter.com/pglongo)
 
+## Xamarin
+
+If you are Xamarin developer you can use this [port](https://github.com/Prin53/Xamarin.iOS.PKHUD).
 
 ## License
 
