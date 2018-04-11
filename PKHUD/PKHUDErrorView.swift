@@ -33,12 +33,16 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         return dash
     }
 
-    public init(title: String? = nil, subtitle: String? = nil) {
+    public init(title: String? = nil, subtitle: String? = nil, tintColor:UIColor? = nil) {
         super.init(title: title, subtitle: subtitle)
         layer.addSublayer(dashOneLayer)
         layer.addSublayer(dashTwoLayer)
         dashOneLayer.position = layer.position
         dashTwoLayer.position = layer.position
+        if let tintColor = tintColor{
+            dashOneLayer.strokeColor = tintColor.cgColor
+            dashTwoLayer.strokeColor = tintColor.cgColor
+        }
     }
 
     public required init?(coder aDecoder: NSCoder) {

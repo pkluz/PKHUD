@@ -30,9 +30,12 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         return layer
     }()
 
-    public init(title: String? = nil, subtitle: String? = nil) {
+    public init(title: String? = nil, subtitle: String? = nil, tintColor:UIColor? = nil) {
         super.init(title: title, subtitle: subtitle)
         layer.addSublayer(checkmarkShapeLayer)
+        if let tintColor = tintColor{
+            checkmarkShapeLayer.strokeColor = tintColor.cgColor
+        }
         checkmarkShapeLayer.position = layer.position
     }
 

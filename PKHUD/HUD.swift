@@ -42,8 +42,8 @@ public final class HUD {
     public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
 
     // MARK: Public methods, PKHUD based
-    public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
-        PKHUD.sharedHUD.contentView = contentView(content)
+    public static func show(_ content: HUDContentType, tintColor:UIColor? = nil, onView view: UIView? = nil) {
+        PKHUD.sharedHUD.contentView = contentView(content, tintColor: tintColor)
         PKHUD.sharedHUD.show(onView: view)
     }
 
@@ -60,23 +60,23 @@ public final class HUD {
     }
 
     // MARK: Public methods, HUD based
-    public static func flash(_ content: HUDContentType, onView view: UIView? = nil) {
-        HUD.show(content, onView: view)
+    public static func flash(_ content: HUDContentType, tintColor:UIColor? = nil, onView view: UIView? = nil) {
+        HUD.show(content, tintColor: tintColor, onView: view)
         HUD.hide(animated: true, completion: nil)
     }
 
-    public static func flash(_ content: HUDContentType, onView view: UIView? = nil, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
-        HUD.show(content, onView: view)
+    public static func flash(_ content: HUDContentType, tintColor:UIColor? = nil, onView view: UIView? = nil, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
+        HUD.show(content, tintColor: tintColor, onView: view)
         HUD.hide(afterDelay: delay, completion: completion)
     }
 
     // MARK: Private methods
-    fileprivate static func contentView(_ content: HUDContentType) -> UIView {
+    fileprivate static func contentView(_ content: HUDContentType, tintColor:UIColor? = nil) -> UIView {
         switch content {
         case .success:
-            return PKHUDSuccessView()
+            return PKHUDSuccessView(tintColor: tintColor)
         case .error:
-            return PKHUDErrorView()
+            return PKHUDErrorView(tintColor: tintColor)
         case .progress:
             return PKHUDProgressView()
         case let .image(image):
@@ -85,9 +85,9 @@ public final class HUD {
             return PKHUDRotatingImageView(image: image)
 
         case let .labeledSuccess(title, subtitle):
-            return PKHUDSuccessView(title: title, subtitle: subtitle)
+            return PKHUDSuccessView(title: title, subtitle: subtitle, tintColor: tintColor)
         case let .labeledError(title, subtitle):
-            return PKHUDErrorView(title: title, subtitle: subtitle)
+            return PKHUDErrorView(title: title, subtitle: subtitle, tintColor:tintColor)
         case let .labeledProgress(title, subtitle):
             return PKHUDProgressView(title: title, subtitle: subtitle)
         case let .labeledImage(image, title, subtitle):
