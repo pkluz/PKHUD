@@ -44,7 +44,7 @@ public final class HUD {
     // MARK: Public methods, PKHUD based
     public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
         PKHUD.sharedHUD.contentView = contentView(content)
-        PKHUD.sharedHUD.contentView.setAccessibilityProperties(for: content)
+        PKHUD.sharedHUD.contentView.accessibilityLabel = accessibilityLabel(for: content)
         PKHUD.sharedHUD.show(onView: view)
     }
 
@@ -102,31 +102,36 @@ public final class HUD {
             return PKHUDSystemActivityIndicatorView()
         }
     }
-}
 
-fileprivate extension UIView {
-    fileprivate func setAccessibilityProperties(for content: HUDContentType) {
-        self.accessibilityLabel = "Please wait."
+    fileprivate static func accessibilityLabel(for content: HUDContentType) -> String {
+        let result: String?
         switch content {
         case .success:
-            self.accessibilityLabel = "Success!"
+            result = "Success!"
         case .error:
-            self.accessibilityLabel = "Error!"
+            result = "Error!"
         case .image(_),
              .rotatingImage(_):
-            self.accessibilityLabel = "Image"
+            result = "Image"
         case .label(let title):
-            guard let label = title else { break }
-            self.accessibilityLabel = label
+            result = title
         case .labeledSuccess(let title, let subtitle),
              .labeledError(let title, let subtitle),
              .labeledProgress(let title, let subtitle),
              .labeledImage(_, let title, let subtitle),
              .labeledRotatingImage(_, let title, let subtitle):
-            guard title != nil || subtitle != nil else { break }
-            self.accessibilityLabel = (title ?? "") + "\n" + (subtitle ?? "")
+            guard let title = title else {
+                result = subtitle
+                break
+            }
+            guard let subtitle = subtitle else {
+                result = title
+                break
+            }
+            result = title + "\n" + subtitle
         default:
-            self.accessibilityLabel = "Please wait."
+            result = nil
         }
+        return result ?? "Please wait."
     }
 }
