@@ -24,55 +24,10 @@ public enum HUDContentType {
 
     case label(String?)
     case systemActivity
-}
 
-public final class HUD {
-
-    // MARK: Properties
-    public static var dimsBackground: Bool {
-        get { return PKHUD.sharedHUD.dimsBackground }
-        set { PKHUD.sharedHUD.dimsBackground = newValue }
-    }
-
-    public static var allowsInteraction: Bool {
-        get { return PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled  }
-        set { PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = newValue }
-    }
-
-    public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
-
-    // MARK: Public methods, PKHUD based
-    public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
-        PKHUD.sharedHUD.contentView = contentView(content)
-        PKHUD.sharedHUD.show(onView: view)
-    }
-
-    public static func hide(_ completion: ((Bool) -> Void)? = nil) {
-        PKHUD.sharedHUD.hide(animated: false, completion: completion)
-    }
-
-    public static func hide(animated: Bool, completion: ((Bool) -> Void)? = nil) {
-        PKHUD.sharedHUD.hide(animated: animated, completion: completion)
-    }
-
-    public static func hide(afterDelay delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
-        PKHUD.sharedHUD.hide(afterDelay: delay, completion: completion)
-    }
-
-    // MARK: Public methods, HUD based
-    public static func flash(_ content: HUDContentType, onView view: UIView? = nil) {
-        HUD.show(content, onView: view)
-        HUD.hide(animated: true, completion: nil)
-    }
-
-    public static func flash(_ content: HUDContentType, onView view: UIView? = nil, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
-        HUD.show(content, onView: view)
-        HUD.hide(afterDelay: delay, completion: completion)
-    }
-
-    // MARK: Private methods
-    fileprivate static func contentView(_ content: HUDContentType) -> UIView {
-        switch content {
+    // MARK: public methods which allow to use non-global PKHUD
+    public func makeDefaultContentView() -> UIView {
+        switch self {
         case .success:
             return PKHUDSuccessView()
         case .error:
@@ -100,5 +55,84 @@ public final class HUD {
         case .systemActivity:
             return PKHUDSystemActivityIndicatorView()
         }
+    }
+
+    public var defautlAccessibilityLabel: String {
+        let result: String?
+        switch self {
+        case .success:
+            result = "Success!"
+        case .error:
+            result = "Error!"
+        case .image(_),
+             .rotatingImage(_):
+            result = "Image"
+        case .label(let title):
+            result = title
+        case .labeledSuccess(let title, let subtitle),
+             .labeledError(let title, let subtitle),
+             .labeledProgress(let title, let subtitle),
+             .labeledImage(_, let title, let subtitle),
+             .labeledRotatingImage(_, let title, let subtitle):
+            guard let title = title else {
+                result = subtitle
+                break
+            }
+            guard let subtitle = subtitle else {
+                result = title
+                break
+            }
+            result = title + "\n" + subtitle
+        default:
+            result = nil
+        }
+        return result ?? "Please wait."
+    }
+}
+
+public final class HUD {
+
+    // MARK: Properties
+    public static var dimsBackground: Bool {
+        get { return PKHUD.sharedHUD.dimsBackground }
+        set { PKHUD.sharedHUD.dimsBackground = newValue }
+    }
+
+    public static var allowsInteraction: Bool {
+        get { return PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled  }
+        set { PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = newValue }
+    }
+
+    public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
+
+    // MARK: Public methods, PKHUD based
+    public static func show(_ content: HUDContentType, onView view: UIView? = nil) {
+        let hud = PKHUD.sharedHUD
+        hud.contentView = content.makeDefaultContentView()
+        hud.accessibilityLabel = content.defautlAccessibilityLabel
+        hud.show(onView: view)
+    }
+
+    public static func hide(_ completion: ((Bool) -> Void)? = nil) {
+        PKHUD.sharedHUD.hide(animated: false, completion: completion)
+    }
+
+    public static func hide(animated: Bool, completion: ((Bool) -> Void)? = nil) {
+        PKHUD.sharedHUD.hide(animated: animated, completion: completion)
+    }
+
+    public static func hide(afterDelay delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
+        PKHUD.sharedHUD.hide(afterDelay: delay, completion: completion)
+    }
+
+    // MARK: Public methods, HUD based
+    public static func flash(_ content: HUDContentType, onView view: UIView? = nil) {
+        HUD.show(content, onView: view)
+        HUD.hide(animated: true, completion: nil)
+    }
+
+    public static func flash(_ content: HUDContentType, onView view: UIView? = nil, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
+        HUD.show(content, onView: view)
+        HUD.hide(afterDelay: delay, completion: completion)
     }
 }

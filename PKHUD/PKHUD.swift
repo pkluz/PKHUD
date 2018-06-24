@@ -109,6 +109,18 @@ open class PKHUD: NSObject {
         }
     }
 
+    open override var accessibilityLabel: String? {
+        get {
+            return contentView.accessibilityLabel
+        }
+        set {
+            iterateAllSubviews(container) { $0.isAccessibilityElement = false }
+            contentView.isAccessibilityElement = true
+            contentView.accessibilityLabel = newValue
+            contentView.accessibilityTraits = UIAccessibilityTraitStaticText
+        }
+    }
+
     open var effect: UIVisualEffect? {
         get {
             return container.frameView.effect
@@ -139,6 +151,7 @@ open class PKHUD: NSObject {
         } else {
             showContent()
         }
+        UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, contentView)
     }
 
     func showContent() {
@@ -211,5 +224,12 @@ open class PKHUD: NSObject {
         if (graceTimer?.isValid)! {
             showContent()
         }
+    }
+
+    private func iterateAllSubviews(_ firstView: UIView, iterateBlock: (_ view: UIView) -> Void) {
+        for subview in firstView.subviews {
+            iterateAllSubviews(subview, iterateBlock: iterateBlock)
+        }
+        iterateBlock(firstView)
     }
 }
