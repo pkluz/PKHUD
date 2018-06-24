@@ -74,7 +74,7 @@ open class PKHUDSquareBaseView: UIView {
         let threeQuarterHeight = CGFloat(ceilf(CFloat(viewHeight / 4.0 * 3.0)))
 
         titleLabel.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: viewWidth, height: quarterHeight))
-        imageView.frame = CGRect(origin: CGPoint(x:0.0, y:quarterHeight), size: CGSize(width: viewWidth, height: halfHeight))
-        subtitleLabel.frame = CGRect(origin: CGPoint(x:0.0, y:threeQuarterHeight), size: CGSize(width: viewWidth, height: quarterHeight))
+        imageView.frame = CGRect(origin: CGPoint(x: 0.0, y: quarterHeight), size: CGSize(width: viewWidth, height: halfHeight))
+        subtitleLabel.frame = CGRect(origin: CGPoint(x: 0.0, y: threeQuarterHeight), size: CGSize(width: viewWidth, height: quarterHeight))
     }
 }

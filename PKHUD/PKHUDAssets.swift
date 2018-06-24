@@ -19,7 +19,7 @@ open class PKHUDAssets: NSObject {
 
     internal class func bundledImage(named name: String) -> UIImage {
         let bundle = Bundle(for: PKHUDAssets.self)
-        let image = UIImage(named: name, in:bundle, compatibleWith:nil)
+        let image = UIImage(named: name, in: bundle, compatibleWith: nil)
         if let image = image {
             return image
         }
