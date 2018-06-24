@@ -33,7 +33,7 @@ open class PKHUDSquareBaseView: UIView {
         addSubview(subtitleLabel)
     }
 
-    open let imageView: UIImageView = {
+    public let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.alpha = 0.85
         imageView.clipsToBounds = true
@@ -41,7 +41,7 @@ open class PKHUDSquareBaseView: UIView {
         return imageView
     }()
 
-    open let titleLabel: UILabel = {
+    public let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 17.0)
@@ -51,7 +51,7 @@ open class PKHUDSquareBaseView: UIView {
         return label
     }()
 
-    open let subtitleLabel: UILabel = {
+    public let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14.0)
