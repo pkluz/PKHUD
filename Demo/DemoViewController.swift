@@ -11,13 +11,24 @@ import PKHUD
 
 class DemoViewController: UIViewController {
 
+    let hiddenTextField = UITextField(frame: CGRect.zero)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.addSubview(hiddenTextField)
+        HUD.registerForKeyboardNotifications()
         HUD.dimsBackground = false
         HUD.allowsInteraction = false
     }
 
+    @IBAction func showHideKeyboard(_ sender: Any) {
+        if hiddenTextField.isEditing {
+            view.endEditing(true)
+        } else {
+            hiddenTextField.becomeFirstResponder()
+        }
+    }
     @IBAction func showAnimatedSuccessHUD(_ sender: AnyObject) {
         HUD.flash(.success, delay: 2.0)
     }
@@ -49,6 +60,10 @@ class DemoViewController: UIViewController {
         HUD.flash(.label("Requesting Licence…"), delay: 2.0) { _ in
             print("License Obtained.")
         }
+    }
+
+    deinit {
+        HUD.deregisterFromKeyboardNotifications()
     }
 
     /*

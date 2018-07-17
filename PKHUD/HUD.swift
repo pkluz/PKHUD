@@ -81,6 +81,15 @@ public final class HUD {
         HUD.hide(afterDelay: delay, completion: completion)
     }
 
+    // MARK: Keyboard Methods
+    public static func registerForKeyboardNotifications() {
+        PKHUD.sharedHUD.registerForKeyboardNotifications()
+    }
+
+    public static func deregisterFromKeyboardNotifications() {
+        PKHUD.sharedHUD.deregisterFromKeyboardNotifications()
+    }
+
     // MARK: Private methods
     fileprivate static func contentView(_ content: HUDContentType) -> UIView {
         switch content {

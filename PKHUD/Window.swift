@@ -12,6 +12,8 @@ import UIKit
 /// The window used to display the PKHUD within. Placed atop the applications main window.
 internal class ContainerView: UIView {
 
+    private var keyboardIsVisible = false
+    private var keyboardHeight: CGFloat = 0.0
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
@@ -28,7 +30,6 @@ internal class ContainerView: UIView {
     fileprivate func commonInit() {
         backgroundColor = UIColor.clear
         isHidden = true
-
         addSubview(backgroundView)
         addSubview(frameView)
     }
@@ -36,13 +37,13 @@ internal class ContainerView: UIView {
     internal override func layoutSubviews() {
         super.layoutSubviews()
 
-        frameView.center = center
+        frameView.center = calculateHudCenter()
         backgroundView.frame = bounds
     }
 
     internal func showFrameView() {
         layer.removeAllAnimations()
-        frameView.center = center
+        frameView.center = calculateHudCenter()
         frameView.alpha = 1.0
         isHidden = false
     }
@@ -99,6 +100,69 @@ internal class ContainerView: UIView {
             })
         } else {
             backgroundView.alpha = 0.0
+        }
+    }
+
+    // MARK: Notifications
+    internal func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    internal func deregisterFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    // MARK: Triggered Functions
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        keyboardIsVisible = true
+        guard let userInfo = notification.userInfo else {
+            return
+        }
+        if let keyboardHeight = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height {
+            self.keyboardHeight = keyboardHeight
+        }
+        if !self.isHidden {
+            if let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber,
+                let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
+                animateHUDWith(duration: duration.doubleValue,
+                                  curve: UIViewAnimationCurve(rawValue: curve.intValue) ?? UIViewAnimationCurve.easeInOut,
+                                toLocation: calculateHudCenter())
+            }
+        }
+    }
+
+    @objc private func keyboardWillBeHidden(notification: NSNotification) {
+        keyboardIsVisible = false
+        if !self.isHidden {
+            guard let userInfo = notification.userInfo else {
+                return
+            }
+            if let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber,
+                let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber {
+                animateHUDWith(duration: duration.doubleValue,
+                               curve: UIViewAnimationCurve(rawValue: curve.intValue) ?? UIViewAnimationCurve.easeInOut,
+                               toLocation: calculateHudCenter())
+            }
+        }
+    }
+
+    // MARK: - Helpers
+    private func animateHUDWith(duration: Double, curve: UIViewAnimationCurve, toLocation location: CGPoint) {
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(TimeInterval(duration))
+        UIView.setAnimationCurve(curve)
+        frameView.center = location
+        UIView.commitAnimations()
+    }
+
+    private func calculateHudCenter() -> CGPoint {
+        if !keyboardIsVisible {
+            return center
+        } else {
+            let yLocation = (frame.height - keyboardHeight) / 2
+            return CGPoint(x: center.x, y: yLocation)
         }
     }
 }

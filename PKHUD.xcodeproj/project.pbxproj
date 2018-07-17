@@ -328,8 +328,8 @@
 		F99631F419514FAC001F73CA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = NSExceptional;
 				TargetAttributes = {
 					12CE19F01E25784C0062D873 = {
@@ -355,6 +355,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F99631F319514FAC001F73CA;
 			productRefGroup = F99631FD19514FAC001F73CA /* Products */;
