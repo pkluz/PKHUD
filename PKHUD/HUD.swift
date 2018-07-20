@@ -19,13 +19,13 @@ public enum HUDContentType {
     case progress
     case image(Img?)
     case rotatingImage(Img?)
-    
+
     case labeledSuccess(title: String?, subtitle: String?)
     case labeledError(title: String?, subtitle: String?)
     case labeledProgress(title: String?, subtitle: String?)
     case labeledImage(image: Img?, title: String?, subtitle: String?)
     case labeledRotatingImage(image: Img?, title: String?, subtitle: String?)
-    
+
     case label(String?)
     case systemActivity
 }
@@ -70,7 +70,7 @@ public final class HUD {
         HUD.show(content, onView: view)
         HUD.hide(animated: true, completion: nil)
     }
-    
+
     public static func flash(_ content: HUDContentType, onView view: View? = nil, delay: TimeInterval, completion: ((Bool) -> Void)? = nil) {
         HUD.show(content, onView: view)
         HUD.hide(afterDelay: delay, completion: completion)
@@ -83,7 +83,7 @@ public final class HUD {
             return PKHUDSuccessView()
         case .error:
             return PKHUDErrorView()
-        case .progress():
+        case .progress:
             return PKHUDProgressView()
         case let .image(image):
             return PKHUDSquareBaseView(image: image)

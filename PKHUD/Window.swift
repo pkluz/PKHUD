@@ -15,16 +15,14 @@
 
 /// The window used to display the PKHUD within. Placed atop the applications main window.
 internal class ContainerView: View {
-    
+
     #if os(OSX)
-    override internal var isFlipped:Bool {
-        get {
-            return true
-        }
+    override internal var isFlipped: Bool {
+        return true
     }
     var userInteractionEnabled = false
     #endif
-    
+
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
@@ -40,6 +38,7 @@ internal class ContainerView: View {
 
     fileprivate func commonInit() {
         backgroundColor = Color.clear
+        isHidden = true
 
         addSubview(backgroundView)
         addSubview(frameView)
@@ -47,7 +46,7 @@ internal class ContainerView: View {
     #if os(iOS) || os(watchOS)
     internal override func layoutSubviews() {
         super.layoutSubviews()
-    
+
         frameView.center = center
         backgroundView.frame = bounds
     }
@@ -70,7 +69,7 @@ internal class ContainerView: View {
     fileprivate var willHide = false
 
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
-        let finalize: (_ finished: Bool) -> (Void) = { finished in
+        let finalize: (_ finished: Bool) -> Void = { finished in
             self.isHidden = true
             self.removeFromSuperview()
             self.willHide = false
@@ -95,17 +94,17 @@ internal class ContainerView: View {
                 context.duration = 0.8
                 self.frameView.animator().alphaValue = 0.0
                 self.hideBackground(animated: false)
-            }, completionHandler: { finalize(true) } )
+            }, completionHandler: { finalize(true) })
             #endif
         } else {
             self.frameView.alpha = 0.0
             finalize(true)
         }
     }
-    
+
     fileprivate let backgroundView: View = {
         let view = View()
-        view.backgroundColor = Color(white:0.0, alpha:0.25)
+        view.backgroundColor = Color(white: 0.0, alpha: 0.25)
         view.alpha = 0.0
         return view
     }()
@@ -132,7 +131,7 @@ internal class ContainerView: View {
             #if os(iOS) || os(watchOS)
             UIView.animate(withDuration: 0.65, animations: {
                 self.backgroundView.alpha = 0.0
-            }) 
+            })
             #elseif os(OSX)
             NSAnimationContext.runAnimationGroup({ context in
                 context.duration = 0.65
@@ -143,12 +142,12 @@ internal class ContainerView: View {
             backgroundView.alpha = 0.0
         }
     }
-    
+
     #if os(macOS)
     override func isAccessibilityElement() -> Bool {
         return true
     }
-    
+
     override func accessibilityIdentifier() -> String {
         return "PKHUD"
     }

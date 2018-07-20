@@ -34,25 +34,25 @@ public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDA
     func commonInit () {
         self.backgroundColor = Color.clear
         self.alpha = 0.8
-        
+
         self.addSubview(activityIndicatorView)
-        
+
         self.layoutIfNeeded()
     }
-    
+
     let activityIndicatorView: ActivityIndicatorView = {
         let activity = ActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activity.color = Color.black
         return activity
     }()
-    
+
     public func startAnimation() {
         activityIndicatorView.startAnimating()
     }
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         let x = (self.frame.width - activityIndicatorView.frame.width) / 2
         let y = (self.frame.height - activityIndicatorView.frame.height) / 2
 

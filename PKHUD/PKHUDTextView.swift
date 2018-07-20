@@ -29,23 +29,23 @@ open class PKHUDTextView: PKHUDWideBaseView {
     func commonInit(_ text: String?) {
         titleLabel.text = text
         addSubview(titleLabel)
-        
+
         layoutIfNeeded()
     }
 
-    open override func layoutSubviews() {
+    @objc open override func layoutSubviews() {
         super.layoutSubviews()
 
         let padding: CGFloat = 10.0
         titleLabel.frame = bounds.insetBy(dx: padding, dy: padding)
-        
+
         let maxHeight = titleLabel.frame.height
         let calcHeight = min(titleLabel.size().height, maxHeight)
         let newY = (maxHeight - calcHeight) / 2 + padding
         titleLabel.frame.size.height = calcHeight
         titleLabel.frame.origin.y = newY
     }
-    
+
     open let titleLabel: Label = {
         let label = Label()
         label.textAlignment = .center

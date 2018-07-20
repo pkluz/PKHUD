@@ -25,7 +25,7 @@ open class PKHUDProgressView: PKHUDSquareBaseView, PKHUDAnimating {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-        
+
     public func startAnimation() {
         imageView.add(PKHUDAnimation.discreteRotation, forKey: "progressAnimation")
     }

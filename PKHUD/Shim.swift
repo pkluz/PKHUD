@@ -5,6 +5,8 @@
 //  Created by Fabian Renner on 08.11.16.
 //  Copyright © 2016 NSExceptional. All rights reserved.
 //
+
+// swiftlint:disable file_length
 #if os(macOS)
     import Cocoa
 #else
@@ -37,9 +39,7 @@
 #if os(macOS)
     extension CGColor {
         var color: NSColor? {
-            get {
-                return NSColor(cgColor: self)
-            }
+            return NSColor(cgColor: self)
         }
     }
     extension NSView {
@@ -63,7 +63,7 @@
         }
         var center: CGPoint {
             get {
-                return CGPoint(x: NSMidX(self.frame), y: NSMidY(self.frame))
+                return CGPoint(x: self.frame.midX, y: self.frame.midY)
             }
             set (center) {
                 self.frame.origin = CGPoint(x: center.x - frame.size.width / 2,
@@ -74,21 +74,21 @@
             self.wantsLayer = true
             self.layer?.removeAllAnimations()
         }
-        
+
         func add(_ anim: CAAnimation, forKey: String?) {
             self.wantsLayer = true
             self.layer?.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             self.layer?.position = CGPoint(x: (self.superview?.frame.width ?? 0)/2, y: (self.superview?.frame.height ?? 0)/2)
             self.layer?.add(anim, forKey: forKey)
         }
-        
+
         var clipsToBounds: Bool {
             get {
                 return true
             }
             set {}
         }
-        
+
         var cornerRadius: CGFloat {
             get {
                 self.wantsLayer = true
@@ -99,7 +99,7 @@
                 self.layer?.cornerRadius = radius
             }
         }
-        
+
         var masksToBounds: Bool {
             get {
                 self.wantsLayer = true
@@ -110,14 +110,14 @@
                 self.layer?.masksToBounds = masks
             }
         }
-        
+
         func addSublayer(_ layer: CALayer) {
             self.wantsLayer = true
-            
+
             layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             self.layer?.addSublayer(layer)
         }
-        
+
         var position: CGPoint {
             get {
                 self.wantsLayer = true
@@ -131,44 +131,32 @@
                 self.layout()
             }
         }
-        
+
         func layoutIfNeeded() {
             self.layoutSubviews()
         }
-        
-        func layoutSubviews() {}
+
+        @objc func layoutSubviews() {}
     }
-    
-    extension NSAutoresizingMaskOptions {
-        static var flexibleLeftMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMinXMargin
-            }
+
+    extension NSView.AutoresizingMask {
+        static var flexibleLeftMargin: NSView.AutoresizingMask {
+            return .minXMargin
         }
-        static var flexibleRightMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMaxXMargin
-            }
+        static var flexibleRightMargin: NSView.AutoresizingMask {
+            return .maxXMargin
         }
-        static var flexibleTopMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMinYMargin
-            }
+        static var flexibleTopMargin: NSView.AutoresizingMask {
+            return .minYMargin
         }
-        static var flexibleBottomMargin: NSAutoresizingMaskOptions {
-            get {
-                return .viewMaxYMargin
-            }
+        static var flexibleBottomMargin: NSView.AutoresizingMask {
+            return .maxYMargin
         }
-        static var flexibleHeight: NSAutoresizingMaskOptions {
-            get {
-                return .viewHeightSizable
-            }
+        static var flexibleHeight: NSView.AutoresizingMask {
+            return .height
         }
-        static var flexibleWidth: NSAutoresizingMaskOptions {
-            get {
-                return .viewWidthSizable
-            }
+        static var flexibleWidth: NSView.AutoresizingMask {
+            return .width
         }
     }
     extension ContainerView {
@@ -177,11 +165,7 @@
             set (userInteraction) { self.userInteractionEnabled = userInteraction }
         }
     }
-    
-    
-    
-    
-    
+
     extension NSImageView {
         var contentMode: NSViewContentMode {
             get {
@@ -200,17 +184,16 @@
             }
         }
     }
-    
+
     extension NSFont {
         static var labelViewFont: NSFont {
             return NSFont.systemFont(ofSize: 17.0)
         }
     }
-    
-    
-    //MARK: - shimmed enums ported from iOS
-    
-    enum NSViewContentMode : Int {
+
+    // MARK: - shimmed enums ported from iOS
+
+    enum NSViewContentMode: Int {
         case scaleToFill
         case scaleAspectFit // contents scaled to fit with fixed aspect. remainder is transparent
         case scaleAspectFill // contents scaled to fill with fixed aspect. some portion of content may be clipped.
@@ -225,40 +208,39 @@
         case bottomLeft
         case bottomRight
     }
-    
-    public enum NSActivityIndicatorViewStyle : Int {
+
+    public enum NSActivityIndicatorViewStyle: Int {
         case whiteLarge
         case white
         case gray
     }
-    
-    public enum NSBlurEffectStyle : Int {
+
+    public enum NSBlurEffectStyle: Int {
         case extraLight
         case light
         case dark
         case regular
         case prominent
     }
-    
-    
+
     // MARK: - Ported classes to be more compatible with iOS apis
-    
+
     public class NSActivityIndicatorView: NSProgressIndicator {
         public init(activityIndicatorStyle style: NSActivityIndicatorViewStyle) {
             super.init(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-            
+
             self.wantsLayer = true
-            self.style = .spinningStyle
+            self.style = .spinning
         }
-        
+
         public required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-        
+
         func startAnimating() {
             self.startAnimation(nil)
         }
-        
+
         var color: Color {
             get {
                 return Color.black
@@ -266,16 +248,16 @@
             set {}
         }
     }
-    
+
     public class NSInternalVisualEffectView: NSVisualEffectView {
-        
+
         public override var frame: NSRect {
             didSet {
                 // update the view mask to reflect the dimensions changes
                 self.maskImage = self.roundedCornerMaskImage(size: self.frame.size, cornerRadius: 9.0)
             }
         }
-        
+
         func roundedCornerMaskImage(size: CGSize, cornerRadius: CGFloat) -> NSImage {
             let maskImage = NSImage(size: size, flipped: false) { rect in
                 let bezierPath = NSBezierPath(roundedRect: rect, xRadius: cornerRadius, yRadius: cornerRadius)
@@ -285,25 +267,25 @@
             }
             return maskImage
         }
-        
+
         init(effect: BlurEffect) {
             super.init(frame: NSRect.zero)
-            
-            let material: NSVisualEffectMaterial
+
+            let material: NSVisualEffectView.Material
             if case .dark = effect.style {
                 material = .dark
             } else {
                 material = .light
             }
-            
+
             self.material = material
             self.blendingMode = .withinWindow
 
             if #available(macOS 10.12, *) {
-                self.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+                self.appearance = NSAppearance(named: NSAppearance.Name.vibrantLight)
             }
         }
-        
+
         required public init?(coder: NSCoder) {
             super.init(coder: coder)
         }
@@ -311,28 +293,28 @@
             return self
         }
     }
-    
+
     public class NSBlurEffect {
         let style: NSBlurEffectStyle
         public init(style: NSBlurEffectStyle) {
             self.style = style
         }
     }
-    
+
     open class Label: NSTextField {
         override init(frame frameRect: NSRect) {
             super.init(frame: frameRect)
-            
+
             self.isEditable = false
             self.isBezeled = false
             self.drawsBackground = false
             self.isSelectable = false
         }
-        
+
         required public init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
-        
+
         var text: String? {
             get {
                 return self.stringValue
@@ -341,7 +323,7 @@
                 self.stringValue = newValue ?? ""
             }
         }
-        
+
         var textAlignment: NSTextAlignment {
             get {
                 return self.alignment
@@ -350,21 +332,21 @@
                 self.alignment = newValue
             }
         }
-        
+
         var adjustsFontSizeToFitWidth: Bool {
             get {
                 return false
             }
             set {}
         }
-        
+
         var minimumScaleFactor: CGFloat {
             get {
                 return 1
             }
             set {}
         }
-        
+
         var numberOfLines: Int {
             get {
                 return self.maximumNumberOfLines
@@ -373,7 +355,7 @@
                 self.maximumNumberOfLines = newValue
             }
         }
-        
+
         func size() -> CGSize {
             return self.sizeThatFits(CGSize(width: self.frame.width, height: CGFloat(Int.max)))
         }

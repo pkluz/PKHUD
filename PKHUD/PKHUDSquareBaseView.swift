@@ -13,11 +13,9 @@
     import Cocoa
 #endif
 
-
-
 /// PKHUDSquareBaseView provides a square view, which you can subclass and add additional views to.
 open class PKHUDSquareBaseView: View {
-    
+
     static let defaultSquareBaseViewFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 156.0, height: 156.0))
 
     public override init(frame: CGRect) {
@@ -27,12 +25,10 @@ open class PKHUDSquareBaseView: View {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     #if os(OSX)
-    override open var isFlipped:Bool {
-        get {
-            return true
-        }
+    override open var isFlipped: Bool {
+        return true
     }
     #endif
 
@@ -45,7 +41,7 @@ open class PKHUDSquareBaseView: View {
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
-        
+
         self.layoutIfNeeded()
     }
 
@@ -56,7 +52,7 @@ open class PKHUDSquareBaseView: View {
         imageView.contentMode = .center
         return imageView
     }()
-    
+
     open let titleLabel: Label = {
         let label = Label()
         label.textAlignment = .center
@@ -66,7 +62,7 @@ open class PKHUDSquareBaseView: View {
         label.minimumScaleFactor = 0.25
         return label
     }()
-    
+
     open let subtitleLabel: Label = {
         let label = Label()
         label.textAlignment = .center
@@ -84,8 +80,8 @@ open class PKHUDSquareBaseView: View {
         return true
     }
     #endif
-    
-    open override func layoutSubviews() {
+
+    @objc open override func layoutSubviews() {
         super.layoutSubviews()
 
         let viewWidth = bounds.size.width
@@ -96,7 +92,7 @@ open class PKHUDSquareBaseView: View {
         let threeQuarterHeight = CGFloat(ceilf(CFloat(viewHeight / 4.0 * 3.0)))
 
         titleLabel.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: viewWidth, height: quarterHeight))
-        imageView.frame = CGRect(origin: CGPoint(x:0.0, y:quarterHeight), size: CGSize(width: viewWidth, height: halfHeight))
-        subtitleLabel.frame = CGRect(origin: CGPoint(x:0.0, y:threeQuarterHeight), size: CGSize(width: viewWidth, height: quarterHeight))
+        imageView.frame = CGRect(origin: CGPoint(x: 0.0, y: quarterHeight), size: CGSize(width: viewWidth, height: halfHeight))
+        subtitleLabel.frame = CGRect(origin: CGPoint(x: 0.0, y: threeQuarterHeight), size: CGSize(width: viewWidth, height: quarterHeight))
     }
 }

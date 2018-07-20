@@ -15,12 +15,10 @@
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
 internal class FrameView: VisualEffectView {
-    
+
     #if os(OSX)
-    override internal var isFlipped:Bool {
-        get {
-            return true
-        }
+    override internal var isFlipped: Bool {
+        return true
     }
     #endif
 
@@ -38,9 +36,9 @@ internal class FrameView: VisualEffectView {
         backgroundColor = Color(white: 0.8, alpha: 0.36)
         self.cornerRadius = 9.0
         self.masksToBounds = true
-        
+
         contentView.addSubview(self.content)
-        
+
         #if os(iOS) || os(watchOS)
         let offset = 20.0
 
@@ -58,7 +56,7 @@ internal class FrameView: VisualEffectView {
         addMotionEffect(group)
         #endif
     }
-    
+
     fileprivate var _content = View()
     internal var content: View {
         get {

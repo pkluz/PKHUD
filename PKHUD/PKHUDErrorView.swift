@@ -56,19 +56,19 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
     func rotationAnimation(_ angle: CGFloat) -> CABasicAnimation {
         var animation: CABasicAnimation
         if #available(iOS 9.0, *) {
-            let springAnimation = CASpringAnimation(keyPath:"transform.rotation.z")
+            let springAnimation = CASpringAnimation(keyPath: "transform.rotation.z")
             springAnimation.damping = 1.5
             springAnimation.mass = 0.22
             springAnimation.initialVelocity = 0.5
             animation = springAnimation
         } else {
-            animation = CABasicAnimation(keyPath:"transform.rotation.z")
+            animation = CABasicAnimation(keyPath: "transform.rotation.z")
         }
 
         animation.fromValue = 0.0
-        animation.toValue = angle * CGFloat(M_PI / 180.0)
+        animation.toValue = angle * CGFloat(.pi / 180.0)
         animation.duration = 1.0
-        animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         return animation
     }
 
@@ -76,8 +76,8 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         let dashOneAnimation = rotationAnimation(-45.0)
         let dashTwoAnimation = rotationAnimation(45.0)
 
-        dashOneLayer.transform = CATransform3DMakeRotation(-45 * CGFloat(M_PI/180), 0.0, 0.0, 1.0)
-        dashTwoLayer.transform = CATransform3DMakeRotation(45 * CGFloat(M_PI/180), 0.0, 0.0, 1.0)
+        dashOneLayer.transform = CATransform3DMakeRotation(-45 * CGFloat(.pi / 180.0), 0.0, 0.0, 1.0)
+        dashTwoLayer.transform = CATransform3DMakeRotation(45 * CGFloat(.pi / 180.0), 0.0, 0.0, 1.0)
 
         dashOneLayer.add(dashOneAnimation, forKey: "dashOneAnimation")
         dashTwoLayer.add(dashTwoAnimation, forKey: "dashTwoAnimation")

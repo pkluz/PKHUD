@@ -15,7 +15,7 @@
 
 /// PKHUDWideBaseView provides a wide base view, which you can subclass and add additional views to.
 open class PKHUDWideBaseView: View {
-    
+
     static let defaultWideBaseViewFrame = CGRect(origin: CGPoint.zero, size: CGSize(width: 265.0, height: 90.0))
 
     public init() {
@@ -29,7 +29,7 @@ open class PKHUDWideBaseView: View {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     #if os(OSX)
     open override var allowsVibrancy: Bool {
         return true

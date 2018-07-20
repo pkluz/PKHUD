@@ -47,12 +47,12 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
     }
 
     open func startAnimation() {
-        let checkmarkStrokeAnimation = CAKeyframeAnimation(keyPath:"strokeEnd")
+        let checkmarkStrokeAnimation = CAKeyframeAnimation(keyPath: "strokeEnd")
         checkmarkStrokeAnimation.values = [0, 1]
         checkmarkStrokeAnimation.keyTimes = [0, 1]
         checkmarkStrokeAnimation.duration = 0.35
 
-        checkmarkShapeLayer.add(checkmarkStrokeAnimation, forKey:"checkmarkStrokeAnim")
+        checkmarkShapeLayer.add(checkmarkStrokeAnimation, forKey: "checkmarkStrokeAnim")
     }
 
     open func stopAnimation() {

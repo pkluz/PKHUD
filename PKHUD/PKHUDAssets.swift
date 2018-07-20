@@ -26,7 +26,7 @@ open class PKHUDAssets: NSObject {
         #if os(iOS) || os(watchOS)
             let image = Img(named: name, in: bundle, compatibleWith: nil)
         #elseif os(OSX)
-            let image = bundle.image(forResource: name)
+            let image = bundle.image(forResource: NSImage.Name(rawValue: name))
         #endif
         if let image = image {
             return image
