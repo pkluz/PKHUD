@@ -7,7 +7,11 @@
 //  Licensed under the MIT license.
 //
 
-import UIKit
+#if os(iOS) || os(watchOS)
+    import UIKit
+#elseif os(OSX)
+    import Cocoa
+#endif
 
 /// PKHUDErrorView provides an animated error (cross) view.
 open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
@@ -19,7 +23,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         let dash = CAShapeLayer()
         dash.frame = CGRect(x: 0.0, y: 0.0, width: 88.0, height: 88.0)
         dash.path = {
-            let path = UIBezierPath()
+            let path = BezierPath()
             path.move(to: CGPoint(x: 0.0, y: 44.0))
             path.addLine(to: CGPoint(x: 88.0, y: 44.0))
             return path.cgPath
@@ -27,7 +31,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         dash.lineCap     = kCALineCapRound
         dash.lineJoin    = kCALineJoinRound
         dash.fillColor   = nil
-        dash.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
+        dash.strokeColor = Color(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
         dash.lineWidth   = 6
         dash.fillMode    = kCAFillModeForwards
         return dash
@@ -35,36 +39,36 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
 
     public init(title: String? = nil, subtitle: String? = nil) {
         super.init(title: title, subtitle: subtitle)
-        layer.addSublayer(dashOneLayer)
-        layer.addSublayer(dashTwoLayer)
-        dashOneLayer.position = layer.position
-        dashTwoLayer.position = layer.position
+        self.addSublayer(dashOneLayer)
+        self.addSublayer(dashTwoLayer)
+        dashOneLayer.position = self.center
+        dashTwoLayer.position = self.center
     }
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layer.addSublayer(dashOneLayer)
-        layer.addSublayer(dashTwoLayer)
-        dashOneLayer.position = layer.position
-        dashTwoLayer.position = layer.position
+        self.addSublayer(dashOneLayer)
+        self.addSublayer(dashTwoLayer)
+        dashOneLayer.position = self.center
+        dashTwoLayer.position = self.center
     }
 
     func rotationAnimation(_ angle: CGFloat) -> CABasicAnimation {
         var animation: CABasicAnimation
         if #available(iOS 9.0, *) {
-            let springAnimation = CASpringAnimation(keyPath:"transform.rotation.z")
+            let springAnimation = CASpringAnimation(keyPath: "transform.rotation.z")
             springAnimation.damping = 1.5
             springAnimation.mass = 0.22
             springAnimation.initialVelocity = 0.5
             animation = springAnimation
         } else {
-            animation = CABasicAnimation(keyPath:"transform.rotation.z")
+            animation = CABasicAnimation(keyPath: "transform.rotation.z")
         }
 
         animation.fromValue = 0.0
-        animation.toValue = angle * CGFloat(Double.pi / 180.0)
+        animation.toValue = angle * CGFloat(.pi / 180.0)
         animation.duration = 1.0
-        animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         return animation
     }
 
@@ -72,8 +76,8 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         let dashOneAnimation = rotationAnimation(-45.0)
         let dashTwoAnimation = rotationAnimation(45.0)
 
-        dashOneLayer.transform = CATransform3DMakeRotation(-45 * CGFloat(Double.pi/180), 0.0, 0.0, 1.0)
-        dashTwoLayer.transform = CATransform3DMakeRotation(45 * CGFloat(Double.pi/180), 0.0, 0.0, 1.0)
+        dashOneLayer.transform = CATransform3DMakeRotation(-45 * CGFloat(.pi / 180.0), 0.0, 0.0, 1.0)
+        dashTwoLayer.transform = CATransform3DMakeRotation(45 * CGFloat(.pi / 180.0), 0.0, 0.0, 1.0)
 
         dashOneLayer.add(dashOneAnimation, forKey: "dashOneAnimation")
         dashTwoLayer.add(dashTwoAnimation, forKey: "dashTwoAnimation")
