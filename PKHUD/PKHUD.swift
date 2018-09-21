@@ -138,7 +138,11 @@ open class PKHUD: NSObject {
         // If the grace time is set, postpone the HUD display
         if gracePeriod > 0.0 {
             let timer = Timer(timeInterval: gracePeriod, target: self, selector: #selector(PKHUD.handleGraceTimer(_:)), userInfo: nil, repeats: false)
+            #if swift(>=4.2)
+            RunLoop.current.add(timer, forMode: .common)
+            #else
             RunLoop.current.add(timer, forMode: .commonModes)
+            #endif
             graceTimer = timer
         } else {
             showContent()
