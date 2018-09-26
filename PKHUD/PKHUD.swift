@@ -117,9 +117,9 @@ open class PKHUD: NSObject {
             container.frameView.effect = newValue
         }
     }
-    
+
     open var leadingMargin: CGFloat = 0
-    
+
     open var trailingMargin: CGFloat = 0
 
     open func show(onView view: UIView? = nil) {

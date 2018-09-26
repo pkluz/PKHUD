@@ -39,7 +39,7 @@ public final class HUD {
         get { return PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled  }
         set { PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = newValue }
     }
-    
+
     public static var leadingMargin: CGFloat {
         get { return PKHUD.sharedHUD.leadingMargin  }
         set { PKHUD.sharedHUD.leadingMargin = newValue }
@@ -49,7 +49,7 @@ public final class HUD {
         get { return PKHUD.sharedHUD.trailingMargin  }
         set { PKHUD.sharedHUD.trailingMargin = newValue }
     }
-    
+
     public static var isVisible: Bool { return PKHUD.sharedHUD.isVisible }
 
     // MARK: Public methods, PKHUD based
