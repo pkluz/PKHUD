@@ -18,9 +18,16 @@ open class PKHUDAssets: NSObject {
     open class var progressCircularImage: UIImage { return PKHUDAssets.bundledImage(named: "progress_circular") }
 
     internal class func bundledImage(named name: String) -> UIImage {
-        let bundle = Bundle(for: PKHUDAssets.self)
-        let image = UIImage(named: name, in: bundle, compatibleWith: nil)
-        if let image = image {
+        let primaryBundle = Bundle(for: PKHUDAssets.self)
+        if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
+            // Load image in cases where PKHUD is directly integrated
+            return image
+        } else if
+            let subBundleUrl = primaryBundle.url(forResource: "PKHUDResources", withExtension: "bundle"),
+            let subBundle = Bundle(url: subBundleUrl),
+            let image = UIImage(named: name, in: subBundle, compatibleWith: nil)
+        {
+            // Load image in cases where PKHUD is integrated via cocoapods as a dynamic or static framework with a separate resource bundle
             return image
         }
 
