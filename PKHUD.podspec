@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.source                    = { :git => 'https://github.com/pkluz/PKHUD.git', :tag => s.version.to_s }
   s.source_files              = 'PKHUD/**/*.{h,swift}'
   s.resource_bundle           = { 'PKHUDResources' => 'PKHUD/*.xcassets' }
-  s.swift_version             = '4.0'  
+  s.swift_version             = '4.2'  
 end
