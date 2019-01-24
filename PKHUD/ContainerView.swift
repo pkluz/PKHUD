@@ -28,7 +28,7 @@ internal class ContainerView: UIView {
         commonInit()
     }
 
-    fileprivate func commonInit() {
+    private func commonInit() {
         backgroundColor = UIColor.clear
         isHidden = true
 
@@ -52,7 +52,7 @@ internal class ContainerView: UIView {
         isHidden = false
     }
 
-    fileprivate var willHide = false
+    private var willHide = false
 
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
         let finalize: (_ finished: Bool) -> Void = { finished in
@@ -80,7 +80,7 @@ internal class ContainerView: UIView {
         }
     }
 
-    fileprivate let backgroundView: UIView = {
+    private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.0, alpha: 0.25)
         view.alpha = 0.0
