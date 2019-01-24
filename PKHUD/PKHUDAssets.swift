@@ -17,7 +17,7 @@ open class PKHUDAssets: NSObject {
     open class var progressActivityImage: UIImage { return PKHUDAssets.bundledImage(named: "progress_activity") }
     open class var progressCircularImage: UIImage { return PKHUDAssets.bundledImage(named: "progress_circular") }
 
-    internal class func bundledImage(named name: String) -> UIImage {
+    private class func bundledImage(named name: String) -> UIImage {
         let primaryBundle = Bundle(for: PKHUDAssets.self)
         if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
             // Load image in cases where PKHUD is directly integrated

@@ -12,8 +12,8 @@ import UIKit
 /// PKHUDErrorView provides an animated error (cross) view.
 open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
 
-    var dashOneLayer = PKHUDErrorView.generateDashLayer()
-    var dashTwoLayer = PKHUDErrorView.generateDashLayer()
+    private var dashOneLayer = PKHUDErrorView.generateDashLayer()
+    private var dashTwoLayer = PKHUDErrorView.generateDashLayer()
 
     class func generateDashLayer() -> CAShapeLayer {
         let dash = CAShapeLayer()
@@ -57,7 +57,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         dashTwoLayer.position = layer.position
     }
 
-    func rotationAnimation(_ angle: CGFloat) -> CABasicAnimation {
+    private func rotationAnimation(_ angle: CGFloat) -> CABasicAnimation {
         var animation: CABasicAnimation
         if #available(iOS 9.0, *) {
             let springAnimation = CASpringAnimation(keyPath: "transform.rotation.z")

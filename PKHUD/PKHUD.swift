@@ -12,17 +12,17 @@ import UIKit
 /// The PKHUD object controls showing and hiding of the HUD, as well as its contents and touch response behavior.
 open class PKHUD: NSObject {
 
-    fileprivate struct Constants {
+    private struct Constants {
         static let sharedHUD = PKHUD()
     }
 
     public var viewToPresentOn: UIView?
 
-    fileprivate let container = ContainerView()
-    fileprivate var hideTimer: Timer?
+    private let container = ContainerView()
+    private var hideTimer: Timer?
 
     public typealias TimerAction = (Bool) -> Void
-    fileprivate var timerActions = [String: TimerAction]()
+    private var timerActions = [String: TimerAction]()
 
     /// Grace period is the time (in seconds) that the invoked method may be run without
     /// showing the HUD. If the task finishes before the grace time runs out, the HUD will
@@ -45,7 +45,7 @@ open class PKHUD: NSObject {
     /// This may be used to prevent HUD display for very short tasks.
     /// Defaults to 0 (no grace time).
     public var gracePeriod: TimeInterval = 0
-    fileprivate var graceTimer: Timer?
+    private var graceTimer: Timer?
 
     // MARK: Public
 
@@ -149,7 +149,7 @@ open class PKHUD: NSObject {
         }
     }
 
-    func showContent() {
+    private func showContent() {
         graceTimer?.invalidate()
         container.showFrameView()
         startAnimatingContentView()
@@ -187,13 +187,13 @@ open class PKHUD: NSObject {
         self.startAnimatingContentView()
     }
 
-    internal func startAnimatingContentView() {
+    private func startAnimatingContentView() {
         if let animatingContentView = contentView as? PKHUDAnimating, isVisible {
             animatingContentView.startAnimation()
         }
     }
 
-    internal func stopAnimatingContentView() {
+    private func stopAnimatingContentView() {
         if let animatingContentView = contentView as? PKHUDAnimating {
             animatingContentView.stopAnimation?()
         }

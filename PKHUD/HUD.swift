@@ -91,7 +91,7 @@ public final class HUD {
     }
 
     // MARK: Private methods
-    fileprivate static func contentView(_ content: HUDContentType) -> UIView {
+    private static func contentView(_ content: HUDContentType) -> UIView {
         switch content {
         case .success:
             return PKHUDSuccessView()
