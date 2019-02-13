@@ -45,7 +45,7 @@ public final class PKHUDAnimation {
             NSNumber(value: 1.0)
         ]
         animation.duration = 1.2
-        animation.calculationMode = "discrete"
+        animation.calculationMode = convertToCAAnimationCalculationMode("discrete")
         animation.repeatCount = Float(INT_MAX)
         return animation
     }()
@@ -58,4 +58,9 @@ public final class PKHUDAnimation {
         animation.repeatCount = Float(INT_MAX)
         return animation
     }()
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCAAnimationCalculationMode(_ input: String) -> CAAnimationCalculationMode {
+	return CAAnimationCalculationMode(rawValue: input)
 }

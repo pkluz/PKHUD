@@ -21,9 +21,9 @@ open class PKHUDSuccessView: PKHUDSquareBaseView, PKHUDAnimating {
         let layer = CAShapeLayer()
         layer.frame = CGRect(x: 3.0, y: 3.0, width: 88.0, height: 56.0)
         layer.path = checkmarkPath.cgPath
-        layer.fillMode = kCAFillModeForwards
-        layer.lineCap     = kCALineCapRound
-        layer.lineJoin    = kCALineJoinRound
+        layer.fillMode = CAMediaTimingFillMode.forwards
+        layer.lineCap     = CAShapeLayerLineCap.round
+        layer.lineJoin    = CAShapeLayerLineJoin.round
         layer.fillColor   = nil
         layer.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
         layer.lineWidth   = 6.0

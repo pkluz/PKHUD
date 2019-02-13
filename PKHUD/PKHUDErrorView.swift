@@ -24,12 +24,12 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
             path.addLine(to: CGPoint(x: 88.0, y: 44.0))
             return path.cgPath
         }()
-        dash.lineCap     = kCALineCapRound
-        dash.lineJoin    = kCALineJoinRound
+        dash.lineCap     = CAShapeLayerLineCap.round
+        dash.lineJoin    = CAShapeLayerLineJoin.round
         dash.fillColor   = nil
         dash.strokeColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.0).cgColor
         dash.lineWidth   = 6
-        dash.fillMode    = kCAFillModeForwards
+        dash.fillMode    = CAMediaTimingFillMode.forwards
         return dash
     }
 
@@ -64,7 +64,7 @@ open class PKHUDErrorView: PKHUDSquareBaseView, PKHUDAnimating {
         animation.fromValue = 0.0
         animation.toValue = angle * CGFloat(.pi / 180.0)
         animation.duration = 1.0
-        animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         return animation
     }
 
