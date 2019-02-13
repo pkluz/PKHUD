@@ -132,7 +132,7 @@ open class PKHUD: NSObject {
         } else {
             showContent()
         }
-        UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, self.container.frameView.content)
+        UIAccessibility.post(notification: UIAccessibility.Notification.layoutChanged, argument: self.container.frameView.content)
     }
 
     func showContent() {
