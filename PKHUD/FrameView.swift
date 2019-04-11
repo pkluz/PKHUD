@@ -1,5 +1,5 @@
 //
-//  HUDView.swift
+//  FrameView.swift
 //  PKHUD
 //
 //  Created by Philip Kluz on 6/16/14.

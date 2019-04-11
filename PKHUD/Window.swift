@@ -1,5 +1,5 @@
 //
-//  HUDWindow.swift
+//  Window.swift
 //  PKHUD
 //
 //  Created by Philip Kluz on 6/16/14.
@@ -10,7 +10,7 @@
 import UIKit
 
 /// The window used to display the PKHUD within. Placed atop the applications main window.
-internal final class ContainerView: UIView {
+internal final class Window: UIView {
 
     private var keyboardIsVisible = false
     private var keyboardHeight: CGFloat = 0.0
