@@ -112,6 +112,8 @@
 		F996324C19514FEF001F73CA /* WindowRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowRootViewController.swift; sourceTree = "<group>"; };
 		F996325419514FF3001F73CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F996325819515052001F73CA /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		FEAB74E322A7A32F003F731F /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FEAB74E422A7A50B003F731F /* PKHUD.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = PKHUD.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,8 @@
 		F99631F319514FAC001F73CA = {
 			isa = PBXGroup;
 			children = (
+				FEAB74E422A7A50B003F731F /* PKHUD.podspec */,
+				FEAB74E322A7A32F003F731F /* Package.swift */,
 				F99631FE19514FAC001F73CA /* PKHUD Demo */,
 				F996321F19514FD8001F73CA /* PKHUD */,
 				12CE19F21E25784D0062D873 /* PKHUDDemoUITests */,
