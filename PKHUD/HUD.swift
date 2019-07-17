@@ -35,6 +35,11 @@ public final class HUD {
         set { PKHUD.sharedHUD.dimsBackground = newValue }
     }
 
+    public static var enableMottionEffects: Bool {
+        get { return PKHUD.sharedHUD.enableMotionEffects }
+        set { PKHUD.sharedHUD.enableMotionEffects = newValue }
+    }
+
     public static var allowsInteraction: Bool {
         get { return PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled  }
         set { PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = newValue }
