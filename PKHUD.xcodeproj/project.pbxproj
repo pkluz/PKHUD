@@ -3,36 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; };
-		12CE19F41E25784D0062D873 /* PKHUDDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */; };
+		12010C8A1C3D0E8D005DC6FC /* PKHUDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12010C891C3D0E8D005DC6FC /* PKHUDAnimation.swift */; platformFilter = ios; };
+		12CE19F41E25784D0062D873 /* PKHUDDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CE19F31E25784D0062D873 /* PKHUDDemoUITests.swift */; platformFilter = ios; };
 		12CE19FD1E2578680062D873 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
-		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; };
-		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; };
-		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; };
-		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; };
-		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; };
-		F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */; };
+		3097AF3A1C4843AE007DD42B /* PKHUDRotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */; platformFilter = ios; };
+		640011571C5B6C080013F32B /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640011551C5B6C080013F32B /* HUD.swift */; platformFilter = ios; };
+		F908BEC01BB849290015E5A8 /* PKHUDSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */; platformFilter = ios; };
+		F908BEC31BB84D0B0015E5A8 /* PKHUDAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */; platformFilter = ios; };
+		F908BEC51BB852C60015E5A8 /* PKHUDErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */; platformFilter = ios; };
+		F908BEC81BB85EA70015E5A8 /* PKHUDProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F908BEC71BB85EA70015E5A8 /* PKHUDProgressView.swift */; platformFilter = ios; };
 		F935B1581B2B8088003C3734 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F935B1571B2B8088003C3734 /* Storyboard.storyboard */; };
 		F935B15A1B2B865A003C3734 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F935B1591B2B865A003C3734 /* Launch Screen.storyboard */; };
-		F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */; };
-		F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */; };
-		F935B1611B2B8C8E003C3734 /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */; };
-		F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */; };
+		F935B15D1B2B8C20003C3734 /* PKHUDSquareBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15C1B2B8C20003C3734 /* PKHUDSquareBaseView.swift */; platformFilter = ios; };
+		F935B15F1B2B8C7E003C3734 /* PKHUDWideBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B15E1B2B8C7E003C3734 /* PKHUDWideBaseView.swift */; platformFilter = ios; };
+		F935B1611B2B8C8E003C3734 /* PKHUDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1601B2B8C8E003C3734 /* PKHUDTextView.swift */; platformFilter = ios; };
+		F935B1671B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F935B1661B2B8D8C003C3734 /* PKHUDSystemActivityIndicatorView.swift */; platformFilter = ios; };
 		F996320219514FAC001F73CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996320119514FAC001F73CA /* AppDelegate.swift */; };
 		F996320419514FAD001F73CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996320319514FAD001F73CA /* Images.xcassets */; };
 		F996322319514FD8001F73CA /* PKHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = F996322219514FD8001F73CA /* PKHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F996323319514FD8001F73CA /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; };
 		F996323419514FD8001F73CA /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F996321E19514FD8001F73CA /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* PKHUDAssets.swift */; };
-		F996324F19514FEF001F73CA /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* PKHUD.swift */; };
-		F996325019514FEF001F73CA /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; };
-		F996325219514FEF001F73CA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324B19514FEF001F73CA /* Window.swift */; };
-		F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324C19514FEF001F73CA /* WindowRootViewController.swift */; };
-		F996325519514FF3001F73CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996325419514FF3001F73CA /* Images.xcassets */; };
+		F996324D19514FEF001F73CA /* PKHUDAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324619514FEF001F73CA /* PKHUDAssets.swift */; platformFilter = ios; };
+		F996324F19514FEF001F73CA /* PKHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324819514FEF001F73CA /* PKHUD.swift */; platformFilter = ios; };
+		F996325019514FEF001F73CA /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324919514FEF001F73CA /* FrameView.swift */; platformFilter = ios; };
+		F996325219514FEF001F73CA /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324B19514FEF001F73CA /* Window.swift */; platformFilter = ios; };
+		F996325319514FEF001F73CA /* WindowRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996324C19514FEF001F73CA /* WindowRootViewController.swift */; platformFilter = ios; };
+		F996325519514FF3001F73CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F996325419514FF3001F73CA /* Images.xcassets */; platformFilter = ios; };
 		F996325919515052001F73CA /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F996325819515052001F73CA /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,13 +52,6 @@
 			remoteInfo = PKHUD;
 		};
 		F996323119514FD8001F73CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F99631F419514FAC001F73CA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F996321D19514FD8001F73CA;
-			remoteInfo = PKHUD;
-		};
-		F996323519514FD8001F73CA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F99631F419514FAC001F73CA /* Project object */;
 			proxyType = 1;
@@ -88,6 +81,7 @@
 		12CE19F51E25784D0062D873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3097AF391C4843AE007DD42B /* PKHUDRotatingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDRotatingImageView.swift; sourceTree = "<group>"; };
 		640011551C5B6C080013F32B /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		8223991A22FAAAD500C94858 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F908BEBF1BB849290015E5A8 /* PKHUDSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSuccessView.swift; sourceTree = "<group>"; };
 		F908BEC21BB84D0B0015E5A8 /* PKHUDAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimating.swift; sourceTree = "<group>"; };
 		F908BEC41BB852C60015E5A8 /* PKHUDErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDErrorView.swift; sourceTree = "<group>"; };
@@ -178,6 +172,7 @@
 		F99631F319514FAC001F73CA = {
 			isa = PBXGroup;
 			children = (
+				8223991A22FAAAD500C94858 /* Package.swift */,
 				F99631FE19514FAC001F73CA /* PKHUD Demo */,
 				F996321F19514FD8001F73CA /* PKHUD */,
 				12CE19F21E25784D0062D873 /* PKHUDDemoUITests */,
@@ -297,7 +292,6 @@
 			);
 			dependencies = (
 				F996323219514FD8001F73CA /* PBXTargetDependency */,
-				F996323619514FD8001F73CA /* PBXTargetDependency */,
 			);
 			name = "PKHUD Demo";
 			productName = "PKHUD Demo";
@@ -334,7 +328,7 @@
 				TargetAttributes = {
 					12CE19F01E25784C0062D873 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1100;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F99631FB19514FAC001F73CA;
 					};
@@ -473,11 +467,6 @@
 			target = F996321D19514FD8001F73CA /* PKHUD */;
 			targetProxy = F996323119514FD8001F73CA /* PBXContainerItemProxy */;
 		};
-		F996323619514FD8001F73CA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F996321D19514FD8001F73CA /* PKHUD */;
-			targetProxy = F996323519514FD8001F73CA /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -489,13 +478,17 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = PKHUDDemoUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = NSExceptional.PKHUDDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "PKHUD Demo";
 			};
 			name = Debug;
@@ -509,12 +502,16 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = PKHUDDemoUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = NSExceptional.PKHUDDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "PKHUD Demo";
 			};
 			name = Release;
@@ -621,7 +618,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -635,7 +633,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -650,7 +651,10 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -675,7 +679,11 @@
 				INFOPLIST_FILE = PKHUD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -700,7 +708,11 @@
 				INFOPLIST_FILE = PKHUD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.NSExceptional.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
