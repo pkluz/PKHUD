@@ -11,11 +11,11 @@ let package = Package(
     products: [
         .library(
             name: "PKHUD",
-            targets: ["PKHUD"]),
+            targets: ["PKHUD"])
     ],
     targets: [
         .target(
             name: "PKHUD",
-            path: "PKHUD"),
+            path: "PKHUD")
     ]
 )
