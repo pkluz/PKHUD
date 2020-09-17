@@ -17,8 +17,8 @@ let package = Package(
         .target(
             name: "PKHUD",
             path: "PKHUD",
-            resources: [
-                .process("Images.xcassets")
+            exclude: [
+                "Info.plist",
             ]
         ),
     ],
