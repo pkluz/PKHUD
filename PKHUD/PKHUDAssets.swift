@@ -38,7 +38,9 @@ open class PKHUDAssets: NSObject {
     }
 }
 
+#if IS_FRAMEWORK_TARGET
 private extension Bundle {
     /// In packages a .module static var is automatically available, here we "create" one for the framework build.
     static var module: Bundle { return Bundle(for: PKHUDAssets.self) }
 }
+#endif
