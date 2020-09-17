@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -16,7 +16,10 @@ let package = Package(
     targets: [
         .target(
             name: "PKHUD",
-            path: "PKHUD"
+            path: "PKHUD",
+            resources: [
+                .process("Images.xcassets")
+            ]
         ),
     ],
     swiftLanguageVersions: [.v5]
