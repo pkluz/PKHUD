@@ -2,6 +2,7 @@
 [![License](https://img.shields.io/cocoapods/l/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD) 
 [![Platform](https://img.shields.io/cocoapods/p/PKHUD.svg?style=flat)](http://cocoadocs.org/docsets/PKHUD/3.2.1/) 
 [![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD)
+[![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
@@ -60,6 +61,13 @@ github "pkluz/PKHUD" ~> 4.0
 ```
 
 Run `carthage update` to build the framework and drag the built `PKHUD.framework` into your Xcode project.
+
+### Swift Package Manager
+
+To install using Swift Package Manager, add this to the `dependencies:` section in your Package.swift file:
+```swift
+.package(url: "https://github.com/pkluz/PKHUD.git", .upToNextMinor(from: "5.4.0")),
+```
 
 ## How To
 
