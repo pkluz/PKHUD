@@ -19,7 +19,10 @@ open class PKHUDAssets: NSObject {
 
     internal class func bundledImage(named name: String) -> UIImage {
         let primaryBundle = Bundle(for: PKHUDAssets.self)
-        if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
+        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
+            // Load image from SPM if available
+            return image
+        } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
             // Load image in cases where PKHUD is directly integrated
             return image
         } else if
@@ -34,3 +37,10 @@ open class PKHUDAssets: NSObject {
         return UIImage()
     }
 }
+
+#if IS_FRAMEWORK_TARGET
+private extension Bundle {
+    /// In packages a .module static var is automatically available, here we "create" one for the framework build.
+    static var module: Bundle { return Bundle(for: PKHUDAssets.self) }
+}
+#endif

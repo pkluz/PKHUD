@@ -39,3 +39,4 @@ UserInterfaceState.xcuserstate
 fastlane/report.xml
 
 fastlane/test_output/report.html
+.build
