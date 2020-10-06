@@ -198,11 +198,11 @@ open class PKHUD: NSObject {
             animatingContentView.stopAnimation?()
         }
     }
-    
+
     internal func registerForKeyboardNotifications() {
         container.registerForKeyboardNotifications()
     }
-    
+
     internal func deregisterFromKeyboardNotifications() {
         container.deregisterFromKeyboardNotifications()
     }

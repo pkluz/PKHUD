@@ -14,7 +14,7 @@ internal class ContainerView: UIView {
 
     private var keyboardIsVisible = false
     private var keyboardHeight: CGFloat = 0.0
-    
+
     internal let frameView: FrameView
     internal init(frameView: FrameView = FrameView()) {
         self.frameView = frameView
@@ -42,8 +42,6 @@ internal class ContainerView: UIView {
         frameView.center = calculateHudCenter()
         backgroundView.frame = bounds
     }
-    
-    
 
     internal func showFrameView() {
         layer.removeAllAnimations()
@@ -106,18 +104,18 @@ internal class ContainerView: UIView {
             backgroundView.alpha = 0.0
         }
     }
-    
+
     // MARK: Notifications
     internal func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     internal func deregisterFromKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     // MARK: Triggered Functions
     @objc private func keyboardWillShow(notification: NSNotification) {
         keyboardIsVisible = true
@@ -136,7 +134,7 @@ internal class ContainerView: UIView {
             }
         }
     }
-    
+
     @objc private func keyboardWillBeHidden(notification: NSNotification) {
         keyboardIsVisible = false
         if !self.isHidden {
@@ -151,7 +149,7 @@ internal class ContainerView: UIView {
             }
         }
     }
-    
+
     // MARK: - Helpers
     private func animateHUDWith(duration: Double, curve: UIView.AnimationCurve, toLocation location: CGPoint) {
         UIView.beginAnimations(nil, context: nil)
@@ -160,7 +158,7 @@ internal class ContainerView: UIView {
         frameView.center = location
         UIView.commitAnimations()
     }
-    
+
     private func calculateHudCenter() -> CGPoint {
         if !keyboardIsVisible {
             return center

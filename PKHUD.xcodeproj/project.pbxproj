@@ -229,7 +229,7 @@
 				F996324819514FEF001F73CA /* PKHUD.swift */,
 				F996324619514FEF001F73CA /* PKHUDAssets.swift */,
 				F935B15B1B2B8C03003C3734 /* Content Views */,
-				F9DB0B91197DB78B00385ACE /* Internal */,
+				F9DB0B91197DB78B00385ACE /* Layout */,
 				F996325419514FF3001F73CA /* Images.xcassets */,
 				F996322019514FD8001F73CA /* Supporting Files */,
 			);
@@ -244,14 +244,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F9DB0B91197DB78B00385ACE /* Internal */ = {
+		F9DB0B91197DB78B00385ACE /* Layout */ = {
 			isa = PBXGroup;
 			children = (
 				F996324919514FEF001F73CA /* FrameView.swift */,
 				F996324B19514FEF001F73CA /* Window.swift */,
 				F996324C19514FEF001F73CA /* WindowRootViewController.swift */,
 			);
-			name = Internal;
+			name = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +338,7 @@
 				TargetAttributes = {
 					12CE19F01E25784C0062D873 = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F99631FB19514FAC001F73CA;
 					};
@@ -414,7 +414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\n    echo \"abc\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -498,7 +498,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NSExceptional.PKHUDDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "PKHUD Demo";
 			};
 			name = Debug;
@@ -517,7 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = NSExceptional.PKHUDDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "PKHUD Demo";
 			};
 			name = Release;
