@@ -22,7 +22,7 @@ open class PKHUDTextView: PKHUDWideBaseView {
         commonInit("")
     }
 
-    func commonInit(_ text: String?) {
+    private func commonInit(_ text: String?) {
         titleLabel.text = text
         addSubview(titleLabel)
     }

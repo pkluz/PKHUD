@@ -1,5 +1,5 @@
 //
-//  HUDView.swift
+//  FrameView.swift
 //  PKHUD
 //
 //  Created by Philip Kluz on 6/16/14.
@@ -10,7 +10,7 @@
 import UIKit
 
 /// Provides the general look and feel of the PKHUD, into which the eventual content is inserted.
-internal class FrameView: UIVisualEffectView {
+internal final class FrameView: UIVisualEffectView {
 
     internal init() {
         super.init(effect: UIBlurEffect(style: .light))

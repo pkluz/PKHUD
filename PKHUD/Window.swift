@@ -1,5 +1,5 @@
 //
-//  HUDWindow.swift
+//  Window.swift
 //  PKHUD
 //
 //  Created by Philip Kluz on 6/16/14.
@@ -10,7 +10,7 @@
 import UIKit
 
 /// The window used to display the PKHUD within. Placed atop the applications main window.
-internal class ContainerView: UIView {
+internal final class Window: UIView {
 
     private var keyboardIsVisible = false
     private var keyboardHeight: CGFloat = 0.0
@@ -28,7 +28,7 @@ internal class ContainerView: UIView {
         commonInit()
     }
 
-    fileprivate func commonInit() {
+    private func commonInit() {
         backgroundColor = UIColor.clear
         isHidden = true
 
@@ -52,7 +52,7 @@ internal class ContainerView: UIView {
         isHidden = false
     }
 
-    fileprivate var willHide = false
+    private var willHide = false
 
     internal func hideFrameView(animated anim: Bool, completion: ((Bool) -> Void)? = nil) {
         let finalize: (_ finished: Bool) -> Void = { finished in
@@ -80,7 +80,7 @@ internal class ContainerView: UIView {
         }
     }
 
-    fileprivate let backgroundView: UIView = {
+    private let backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(white: 0.0, alpha: 0.25)
         view.alpha = 0.0

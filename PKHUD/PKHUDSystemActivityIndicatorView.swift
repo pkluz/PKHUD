@@ -27,7 +27,7 @@ public final class PKHUDSystemActivityIndicatorView: PKHUDSquareBaseView, PKHUDA
         commonInit()
     }
 
-    func commonInit () {
+    private func commonInit () {
         backgroundColor = UIColor.clear
         alpha = 0.8
 
