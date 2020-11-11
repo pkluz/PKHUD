@@ -25,6 +25,11 @@ open class PKHUDSquareBaseView: UIView {
     public init(image: UIImage? = nil, title: String? = nil, subtitle: String? = nil) {
         super.init(frame: PKHUDSquareBaseView.defaultSquareBaseViewFrame)
         self.imageView.image = image
+        if #available(iOS 13.0, *) {
+            imageView.tintColor = .label
+        } else {
+            imageView.tintColor = .black
+        }
         titleLabel.text = title
         subtitleLabel.text = subtitle
 
@@ -45,7 +50,7 @@ open class PKHUDSquareBaseView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 17.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.85)
+        label.textColor = .textTintColor
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.25
         return label
@@ -55,7 +60,7 @@ open class PKHUDSquareBaseView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14.0)
-        label.textColor = UIColor.black.withAlphaComponent(0.7)
+        label.textColor = .textTintColor
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
