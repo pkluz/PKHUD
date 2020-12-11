@@ -33,11 +33,12 @@ class DemoViewController: UIViewController {
     }
 
     @IBAction func showAnimatedSuccessHUD(_ sender: AnyObject) {
-        HUD.flash(.success, delay: 2.0)
+        HUD.flash(.success, tintColor: UIColor.orange, delay: 2.0)
     }
 
     @IBAction func showAnimatedErrorHUD(_ sender: AnyObject) {
-        HUD.show(.error)
+        // Error with optional tint color
+        HUD.show(.error,tintColor: UIColor.red)
         HUD.hide(afterDelay: 2.0)
     }
 
