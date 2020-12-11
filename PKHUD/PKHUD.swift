@@ -95,6 +95,16 @@ open class PKHUD: NSObject {
         }
     }
 
+    open var enableMotionEffects: Bool {
+        get {
+            return !container.frameView.motionEffects.isEmpty
+        }
+
+        set {
+            container.frameView.updateMottionEffects(isEnable: newValue)
+        }
+    }
+
     open var isVisible: Bool {
         return !container.isHidden
     }

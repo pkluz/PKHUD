@@ -64,4 +64,28 @@ internal class FrameView: UIVisualEffectView {
             contentView.addSubview(_content)
         }
     }
+
+    func updateMottionEffects(isEnable: Bool) {
+        motionEffects = []
+
+        guard isEnable else {
+            return
+        }
+
+        let offset = 20.0
+
+        let motionEffectsX = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        motionEffectsX.maximumRelativeValue = offset
+        motionEffectsX.minimumRelativeValue = -offset
+
+        let motionEffectsY = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        motionEffectsY.maximumRelativeValue = offset
+        motionEffectsY.minimumRelativeValue = -offset
+
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [motionEffectsX, motionEffectsY]
+
+        addMotionEffect(group)
+    }
+    
 }
