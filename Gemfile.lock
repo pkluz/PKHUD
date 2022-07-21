@@ -171,7 +171,7 @@ GEM
     tty-screen (0.6.5)
     tty-spinner (0.8.0)
       tty-cursor (>= 0.5.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uber (0.1.0)
     unf (0.1.4)
