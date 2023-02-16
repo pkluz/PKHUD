@@ -19,7 +19,13 @@ open class PKHUDAssets: NSObject {
 
     internal class func bundledImage(named name: String) -> UIImage {
         let primaryBundle = Bundle(for: PKHUDAssets.self)
-        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
+        let bundleModule: Bundle?
+#if SWIFT_PACKAGE
+        bundleModule = .module
+#else
+        bundleModule = nil
+#endif
+        if let bundleModule = bundleModule, let image = UIImage(named: name, in: bundleModule, compatibleWith: nil) {
             // Load image from SPM if available
             return image
         } else if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
