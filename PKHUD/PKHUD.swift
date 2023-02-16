@@ -123,7 +123,10 @@ open class PKHUD: NSObject {
     open var trailingMargin: CGFloat = 0
 
     open func show(onView view: UIView? = nil) {
-        let view: UIView = view ?? viewToPresentOn ?? UIApplication.shared.keyWindow!
+        guard let view: UIView = view ?? viewToPresentOn ?? UIApplication.shared.mainWindow else {
+            return
+        }
+        
         if  !view.subviews.contains(container) {
             view.addSubview(container)
             container.frame.origin = CGPoint.zero
@@ -228,4 +231,26 @@ open class PKHUD: NSObject {
             showContent()
         }
     }
+}
+
+fileprivate extension UIApplication {
+    
+    var mainWindow: UIWindow? {
+        if #available(iOS 13.0, *) {
+            return currentScene?.windows
+                    .filter({$0.isKeyWindow}).first ?? keyWindow
+        } else {
+            return keyWindow
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    var currentScene: UIWindowScene? {
+        connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})
+                .first
+    }
+    
 }
